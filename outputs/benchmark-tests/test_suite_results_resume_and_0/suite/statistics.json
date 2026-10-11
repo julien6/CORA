@@ -1,0 +1,1866 @@
+{
+  "summaries": [
+    {
+      "benchmark": "synthetic_sparse",
+      "method": "cora",
+      "budget": 2,
+      "metrics": {
+        "simple_regret": {
+          "n": 1,
+          "mean": 0.5483689443057291,
+          "median": 0.5483689443057291,
+          "iqm": 0.5483689443057291,
+          "iqm_ci": null,
+          "confidence": 0.95,
+          "inferentially_adequate": false
+        },
+        "heldout_mae": {
+          "n": 1,
+          "mean": 1.3290148767970347,
+          "median": 1.3290148767970347,
+          "iqm": 1.3290148767970347,
+          "iqm_ci": null,
+          "confidence": 0.95,
+          "inferentially_adequate": false
+        },
+        "harmful_reference": {
+          "n": 1,
+          "mean": 0.0,
+          "median": 0.0,
+          "iqm": 0.0,
+          "iqm_ci": null,
+          "confidence": 0.95,
+          "inferentially_adequate": false
+        },
+        "constraint_violation": {
+          "n": 1,
+          "mean": 0.0,
+          "median": 0.0,
+          "iqm": 0.0,
+          "iqm_ci": null,
+          "confidence": 0.95,
+          "inferentially_adequate": false
+        },
+        "abstention": {
+          "n": 1,
+          "mean": 1.0,
+          "median": 1.0,
+          "iqm": 1.0,
+          "iqm_ci": null,
+          "confidence": 0.95,
+          "inferentially_adequate": false
+        },
+        "selected_net_value": {
+          "n": 1,
+          "mean": 0.0012301533574825742,
+          "median": 0.0012301533574825742,
+          "iqm": 0.0012301533574825742,
+          "iqm_ci": null,
+          "confidence": 0.95,
+          "inferentially_adequate": false
+        },
+        "wall_seconds": {
+          "n": 1,
+          "mean": 0.011047136002162006,
+          "median": 0.011047136002162006,
+          "iqm": 0.011047136002162006,
+          "iqm_ci": null,
+          "confidence": 0.95,
+          "inferentially_adequate": false
+        },
+        "diagnostic_coverage": {
+          "n": 1,
+          "mean": 1.0,
+          "median": 1.0,
+          "iqm": 1.0,
+          "iqm_ci": null,
+          "confidence": 0.95,
+          "inferentially_adequate": false
+        }
+      }
+    },
+    {
+      "benchmark": "synthetic_sparse",
+      "method": "cora",
+      "budget": 4,
+      "metrics": {
+        "simple_regret": {
+          "n": 1,
+          "mean": 0.5483689443057291,
+          "median": 0.5483689443057291,
+          "iqm": 0.5483689443057291,
+          "iqm_ci": null,
+          "confidence": 0.95,
+          "inferentially_adequate": false
+        },
+        "heldout_mae": {
+          "n": 1,
+          "mean": 0.3919650147607784,
+          "median": 0.3919650147607784,
+          "iqm": 0.3919650147607784,
+          "iqm_ci": null,
+          "confidence": 0.95,
+          "inferentially_adequate": false
+        },
+        "harmful_reference": {
+          "n": 1,
+          "mean": 0.0,
+          "median": 0.0,
+          "iqm": 0.0,
+          "iqm_ci": null,
+          "confidence": 0.95,
+          "inferentially_adequate": false
+        },
+        "constraint_violation": {
+          "n": 1,
+          "mean": 0.0,
+          "median": 0.0,
+          "iqm": 0.0,
+          "iqm_ci": null,
+          "confidence": 0.95,
+          "inferentially_adequate": false
+        },
+        "abstention": {
+          "n": 1,
+          "mean": 1.0,
+          "median": 1.0,
+          "iqm": 1.0,
+          "iqm_ci": null,
+          "confidence": 0.95,
+          "inferentially_adequate": false
+        },
+        "selected_net_value": {
+          "n": 1,
+          "mean": 0.0012301533574825742,
+          "median": 0.0012301533574825742,
+          "iqm": 0.0012301533574825742,
+          "iqm_ci": null,
+          "confidence": 0.95,
+          "inferentially_adequate": false
+        },
+        "wall_seconds": {
+          "n": 1,
+          "mean": 0.031310248996305745,
+          "median": 0.031310248996305745,
+          "iqm": 0.031310248996305745,
+          "iqm_ci": null,
+          "confidence": 0.95,
+          "inferentially_adequate": false
+        },
+        "diagnostic_coverage": {
+          "n": 1,
+          "mean": 1.0,
+          "median": 1.0,
+          "iqm": 1.0,
+          "iqm_ci": null,
+          "confidence": 0.95,
+          "inferentially_adequate": false
+        }
+      }
+    },
+    {
+      "benchmark": "synthetic_sparse",
+      "method": "cora_incomplete_graph",
+      "budget": 2,
+      "metrics": {
+        "simple_regret": {
+          "n": 1,
+          "mean": 0.5483689443057291,
+          "median": 0.5483689443057291,
+          "iqm": 0.5483689443057291,
+          "iqm_ci": null,
+          "confidence": 0.95,
+          "inferentially_adequate": false
+        },
+        "heldout_mae": {
+          "n": 1,
+          "mean": 1.3751721348679764,
+          "median": 1.3751721348679764,
+          "iqm": 1.3751721348679764,
+          "iqm_ci": null,
+          "confidence": 0.95,
+          "inferentially_adequate": false
+        },
+        "harmful_reference": {
+          "n": 1,
+          "mean": 0.0,
+          "median": 0.0,
+          "iqm": 0.0,
+          "iqm_ci": null,
+          "confidence": 0.95,
+          "inferentially_adequate": false
+        },
+        "constraint_violation": {
+          "n": 1,
+          "mean": 0.0,
+          "median": 0.0,
+          "iqm": 0.0,
+          "iqm_ci": null,
+          "confidence": 0.95,
+          "inferentially_adequate": false
+        },
+        "abstention": {
+          "n": 1,
+          "mean": 1.0,
+          "median": 1.0,
+          "iqm": 1.0,
+          "iqm_ci": null,
+          "confidence": 0.95,
+          "inferentially_adequate": false
+        },
+        "selected_net_value": {
+          "n": 1,
+          "mean": 0.0012301533574825742,
+          "median": 0.0012301533574825742,
+          "iqm": 0.0012301533574825742,
+          "iqm_ci": null,
+          "confidence": 0.95,
+          "inferentially_adequate": false
+        },
+        "wall_seconds": {
+          "n": 1,
+          "mean": 0.0031876749999355525,
+          "median": 0.0031876749999355525,
+          "iqm": 0.0031876749999355525,
+          "iqm_ci": null,
+          "confidence": 0.95,
+          "inferentially_adequate": false
+        },
+        "diagnostic_coverage": {
+          "n": 1,
+          "mean": 1.0,
+          "median": 1.0,
+          "iqm": 1.0,
+          "iqm_ci": null,
+          "confidence": 0.95,
+          "inferentially_adequate": false
+        }
+      }
+    },
+    {
+      "benchmark": "synthetic_sparse",
+      "method": "cora_incomplete_graph",
+      "budget": 4,
+      "metrics": {
+        "simple_regret": {
+          "n": 1,
+          "mean": 0.5483689443057291,
+          "median": 0.5483689443057291,
+          "iqm": 0.5483689443057291,
+          "iqm_ci": null,
+          "confidence": 0.95,
+          "inferentially_adequate": false
+        },
+        "heldout_mae": {
+          "n": 1,
+          "mean": 0.7568048750698189,
+          "median": 0.7568048750698189,
+          "iqm": 0.7568048750698189,
+          "iqm_ci": null,
+          "confidence": 0.95,
+          "inferentially_adequate": false
+        },
+        "harmful_reference": {
+          "n": 1,
+          "mean": 0.0,
+          "median": 0.0,
+          "iqm": 0.0,
+          "iqm_ci": null,
+          "confidence": 0.95,
+          "inferentially_adequate": false
+        },
+        "constraint_violation": {
+          "n": 1,
+          "mean": 0.0,
+          "median": 0.0,
+          "iqm": 0.0,
+          "iqm_ci": null,
+          "confidence": 0.95,
+          "inferentially_adequate": false
+        },
+        "abstention": {
+          "n": 1,
+          "mean": 1.0,
+          "median": 1.0,
+          "iqm": 1.0,
+          "iqm_ci": null,
+          "confidence": 0.95,
+          "inferentially_adequate": false
+        },
+        "selected_net_value": {
+          "n": 1,
+          "mean": 0.0012301533574825742,
+          "median": 0.0012301533574825742,
+          "iqm": 0.0012301533574825742,
+          "iqm_ci": null,
+          "confidence": 0.95,
+          "inferentially_adequate": false
+        },
+        "wall_seconds": {
+          "n": 1,
+          "mean": 0.009460317996854428,
+          "median": 0.009460317996854428,
+          "iqm": 0.009460317996854428,
+          "iqm_ci": null,
+          "confidence": 0.95,
+          "inferentially_adequate": false
+        },
+        "diagnostic_coverage": {
+          "n": 1,
+          "mean": 1.0,
+          "median": 1.0,
+          "iqm": 1.0,
+          "iqm_ci": null,
+          "confidence": 0.95,
+          "inferentially_adequate": false
+        }
+      }
+    },
+    {
+      "benchmark": "synthetic_sparse",
+      "method": "cora_no_confidence",
+      "budget": 2,
+      "metrics": {
+        "simple_regret": {
+          "n": 1,
+          "mean": 0.5483689443057291,
+          "median": 0.5483689443057291,
+          "iqm": 0.5483689443057291,
+          "iqm_ci": null,
+          "confidence": 0.95,
+          "inferentially_adequate": false
+        },
+        "heldout_mae": {
+          "n": 1,
+          "mean": 1.3290148767970347,
+          "median": 1.3290148767970347,
+          "iqm": 1.3290148767970347,
+          "iqm_ci": null,
+          "confidence": 0.95,
+          "inferentially_adequate": false
+        },
+        "harmful_reference": {
+          "n": 1,
+          "mean": 0.0,
+          "median": 0.0,
+          "iqm": 0.0,
+          "iqm_ci": null,
+          "confidence": 0.95,
+          "inferentially_adequate": false
+        },
+        "constraint_violation": {
+          "n": 1,
+          "mean": 0.0,
+          "median": 0.0,
+          "iqm": 0.0,
+          "iqm_ci": null,
+          "confidence": 0.95,
+          "inferentially_adequate": false
+        },
+        "abstention": {
+          "n": 1,
+          "mean": 1.0,
+          "median": 1.0,
+          "iqm": 1.0,
+          "iqm_ci": null,
+          "confidence": 0.95,
+          "inferentially_adequate": false
+        },
+        "selected_net_value": {
+          "n": 1,
+          "mean": 0.0012301533574825742,
+          "median": 0.0012301533574825742,
+          "iqm": 0.0012301533574825742,
+          "iqm_ci": null,
+          "confidence": 0.95,
+          "inferentially_adequate": false
+        },
+        "wall_seconds": {
+          "n": 1,
+          "mean": 0.010150556001462974,
+          "median": 0.010150556001462974,
+          "iqm": 0.010150556001462974,
+          "iqm_ci": null,
+          "confidence": 0.95,
+          "inferentially_adequate": false
+        },
+        "diagnostic_coverage": {
+          "n": 1,
+          "mean": 1.0,
+          "median": 1.0,
+          "iqm": 1.0,
+          "iqm_ci": null,
+          "confidence": 0.95,
+          "inferentially_adequate": false
+        }
+      }
+    },
+    {
+      "benchmark": "synthetic_sparse",
+      "method": "cora_no_confidence",
+      "budget": 4,
+      "metrics": {
+        "simple_regret": {
+          "n": 1,
+          "mean": 0.34962340679725923,
+          "median": 0.34962340679725923,
+          "iqm": 0.34962340679725923,
+          "iqm_ci": null,
+          "confidence": 0.95,
+          "inferentially_adequate": false
+        },
+        "heldout_mae": {
+          "n": 1,
+          "mean": 0.3919650147607784,
+          "median": 0.3919650147607784,
+          "iqm": 0.3919650147607784,
+          "iqm_ci": null,
+          "confidence": 0.95,
+          "inferentially_adequate": false
+        },
+        "harmful_reference": {
+          "n": 1,
+          "mean": 0.0,
+          "median": 0.0,
+          "iqm": 0.0,
+          "iqm_ci": null,
+          "confidence": 0.95,
+          "inferentially_adequate": false
+        },
+        "constraint_violation": {
+          "n": 1,
+          "mean": 0.0,
+          "median": 0.0,
+          "iqm": 0.0,
+          "iqm_ci": null,
+          "confidence": 0.95,
+          "inferentially_adequate": false
+        },
+        "abstention": {
+          "n": 1,
+          "mean": 0.0,
+          "median": 0.0,
+          "iqm": 0.0,
+          "iqm_ci": null,
+          "confidence": 0.95,
+          "inferentially_adequate": false
+        },
+        "selected_net_value": {
+          "n": 1,
+          "mean": 0.19997569086595243,
+          "median": 0.19997569086595243,
+          "iqm": 0.19997569086595243,
+          "iqm_ci": null,
+          "confidence": 0.95,
+          "inferentially_adequate": false
+        },
+        "wall_seconds": {
+          "n": 1,
+          "mean": 0.028964921002625488,
+          "median": 0.028964921002625488,
+          "iqm": 0.028964921002625488,
+          "iqm_ci": null,
+          "confidence": 0.95,
+          "inferentially_adequate": false
+        },
+        "diagnostic_coverage": {
+          "n": 1,
+          "mean": 1.0,
+          "median": 1.0,
+          "iqm": 1.0,
+          "iqm_ci": null,
+          "confidence": 0.95,
+          "inferentially_adequate": false
+        }
+      }
+    },
+    {
+      "benchmark": "synthetic_sparse",
+      "method": "cora_no_constraints",
+      "budget": 2,
+      "metrics": {
+        "simple_regret": {
+          "n": 1,
+          "mean": 0.5483689443057291,
+          "median": 0.5483689443057291,
+          "iqm": 0.5483689443057291,
+          "iqm_ci": null,
+          "confidence": 0.95,
+          "inferentially_adequate": false
+        },
+        "heldout_mae": {
+          "n": 1,
+          "mean": 1.3290148767970347,
+          "median": 1.3290148767970347,
+          "iqm": 1.3290148767970347,
+          "iqm_ci": null,
+          "confidence": 0.95,
+          "inferentially_adequate": false
+        },
+        "harmful_reference": {
+          "n": 1,
+          "mean": 0.0,
+          "median": 0.0,
+          "iqm": 0.0,
+          "iqm_ci": null,
+          "confidence": 0.95,
+          "inferentially_adequate": false
+        },
+        "constraint_violation": {
+          "n": 1,
+          "mean": 0.0,
+          "median": 0.0,
+          "iqm": 0.0,
+          "iqm_ci": null,
+          "confidence": 0.95,
+          "inferentially_adequate": false
+        },
+        "abstention": {
+          "n": 1,
+          "mean": 1.0,
+          "median": 1.0,
+          "iqm": 1.0,
+          "iqm_ci": null,
+          "confidence": 0.95,
+          "inferentially_adequate": false
+        },
+        "selected_net_value": {
+          "n": 1,
+          "mean": 0.0012301533574825742,
+          "median": 0.0012301533574825742,
+          "iqm": 0.0012301533574825742,
+          "iqm_ci": null,
+          "confidence": 0.95,
+          "inferentially_adequate": false
+        },
+        "wall_seconds": {
+          "n": 1,
+          "mean": 0.02345049699943047,
+          "median": 0.02345049699943047,
+          "iqm": 0.02345049699943047,
+          "iqm_ci": null,
+          "confidence": 0.95,
+          "inferentially_adequate": false
+        },
+        "diagnostic_coverage": {
+          "n": 1,
+          "mean": 1.0,
+          "median": 1.0,
+          "iqm": 1.0,
+          "iqm_ci": null,
+          "confidence": 0.95,
+          "inferentially_adequate": false
+        }
+      }
+    },
+    {
+      "benchmark": "synthetic_sparse",
+      "method": "cora_no_constraints",
+      "budget": 4,
+      "metrics": {
+        "simple_regret": {
+          "n": 1,
+          "mean": 0.5483689443057291,
+          "median": 0.5483689443057291,
+          "iqm": 0.5483689443057291,
+          "iqm_ci": null,
+          "confidence": 0.95,
+          "inferentially_adequate": false
+        },
+        "heldout_mae": {
+          "n": 1,
+          "mean": 0.4684518820533128,
+          "median": 0.4684518820533128,
+          "iqm": 0.4684518820533128,
+          "iqm_ci": null,
+          "confidence": 0.95,
+          "inferentially_adequate": false
+        },
+        "harmful_reference": {
+          "n": 1,
+          "mean": 0.0,
+          "median": 0.0,
+          "iqm": 0.0,
+          "iqm_ci": null,
+          "confidence": 0.95,
+          "inferentially_adequate": false
+        },
+        "constraint_violation": {
+          "n": 1,
+          "mean": 0.0,
+          "median": 0.0,
+          "iqm": 0.0,
+          "iqm_ci": null,
+          "confidence": 0.95,
+          "inferentially_adequate": false
+        },
+        "abstention": {
+          "n": 1,
+          "mean": 1.0,
+          "median": 1.0,
+          "iqm": 1.0,
+          "iqm_ci": null,
+          "confidence": 0.95,
+          "inferentially_adequate": false
+        },
+        "selected_net_value": {
+          "n": 1,
+          "mean": 0.0012301533574825742,
+          "median": 0.0012301533574825742,
+          "iqm": 0.0012301533574825742,
+          "iqm_ci": null,
+          "confidence": 0.95,
+          "inferentially_adequate": false
+        },
+        "wall_seconds": {
+          "n": 1,
+          "mean": 0.06510992299445206,
+          "median": 0.06510992299445206,
+          "iqm": 0.06510992299445206,
+          "iqm_ci": null,
+          "confidence": 0.95,
+          "inferentially_adequate": false
+        },
+        "diagnostic_coverage": {
+          "n": 1,
+          "mean": 1.0,
+          "median": 1.0,
+          "iqm": 1.0,
+          "iqm_ci": null,
+          "confidence": 0.95,
+          "inferentially_adequate": false
+        }
+      }
+    },
+    {
+      "benchmark": "synthetic_sparse",
+      "method": "factorized_uniform",
+      "budget": 2,
+      "metrics": {
+        "simple_regret": {
+          "n": 1,
+          "mean": 0.5483689443057291,
+          "median": 0.5483689443057291,
+          "iqm": 0.5483689443057291,
+          "iqm_ci": null,
+          "confidence": 0.95,
+          "inferentially_adequate": false
+        },
+        "heldout_mae": {
+          "n": 1,
+          "mean": 1.3290148767970347,
+          "median": 1.3290148767970347,
+          "iqm": 1.3290148767970347,
+          "iqm_ci": null,
+          "confidence": 0.95,
+          "inferentially_adequate": false
+        },
+        "harmful_reference": {
+          "n": 1,
+          "mean": 0.0,
+          "median": 0.0,
+          "iqm": 0.0,
+          "iqm_ci": null,
+          "confidence": 0.95,
+          "inferentially_adequate": false
+        },
+        "constraint_violation": {
+          "n": 1,
+          "mean": 0.0,
+          "median": 0.0,
+          "iqm": 0.0,
+          "iqm_ci": null,
+          "confidence": 0.95,
+          "inferentially_adequate": false
+        },
+        "abstention": {
+          "n": 1,
+          "mean": 1.0,
+          "median": 1.0,
+          "iqm": 1.0,
+          "iqm_ci": null,
+          "confidence": 0.95,
+          "inferentially_adequate": false
+        },
+        "selected_net_value": {
+          "n": 1,
+          "mean": 0.0012301533574825742,
+          "median": 0.0012301533574825742,
+          "iqm": 0.0012301533574825742,
+          "iqm_ci": null,
+          "confidence": 0.95,
+          "inferentially_adequate": false
+        },
+        "wall_seconds": {
+          "n": 1,
+          "mean": 0.0005087259996798821,
+          "median": 0.0005087259996798821,
+          "iqm": 0.0005087259996798821,
+          "iqm_ci": null,
+          "confidence": 0.95,
+          "inferentially_adequate": false
+        },
+        "diagnostic_coverage": {
+          "n": 1,
+          "mean": 1.0,
+          "median": 1.0,
+          "iqm": 1.0,
+          "iqm_ci": null,
+          "confidence": 0.95,
+          "inferentially_adequate": false
+        }
+      }
+    },
+    {
+      "benchmark": "synthetic_sparse",
+      "method": "factorized_uniform",
+      "budget": 4,
+      "metrics": {
+        "simple_regret": {
+          "n": 1,
+          "mean": 0.34962340679725923,
+          "median": 0.34962340679725923,
+          "iqm": 0.34962340679725923,
+          "iqm_ci": null,
+          "confidence": 0.95,
+          "inferentially_adequate": false
+        },
+        "heldout_mae": {
+          "n": 1,
+          "mean": 0.3773774401149691,
+          "median": 0.3773774401149691,
+          "iqm": 0.3773774401149691,
+          "iqm_ci": null,
+          "confidence": 0.95,
+          "inferentially_adequate": false
+        },
+        "harmful_reference": {
+          "n": 1,
+          "mean": 0.0,
+          "median": 0.0,
+          "iqm": 0.0,
+          "iqm_ci": null,
+          "confidence": 0.95,
+          "inferentially_adequate": false
+        },
+        "constraint_violation": {
+          "n": 1,
+          "mean": 0.0,
+          "median": 0.0,
+          "iqm": 0.0,
+          "iqm_ci": null,
+          "confidence": 0.95,
+          "inferentially_adequate": false
+        },
+        "abstention": {
+          "n": 1,
+          "mean": 0.0,
+          "median": 0.0,
+          "iqm": 0.0,
+          "iqm_ci": null,
+          "confidence": 0.95,
+          "inferentially_adequate": false
+        },
+        "selected_net_value": {
+          "n": 1,
+          "mean": 0.19997569086595243,
+          "median": 0.19997569086595243,
+          "iqm": 0.19997569086595243,
+          "iqm_ci": null,
+          "confidence": 0.95,
+          "inferentially_adequate": false
+        },
+        "wall_seconds": {
+          "n": 1,
+          "mean": 0.0009647710030549206,
+          "median": 0.0009647710030549206,
+          "iqm": 0.0009647710030549206,
+          "iqm_ci": null,
+          "confidence": 0.95,
+          "inferentially_adequate": false
+        },
+        "diagnostic_coverage": {
+          "n": 1,
+          "mean": 1.0,
+          "median": 1.0,
+          "iqm": 1.0,
+          "iqm_ci": null,
+          "confidence": 0.95,
+          "inferentially_adequate": false
+        }
+      }
+    },
+    {
+      "benchmark": "synthetic_sparse",
+      "method": "global_linear",
+      "budget": 2,
+      "metrics": {
+        "simple_regret": {
+          "n": 1,
+          "mean": 0.5483689443057291,
+          "median": 0.5483689443057291,
+          "iqm": 0.5483689443057291,
+          "iqm_ci": null,
+          "confidence": 0.95,
+          "inferentially_adequate": false
+        },
+        "heldout_mae": {
+          "n": 1,
+          "mean": 1.3280502433385193,
+          "median": 1.3280502433385193,
+          "iqm": 1.3280502433385193,
+          "iqm_ci": null,
+          "confidence": 0.95,
+          "inferentially_adequate": false
+        },
+        "harmful_reference": {
+          "n": 1,
+          "mean": 0.0,
+          "median": 0.0,
+          "iqm": 0.0,
+          "iqm_ci": null,
+          "confidence": 0.95,
+          "inferentially_adequate": false
+        },
+        "constraint_violation": {
+          "n": 1,
+          "mean": 0.0,
+          "median": 0.0,
+          "iqm": 0.0,
+          "iqm_ci": null,
+          "confidence": 0.95,
+          "inferentially_adequate": false
+        },
+        "abstention": {
+          "n": 1,
+          "mean": 1.0,
+          "median": 1.0,
+          "iqm": 1.0,
+          "iqm_ci": null,
+          "confidence": 0.95,
+          "inferentially_adequate": false
+        },
+        "selected_net_value": {
+          "n": 1,
+          "mean": 0.0012301533574825742,
+          "median": 0.0012301533574825742,
+          "iqm": 0.0012301533574825742,
+          "iqm_ci": null,
+          "confidence": 0.95,
+          "inferentially_adequate": false
+        },
+        "wall_seconds": {
+          "n": 1,
+          "mean": 0.0004247920005582273,
+          "median": 0.0004247920005582273,
+          "iqm": 0.0004247920005582273,
+          "iqm_ci": null,
+          "confidence": 0.95,
+          "inferentially_adequate": false
+        },
+        "diagnostic_coverage": {
+          "n": 1,
+          "mean": 1.0,
+          "median": 1.0,
+          "iqm": 1.0,
+          "iqm_ci": null,
+          "confidence": 0.95,
+          "inferentially_adequate": false
+        }
+      }
+    },
+    {
+      "benchmark": "synthetic_sparse",
+      "method": "global_linear",
+      "budget": 4,
+      "metrics": {
+        "simple_regret": {
+          "n": 1,
+          "mean": 0.34962340679725923,
+          "median": 0.34962340679725923,
+          "iqm": 0.34962340679725923,
+          "iqm_ci": null,
+          "confidence": 0.95,
+          "inferentially_adequate": false
+        },
+        "heldout_mae": {
+          "n": 1,
+          "mean": 0.793274142339887,
+          "median": 0.793274142339887,
+          "iqm": 0.793274142339887,
+          "iqm_ci": null,
+          "confidence": 0.95,
+          "inferentially_adequate": false
+        },
+        "harmful_reference": {
+          "n": 1,
+          "mean": 0.0,
+          "median": 0.0,
+          "iqm": 0.0,
+          "iqm_ci": null,
+          "confidence": 0.95,
+          "inferentially_adequate": false
+        },
+        "constraint_violation": {
+          "n": 1,
+          "mean": 0.0,
+          "median": 0.0,
+          "iqm": 0.0,
+          "iqm_ci": null,
+          "confidence": 0.95,
+          "inferentially_adequate": false
+        },
+        "abstention": {
+          "n": 1,
+          "mean": 0.0,
+          "median": 0.0,
+          "iqm": 0.0,
+          "iqm_ci": null,
+          "confidence": 0.95,
+          "inferentially_adequate": false
+        },
+        "selected_net_value": {
+          "n": 1,
+          "mean": 0.19997569086595243,
+          "median": 0.19997569086595243,
+          "iqm": 0.19997569086595243,
+          "iqm_ci": null,
+          "confidence": 0.95,
+          "inferentially_adequate": false
+        },
+        "wall_seconds": {
+          "n": 1,
+          "mean": 0.000813733997347299,
+          "median": 0.000813733997347299,
+          "iqm": 0.000813733997347299,
+          "iqm_ci": null,
+          "confidence": 0.95,
+          "inferentially_adequate": false
+        },
+        "diagnostic_coverage": {
+          "n": 1,
+          "mean": 0.9583333333333334,
+          "median": 0.9583333333333334,
+          "iqm": 0.9583333333333334,
+          "iqm_ci": null,
+          "confidence": 0.95,
+          "inferentially_adequate": false
+        }
+      }
+    },
+    {
+      "benchmark": "synthetic_sparse",
+      "method": "global_neural",
+      "budget": 2,
+      "metrics": {
+        "simple_regret": {
+          "n": 1,
+          "mean": 1.5389607830630032,
+          "median": 1.5389607830630032,
+          "iqm": 1.5389607830630032,
+          "iqm_ci": null,
+          "confidence": 0.95,
+          "inferentially_adequate": false
+        },
+        "heldout_mae": {
+          "n": 1,
+          "mean": 1.1887157515302418,
+          "median": 1.1887157515302418,
+          "iqm": 1.1887157515302418,
+          "iqm_ci": null,
+          "confidence": 0.95,
+          "inferentially_adequate": false
+        },
+        "harmful_reference": {
+          "n": 1,
+          "mean": 1.0,
+          "median": 1.0,
+          "iqm": 1.0,
+          "iqm_ci": null,
+          "confidence": 0.95,
+          "inferentially_adequate": false
+        },
+        "constraint_violation": {
+          "n": 1,
+          "mean": 0.0,
+          "median": 0.0,
+          "iqm": 0.0,
+          "iqm_ci": null,
+          "confidence": 0.95,
+          "inferentially_adequate": false
+        },
+        "abstention": {
+          "n": 1,
+          "mean": 0.0,
+          "median": 0.0,
+          "iqm": 0.0,
+          "iqm_ci": null,
+          "confidence": 0.95,
+          "inferentially_adequate": false
+        },
+        "selected_net_value": {
+          "n": 1,
+          "mean": -0.9893616853997916,
+          "median": -0.9893616853997916,
+          "iqm": -0.9893616853997916,
+          "iqm_ci": null,
+          "confidence": 0.95,
+          "inferentially_adequate": false
+        },
+        "wall_seconds": {
+          "n": 1,
+          "mean": 0.011662550998153165,
+          "median": 0.011662550998153165,
+          "iqm": 0.011662550998153165,
+          "iqm_ci": null,
+          "confidence": 0.95,
+          "inferentially_adequate": false
+        },
+        "diagnostic_coverage": {
+          "n": 1,
+          "mean": 1.0,
+          "median": 1.0,
+          "iqm": 1.0,
+          "iqm_ci": null,
+          "confidence": 0.95,
+          "inferentially_adequate": false
+        }
+      }
+    },
+    {
+      "benchmark": "synthetic_sparse",
+      "method": "global_neural",
+      "budget": 4,
+      "metrics": {
+        "simple_regret": {
+          "n": 1,
+          "mean": 0.34962340679725923,
+          "median": 0.34962340679725923,
+          "iqm": 0.34962340679725923,
+          "iqm_ci": null,
+          "confidence": 0.95,
+          "inferentially_adequate": false
+        },
+        "heldout_mae": {
+          "n": 1,
+          "mean": 1.1500100007596399,
+          "median": 1.1500100007596399,
+          "iqm": 1.1500100007596399,
+          "iqm_ci": null,
+          "confidence": 0.95,
+          "inferentially_adequate": false
+        },
+        "harmful_reference": {
+          "n": 1,
+          "mean": 0.0,
+          "median": 0.0,
+          "iqm": 0.0,
+          "iqm_ci": null,
+          "confidence": 0.95,
+          "inferentially_adequate": false
+        },
+        "constraint_violation": {
+          "n": 1,
+          "mean": 0.0,
+          "median": 0.0,
+          "iqm": 0.0,
+          "iqm_ci": null,
+          "confidence": 0.95,
+          "inferentially_adequate": false
+        },
+        "abstention": {
+          "n": 1,
+          "mean": 0.0,
+          "median": 0.0,
+          "iqm": 0.0,
+          "iqm_ci": null,
+          "confidence": 0.95,
+          "inferentially_adequate": false
+        },
+        "selected_net_value": {
+          "n": 1,
+          "mean": 0.19997569086595243,
+          "median": 0.19997569086595243,
+          "iqm": 0.19997569086595243,
+          "iqm_ci": null,
+          "confidence": 0.95,
+          "inferentially_adequate": false
+        },
+        "wall_seconds": {
+          "n": 1,
+          "mean": 0.02483685399784008,
+          "median": 0.02483685399784008,
+          "iqm": 0.02483685399784008,
+          "iqm_ci": null,
+          "confidence": 0.95,
+          "inferentially_adequate": false
+        },
+        "diagnostic_coverage": {
+          "n": 1,
+          "mean": 1.0,
+          "median": 1.0,
+          "iqm": 1.0,
+          "iqm_ci": null,
+          "confidence": 0.95,
+          "inferentially_adequate": false
+        }
+      }
+    },
+    {
+      "benchmark": "synthetic_sparse",
+      "method": "greedy_swap",
+      "budget": 2,
+      "metrics": {
+        "simple_regret": {
+          "n": 1,
+          "mean": 0.5483689443057291,
+          "median": 0.5483689443057291,
+          "iqm": 0.5483689443057291,
+          "iqm_ci": null,
+          "confidence": 0.95,
+          "inferentially_adequate": false
+        },
+        "heldout_mae": {
+          "n": 1,
+          "mean": 0.9509742505275649,
+          "median": 0.9509742505275649,
+          "iqm": 0.9509742505275649,
+          "iqm_ci": null,
+          "confidence": 0.95,
+          "inferentially_adequate": false
+        },
+        "harmful_reference": {
+          "n": 1,
+          "mean": 0.0,
+          "median": 0.0,
+          "iqm": 0.0,
+          "iqm_ci": null,
+          "confidence": 0.95,
+          "inferentially_adequate": false
+        },
+        "constraint_violation": {
+          "n": 1,
+          "mean": 0.0,
+          "median": 0.0,
+          "iqm": 0.0,
+          "iqm_ci": null,
+          "confidence": 0.95,
+          "inferentially_adequate": false
+        },
+        "abstention": {
+          "n": 1,
+          "mean": 1.0,
+          "median": 1.0,
+          "iqm": 1.0,
+          "iqm_ci": null,
+          "confidence": 0.95,
+          "inferentially_adequate": false
+        },
+        "selected_net_value": {
+          "n": 1,
+          "mean": 0.0012301533574825742,
+          "median": 0.0012301533574825742,
+          "iqm": 0.0012301533574825742,
+          "iqm_ci": null,
+          "confidence": 0.95,
+          "inferentially_adequate": false
+        },
+        "wall_seconds": {
+          "n": 1,
+          "mean": 0.000457677997474093,
+          "median": 0.000457677997474093,
+          "iqm": 0.000457677997474093,
+          "iqm_ci": null,
+          "confidence": 0.95,
+          "inferentially_adequate": false
+        },
+        "diagnostic_coverage": {
+          "n": 1,
+          "mean": 1.0,
+          "median": 1.0,
+          "iqm": 1.0,
+          "iqm_ci": null,
+          "confidence": 0.95,
+          "inferentially_adequate": false
+        }
+      }
+    },
+    {
+      "benchmark": "synthetic_sparse",
+      "method": "greedy_swap",
+      "budget": 4,
+      "metrics": {
+        "simple_regret": {
+          "n": 1,
+          "mean": 0.5483689443057291,
+          "median": 0.5483689443057291,
+          "iqm": 0.5483689443057291,
+          "iqm_ci": null,
+          "confidence": 0.95,
+          "inferentially_adequate": false
+        },
+        "heldout_mae": {
+          "n": 1,
+          "mean": 0.5777741462400383,
+          "median": 0.5777741462400383,
+          "iqm": 0.5777741462400383,
+          "iqm_ci": null,
+          "confidence": 0.95,
+          "inferentially_adequate": false
+        },
+        "harmful_reference": {
+          "n": 1,
+          "mean": 0.0,
+          "median": 0.0,
+          "iqm": 0.0,
+          "iqm_ci": null,
+          "confidence": 0.95,
+          "inferentially_adequate": false
+        },
+        "constraint_violation": {
+          "n": 1,
+          "mean": 0.0,
+          "median": 0.0,
+          "iqm": 0.0,
+          "iqm_ci": null,
+          "confidence": 0.95,
+          "inferentially_adequate": false
+        },
+        "abstention": {
+          "n": 1,
+          "mean": 1.0,
+          "median": 1.0,
+          "iqm": 1.0,
+          "iqm_ci": null,
+          "confidence": 0.95,
+          "inferentially_adequate": false
+        },
+        "selected_net_value": {
+          "n": 1,
+          "mean": 0.0012301533574825742,
+          "median": 0.0012301533574825742,
+          "iqm": 0.0012301533574825742,
+          "iqm_ci": null,
+          "confidence": 0.95,
+          "inferentially_adequate": false
+        },
+        "wall_seconds": {
+          "n": 1,
+          "mean": 0.0008923499990487471,
+          "median": 0.0008923499990487471,
+          "iqm": 0.0008923499990487471,
+          "iqm_ci": null,
+          "confidence": 0.95,
+          "inferentially_adequate": false
+        },
+        "diagnostic_coverage": {
+          "n": 1,
+          "mean": 1.0,
+          "median": 1.0,
+          "iqm": 1.0,
+          "iqm_ci": null,
+          "confidence": 0.95,
+          "inferentially_adequate": false
+        }
+      }
+    },
+    {
+      "benchmark": "synthetic_sparse",
+      "method": "no_op",
+      "budget": 2,
+      "metrics": {
+        "simple_regret": {
+          "n": 1,
+          "mean": 0.5483689443057291,
+          "median": 0.5483689443057291,
+          "iqm": 0.5483689443057291,
+          "iqm_ci": null,
+          "confidence": 0.95,
+          "inferentially_adequate": false
+        },
+        "harmful_reference": {
+          "n": 1,
+          "mean": 0.0,
+          "median": 0.0,
+          "iqm": 0.0,
+          "iqm_ci": null,
+          "confidence": 0.95,
+          "inferentially_adequate": false
+        },
+        "constraint_violation": {
+          "n": 1,
+          "mean": 0.0,
+          "median": 0.0,
+          "iqm": 0.0,
+          "iqm_ci": null,
+          "confidence": 0.95,
+          "inferentially_adequate": false
+        },
+        "abstention": {
+          "n": 1,
+          "mean": 1.0,
+          "median": 1.0,
+          "iqm": 1.0,
+          "iqm_ci": null,
+          "confidence": 0.95,
+          "inferentially_adequate": false
+        },
+        "selected_net_value": {
+          "n": 1,
+          "mean": 0.0012301533574825742,
+          "median": 0.0012301533574825742,
+          "iqm": 0.0012301533574825742,
+          "iqm_ci": null,
+          "confidence": 0.95,
+          "inferentially_adequate": false
+        },
+        "wall_seconds": {
+          "n": 1,
+          "mean": 3.0729999707546085e-05,
+          "median": 3.0729999707546085e-05,
+          "iqm": 3.0729999707546085e-05,
+          "iqm_ci": null,
+          "confidence": 0.95,
+          "inferentially_adequate": false
+        }
+      }
+    },
+    {
+      "benchmark": "synthetic_sparse",
+      "method": "no_op",
+      "budget": 4,
+      "metrics": {
+        "simple_regret": {
+          "n": 1,
+          "mean": 0.5483689443057291,
+          "median": 0.5483689443057291,
+          "iqm": 0.5483689443057291,
+          "iqm_ci": null,
+          "confidence": 0.95,
+          "inferentially_adequate": false
+        },
+        "harmful_reference": {
+          "n": 1,
+          "mean": 0.0,
+          "median": 0.0,
+          "iqm": 0.0,
+          "iqm_ci": null,
+          "confidence": 0.95,
+          "inferentially_adequate": false
+        },
+        "constraint_violation": {
+          "n": 1,
+          "mean": 0.0,
+          "median": 0.0,
+          "iqm": 0.0,
+          "iqm_ci": null,
+          "confidence": 0.95,
+          "inferentially_adequate": false
+        },
+        "abstention": {
+          "n": 1,
+          "mean": 1.0,
+          "median": 1.0,
+          "iqm": 1.0,
+          "iqm_ci": null,
+          "confidence": 0.95,
+          "inferentially_adequate": false
+        },
+        "selected_net_value": {
+          "n": 1,
+          "mean": 0.0012301533574825742,
+          "median": 0.0012301533574825742,
+          "iqm": 0.0012301533574825742,
+          "iqm_ci": null,
+          "confidence": 0.95,
+          "inferentially_adequate": false
+        },
+        "wall_seconds": {
+          "n": 1,
+          "mean": 4.290299693820998e-05,
+          "median": 4.290299693820998e-05,
+          "iqm": 4.290299693820998e-05,
+          "iqm_ci": null,
+          "confidence": 0.95,
+          "inferentially_adequate": false
+        }
+      }
+    },
+    {
+      "benchmark": "synthetic_sparse",
+      "method": "random",
+      "budget": 2,
+      "metrics": {
+        "simple_regret": {
+          "n": 1,
+          "mean": 4.672097396964676,
+          "median": 4.672097396964676,
+          "iqm": 4.672097396964676,
+          "iqm_ci": null,
+          "confidence": 0.95,
+          "inferentially_adequate": false
+        },
+        "heldout_mae": {
+          "n": 1,
+          "mean": 1.3290148767970347,
+          "median": 1.3290148767970347,
+          "iqm": 1.3290148767970347,
+          "iqm_ci": null,
+          "confidence": 0.95,
+          "inferentially_adequate": false
+        },
+        "harmful_reference": {
+          "n": 1,
+          "mean": 1.0,
+          "median": 1.0,
+          "iqm": 1.0,
+          "iqm_ci": null,
+          "confidence": 0.95,
+          "inferentially_adequate": false
+        },
+        "constraint_violation": {
+          "n": 1,
+          "mean": 0.0,
+          "median": 0.0,
+          "iqm": 0.0,
+          "iqm_ci": null,
+          "confidence": 0.95,
+          "inferentially_adequate": false
+        },
+        "abstention": {
+          "n": 1,
+          "mean": 0.0,
+          "median": 0.0,
+          "iqm": 0.0,
+          "iqm_ci": null,
+          "confidence": 0.95,
+          "inferentially_adequate": false
+        },
+        "selected_net_value": {
+          "n": 1,
+          "mean": -4.122498299301465,
+          "median": -4.122498299301465,
+          "iqm": -4.122498299301465,
+          "iqm_ci": null,
+          "confidence": 0.95,
+          "inferentially_adequate": false
+        },
+        "wall_seconds": {
+          "n": 1,
+          "mean": 0.0004844089999096468,
+          "median": 0.0004844089999096468,
+          "iqm": 0.0004844089999096468,
+          "iqm_ci": null,
+          "confidence": 0.95,
+          "inferentially_adequate": false
+        },
+        "diagnostic_coverage": {
+          "n": 1,
+          "mean": 1.0,
+          "median": 1.0,
+          "iqm": 1.0,
+          "iqm_ci": null,
+          "confidence": 0.95,
+          "inferentially_adequate": false
+        }
+      }
+    },
+    {
+      "benchmark": "synthetic_sparse",
+      "method": "random",
+      "budget": 4,
+      "metrics": {
+        "simple_regret": {
+          "n": 1,
+          "mean": 3.4969517119730122,
+          "median": 3.4969517119730122,
+          "iqm": 3.4969517119730122,
+          "iqm_ci": null,
+          "confidence": 0.95,
+          "inferentially_adequate": false
+        },
+        "heldout_mae": {
+          "n": 1,
+          "mean": 1.2828753025637476,
+          "median": 1.2828753025637476,
+          "iqm": 1.2828753025637476,
+          "iqm_ci": null,
+          "confidence": 0.95,
+          "inferentially_adequate": false
+        },
+        "harmful_reference": {
+          "n": 1,
+          "mean": 1.0,
+          "median": 1.0,
+          "iqm": 1.0,
+          "iqm_ci": null,
+          "confidence": 0.95,
+          "inferentially_adequate": false
+        },
+        "constraint_violation": {
+          "n": 1,
+          "mean": 0.0,
+          "median": 0.0,
+          "iqm": 0.0,
+          "iqm_ci": null,
+          "confidence": 0.95,
+          "inferentially_adequate": false
+        },
+        "abstention": {
+          "n": 1,
+          "mean": 0.0,
+          "median": 0.0,
+          "iqm": 0.0,
+          "iqm_ci": null,
+          "confidence": 0.95,
+          "inferentially_adequate": false
+        },
+        "selected_net_value": {
+          "n": 1,
+          "mean": -2.9473526143098008,
+          "median": -2.9473526143098008,
+          "iqm": -2.9473526143098008,
+          "iqm_ci": null,
+          "confidence": 0.95,
+          "inferentially_adequate": false
+        },
+        "wall_seconds": {
+          "n": 1,
+          "mean": 0.0009793780045583844,
+          "median": 0.0009793780045583844,
+          "iqm": 0.0009793780045583844,
+          "iqm_ci": null,
+          "confidence": 0.95,
+          "inferentially_adequate": false
+        },
+        "diagnostic_coverage": {
+          "n": 1,
+          "mean": 1.0,
+          "median": 1.0,
+          "iqm": 1.0,
+          "iqm_ci": null,
+          "confidence": 0.95,
+          "inferentially_adequate": false
+        }
+      }
+    },
+    {
+      "benchmark": "synthetic_sparse",
+      "method": "structure_blind_active",
+      "budget": 2,
+      "metrics": {
+        "simple_regret": {
+          "n": 1,
+          "mean": 0.5483689443057291,
+          "median": 0.5483689443057291,
+          "iqm": 0.5483689443057291,
+          "iqm_ci": null,
+          "confidence": 0.95,
+          "inferentially_adequate": false
+        },
+        "heldout_mae": {
+          "n": 1,
+          "mean": 1.288040193700178,
+          "median": 1.288040193700178,
+          "iqm": 1.288040193700178,
+          "iqm_ci": null,
+          "confidence": 0.95,
+          "inferentially_adequate": false
+        },
+        "harmful_reference": {
+          "n": 1,
+          "mean": 0.0,
+          "median": 0.0,
+          "iqm": 0.0,
+          "iqm_ci": null,
+          "confidence": 0.95,
+          "inferentially_adequate": false
+        },
+        "constraint_violation": {
+          "n": 1,
+          "mean": 0.0,
+          "median": 0.0,
+          "iqm": 0.0,
+          "iqm_ci": null,
+          "confidence": 0.95,
+          "inferentially_adequate": false
+        },
+        "abstention": {
+          "n": 1,
+          "mean": 1.0,
+          "median": 1.0,
+          "iqm": 1.0,
+          "iqm_ci": null,
+          "confidence": 0.95,
+          "inferentially_adequate": false
+        },
+        "selected_net_value": {
+          "n": 1,
+          "mean": 0.0012301533574825742,
+          "median": 0.0012301533574825742,
+          "iqm": 0.0012301533574825742,
+          "iqm_ci": null,
+          "confidence": 0.95,
+          "inferentially_adequate": false
+        },
+        "wall_seconds": {
+          "n": 1,
+          "mean": 0.03740195499995025,
+          "median": 0.03740195499995025,
+          "iqm": 0.03740195499995025,
+          "iqm_ci": null,
+          "confidence": 0.95,
+          "inferentially_adequate": false
+        },
+        "diagnostic_coverage": {
+          "n": 1,
+          "mean": 1.0,
+          "median": 1.0,
+          "iqm": 1.0,
+          "iqm_ci": null,
+          "confidence": 0.95,
+          "inferentially_adequate": false
+        }
+      }
+    },
+    {
+      "benchmark": "synthetic_sparse",
+      "method": "structure_blind_active",
+      "budget": 4,
+      "metrics": {
+        "simple_regret": {
+          "n": 1,
+          "mean": 0.34962340679725923,
+          "median": 0.34962340679725923,
+          "iqm": 0.34962340679725923,
+          "iqm_ci": null,
+          "confidence": 0.95,
+          "inferentially_adequate": false
+        },
+        "heldout_mae": {
+          "n": 1,
+          "mean": 1.2157205135618252,
+          "median": 1.2157205135618252,
+          "iqm": 1.2157205135618252,
+          "iqm_ci": null,
+          "confidence": 0.95,
+          "inferentially_adequate": false
+        },
+        "harmful_reference": {
+          "n": 1,
+          "mean": 0.0,
+          "median": 0.0,
+          "iqm": 0.0,
+          "iqm_ci": null,
+          "confidence": 0.95,
+          "inferentially_adequate": false
+        },
+        "constraint_violation": {
+          "n": 1,
+          "mean": 0.0,
+          "median": 0.0,
+          "iqm": 0.0,
+          "iqm_ci": null,
+          "confidence": 0.95,
+          "inferentially_adequate": false
+        },
+        "abstention": {
+          "n": 1,
+          "mean": 0.0,
+          "median": 0.0,
+          "iqm": 0.0,
+          "iqm_ci": null,
+          "confidence": 0.95,
+          "inferentially_adequate": false
+        },
+        "selected_net_value": {
+          "n": 1,
+          "mean": 0.19997569086595243,
+          "median": 0.19997569086595243,
+          "iqm": 0.19997569086595243,
+          "iqm_ci": null,
+          "confidence": 0.95,
+          "inferentially_adequate": false
+        },
+        "wall_seconds": {
+          "n": 1,
+          "mean": 0.10717945599753875,
+          "median": 0.10717945599753875,
+          "iqm": 0.10717945599753875,
+          "iqm_ci": null,
+          "confidence": 0.95,
+          "inferentially_adequate": false
+        },
+        "diagnostic_coverage": {
+          "n": 1,
+          "mean": 1.0,
+          "median": 1.0,
+          "iqm": 1.0,
+          "iqm_ci": null,
+          "confidence": 0.95,
+          "inferentially_adequate": false
+        }
+      }
+    },
+    {
+      "benchmark": "synthetic_sparse",
+      "method": "uniform_tabular",
+      "budget": 2,
+      "metrics": {
+        "simple_regret": {
+          "n": 1,
+          "mean": 0.5483689443057291,
+          "median": 0.5483689443057291,
+          "iqm": 0.5483689443057291,
+          "iqm_ci": null,
+          "confidence": 0.95,
+          "inferentially_adequate": false
+        },
+        "heldout_mae": {
+          "n": 1,
+          "mean": 1.288040193700178,
+          "median": 1.288040193700178,
+          "iqm": 1.288040193700178,
+          "iqm_ci": null,
+          "confidence": 0.95,
+          "inferentially_adequate": false
+        },
+        "harmful_reference": {
+          "n": 1,
+          "mean": 0.0,
+          "median": 0.0,
+          "iqm": 0.0,
+          "iqm_ci": null,
+          "confidence": 0.95,
+          "inferentially_adequate": false
+        },
+        "constraint_violation": {
+          "n": 1,
+          "mean": 0.0,
+          "median": 0.0,
+          "iqm": 0.0,
+          "iqm_ci": null,
+          "confidence": 0.95,
+          "inferentially_adequate": false
+        },
+        "abstention": {
+          "n": 1,
+          "mean": 1.0,
+          "median": 1.0,
+          "iqm": 1.0,
+          "iqm_ci": null,
+          "confidence": 0.95,
+          "inferentially_adequate": false
+        },
+        "selected_net_value": {
+          "n": 1,
+          "mean": 0.0012301533574825742,
+          "median": 0.0012301533574825742,
+          "iqm": 0.0012301533574825742,
+          "iqm_ci": null,
+          "confidence": 0.95,
+          "inferentially_adequate": false
+        },
+        "wall_seconds": {
+          "n": 1,
+          "mean": 0.0005424310002126731,
+          "median": 0.0005424310002126731,
+          "iqm": 0.0005424310002126731,
+          "iqm_ci": null,
+          "confidence": 0.95,
+          "inferentially_adequate": false
+        },
+        "diagnostic_coverage": {
+          "n": 1,
+          "mean": 1.0,
+          "median": 1.0,
+          "iqm": 1.0,
+          "iqm_ci": null,
+          "confidence": 0.95,
+          "inferentially_adequate": false
+        }
+      }
+    },
+    {
+      "benchmark": "synthetic_sparse",
+      "method": "uniform_tabular",
+      "budget": 4,
+      "metrics": {
+        "simple_regret": {
+          "n": 1,
+          "mean": 0.34962340679725923,
+          "median": 0.34962340679725923,
+          "iqm": 0.34962340679725923,
+          "iqm_ci": null,
+          "confidence": 0.95,
+          "inferentially_adequate": false
+        },
+        "heldout_mae": {
+          "n": 1,
+          "mean": 1.2157205135618252,
+          "median": 1.2157205135618252,
+          "iqm": 1.2157205135618252,
+          "iqm_ci": null,
+          "confidence": 0.95,
+          "inferentially_adequate": false
+        },
+        "harmful_reference": {
+          "n": 1,
+          "mean": 0.0,
+          "median": 0.0,
+          "iqm": 0.0,
+          "iqm_ci": null,
+          "confidence": 0.95,
+          "inferentially_adequate": false
+        },
+        "constraint_violation": {
+          "n": 1,
+          "mean": 0.0,
+          "median": 0.0,
+          "iqm": 0.0,
+          "iqm_ci": null,
+          "confidence": 0.95,
+          "inferentially_adequate": false
+        },
+        "abstention": {
+          "n": 1,
+          "mean": 0.0,
+          "median": 0.0,
+          "iqm": 0.0,
+          "iqm_ci": null,
+          "confidence": 0.95,
+          "inferentially_adequate": false
+        },
+        "selected_net_value": {
+          "n": 1,
+          "mean": 0.19997569086595243,
+          "median": 0.19997569086595243,
+          "iqm": 0.19997569086595243,
+          "iqm_ci": null,
+          "confidence": 0.95,
+          "inferentially_adequate": false
+        },
+        "wall_seconds": {
+          "n": 1,
+          "mean": 0.0010405430002720095,
+          "median": 0.0010405430002720095,
+          "iqm": 0.0010405430002720095,
+          "iqm_ci": null,
+          "confidence": 0.95,
+          "inferentially_adequate": false
+        },
+        "diagnostic_coverage": {
+          "n": 1,
+          "mean": 1.0,
+          "median": 1.0,
+          "iqm": 1.0,
+          "iqm_ci": null,
+          "confidence": 0.95,
+          "inferentially_adequate": false
+        }
+      }
+    }
+  ],
+  "paired_comparisons": [],
+  "limitations": "Bootstrap intervals are descriptive; tiny seed counts cannot substantiate research claims. Holm family contains every reported paired test."
+}

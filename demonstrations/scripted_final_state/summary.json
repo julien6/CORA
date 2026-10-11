@@ -1,0 +1,16 @@
+{
+  "label": "SCRIPTED DEMONSTRATION, NOT TRAINED BASELINE RESULTS",
+  "training_steps": 0,
+  "gradient_updates": 0,
+  "core_conditions": 11,
+  "native_environments": 4,
+  "static_rows": 165,
+  "live_adoption_rows": 24,
+  "native_rollouts": 8,
+  "replay_gifs": 48,
+  "traces": 92,
+  "png_images": 170,
+  "pdf_plots": 16,
+  "legacy_excluded": "legacy_simple_spread/",
+  "all_outputs_within": "demonstrations/scripted_final_state"
+}

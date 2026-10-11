@@ -1,0 +1,64 @@
+{
+  "experiments_executed": false,
+  "jobs": [
+    {
+      "name": "bench_research.yaml",
+      "check": {
+        "status": "configuration_valid",
+        "experiments_executed": false
+      },
+      "argv": [
+        "/home/jsoule/Documents/CORA/.venv/bin/python",
+        "-m",
+        "cora.benchmarks.runner",
+        "--config",
+        "/home/jsoule/Documents/CORA/configs/bench_research.yaml"
+      ],
+      "command": "/home/jsoule/Documents/CORA/.venv/bin/python -m cora.benchmarks.runner --config /home/jsoule/Documents/CORA/configs/bench_research.yaml"
+    },
+    {
+      "name": "applications.yaml",
+      "check": {
+        "status": "ready_for_explicit_execution",
+        "result_rows": 15680,
+        "upper_bound_training_environment_steps": 113120000,
+        "protocol": "frozen",
+        "policy_transfer": "mechanism reuse only; no zero-shot learned-weight claim",
+        "external_comparators": "adapted/internal methods; faithful published reproductions remain unavailable",
+        "experiments_executed": false
+      },
+      "argv": [
+        "/home/jsoule/Documents/CORA/.venv/bin/python",
+        "-m",
+        "cora.benchmarks.release",
+        "--config",
+        "/home/jsoule/Documents/CORA/configs/applications.yaml",
+        "--run"
+      ],
+      "command": "/home/jsoule/Documents/CORA/.venv/bin/python -m cora.benchmarks.release --config /home/jsoule/Documents/CORA/configs/applications.yaml --run"
+    },
+    {
+      "name": "applications_adaptive.yaml",
+      "check": {
+        "status": "ready_for_explicit_execution",
+        "result_rows": 47040,
+        "upper_bound_training_environment_steps": 339360000,
+        "protocol": "retrain_between_decisions",
+        "policy_transfer": "mechanism reuse only; no zero-shot learned-weight claim",
+        "external_comparators": "adapted/internal methods; faithful published reproductions remain unavailable",
+        "experiments_executed": false
+      },
+      "argv": [
+        "/home/jsoule/Documents/CORA/.venv/bin/python",
+        "-m",
+        "cora.benchmarks.release",
+        "--config",
+        "/home/jsoule/Documents/CORA/configs/applications_adaptive.yaml",
+        "--run"
+      ],
+      "command": "/home/jsoule/Documents/CORA/.venv/bin/python -m cora.benchmarks.release --config /home/jsoule/Documents/CORA/configs/applications_adaptive.yaml --run"
+    }
+  ],
+  "publication_scope_complete": false,
+  "limitation": "Published comparator reproductions remain unspecified/incompatible; runnable adaptations are explicitly labeled."
+}

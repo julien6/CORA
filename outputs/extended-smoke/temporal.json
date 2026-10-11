@@ -1,0 +1,862 @@
+[
+  {
+    "seed": 7,
+    "coupling": false,
+    "family": [
+      [],
+      [
+        0
+      ],
+      [
+        1
+      ]
+    ],
+    "queries": [
+      {
+        "step": 0,
+        "intervention": [
+          1,
+          1
+        ],
+        "outcome": 10.283687276875424,
+        "propensity": 0.25,
+        "policy_version": "reservoir-fixed-v1",
+        "context": "empty-reservoirs"
+      },
+      {
+        "step": 1,
+        "intervention": [
+          0,
+          1
+        ],
+        "outcome": 5.120668107231889,
+        "propensity": 0.25,
+        "policy_version": "reservoir-fixed-v1",
+        "context": "empty-reservoirs"
+      },
+      {
+        "step": 2,
+        "intervention": [
+          1,
+          1
+        ],
+        "outcome": 10.246016460741414,
+        "propensity": 0.25,
+        "policy_version": "reservoir-fixed-v1",
+        "context": "empty-reservoirs"
+      },
+      {
+        "step": 3,
+        "intervention": [
+          0,
+          0
+        ],
+        "outcome": -0.04958232774982312,
+        "propensity": 0.25,
+        "policy_version": "reservoir-fixed-v1",
+        "context": "empty-reservoirs"
+      },
+      {
+        "step": 4,
+        "intervention": [
+          1,
+          1
+        ],
+        "outcome": 10.335760762277728,
+        "propensity": 0.25,
+        "policy_version": "reservoir-fixed-v1",
+        "context": "empty-reservoirs"
+      },
+      {
+        "step": 5,
+        "intervention": [
+          0,
+          0
+        ],
+        "outcome": -0.024610325927566484,
+        "propensity": 0.25,
+        "policy_version": "reservoir-fixed-v1",
+        "context": "empty-reservoirs"
+      },
+      {
+        "step": 6,
+        "intervention": [
+          0,
+          0
+        ],
+        "outcome": 0.024492102509259914,
+        "propensity": 0.25,
+        "policy_version": "reservoir-fixed-v1",
+        "context": "empty-reservoirs"
+      },
+      {
+        "step": 7,
+        "intervention": [
+          1,
+          0
+        ],
+        "outcome": 5.152219350408004,
+        "propensity": 0.25,
+        "policy_version": "reservoir-fixed-v1",
+        "context": "empty-reservoirs"
+      },
+      {
+        "step": 8,
+        "intervention": [
+          0,
+          1
+        ],
+        "outcome": 5.08785159776459,
+        "propensity": 0.25,
+        "policy_version": "reservoir-fixed-v1",
+        "context": "empty-reservoirs"
+      },
+      {
+        "step": 9,
+        "intervention": [
+          1,
+          0
+        ],
+        "outcome": 5.1329124088768365,
+        "propensity": 0.25,
+        "policy_version": "reservoir-fixed-v1",
+        "context": "empty-reservoirs"
+      },
+      {
+        "step": 10,
+        "intervention": [
+          0,
+          1
+        ],
+        "outcome": 5.067164272635746,
+        "propensity": 0.25,
+        "policy_version": "reservoir-fixed-v1",
+        "context": "empty-reservoirs"
+      },
+      {
+        "step": 11,
+        "intervention": [
+          0,
+          1
+        ],
+        "outcome": 5.111494211947989,
+        "propensity": 0.25,
+        "policy_version": "reservoir-fixed-v1",
+        "context": "empty-reservoirs"
+      },
+      {
+        "step": 12,
+        "intervention": [
+          0,
+          1
+        ],
+        "outcome": 5.069898113010751,
+        "propensity": 0.25,
+        "policy_version": "reservoir-fixed-v1",
+        "context": "empty-reservoirs"
+      },
+      {
+        "step": 13,
+        "intervention": [
+          0,
+          1
+        ],
+        "outcome": 5.042288248110414,
+        "propensity": 0.25,
+        "policy_version": "reservoir-fixed-v1",
+        "context": "empty-reservoirs"
+      },
+      {
+        "step": 14,
+        "intervention": [
+          1,
+          1
+        ],
+        "outcome": 10.205377675927815,
+        "propensity": 0.25,
+        "policy_version": "reservoir-fixed-v1",
+        "context": "empty-reservoirs"
+      },
+      {
+        "step": 15,
+        "intervention": [
+          0,
+          0
+        ],
+        "outcome": 0.013563217941085077,
+        "propensity": 0.25,
+        "policy_version": "reservoir-fixed-v1",
+        "context": "empty-reservoirs"
+      }
+    ],
+    "prediction": [
+      -0.014795946464015941,
+      5.156647868340317,
+      5.0879328738486125,
+      10.259376688652946
+    ],
+    "radius": [
+      0.7038589910300277,
+      0.8489304840812206,
+      0.6003126359170672,
+      0.7039229680333665
+    ],
+    "selected": 3,
+    "evaluation_only_values": [
+      0.0,
+      5.134375,
+      5.134375,
+      10.26875
+    ],
+    "simultaneous_coverage": true,
+    "conditional_certification": true,
+    "guarantee": "expected value on confidence event, assuming exact SCM and stated noise bound"
+  },
+  {
+    "seed": 8,
+    "coupling": false,
+    "family": [
+      [],
+      [
+        0
+      ],
+      [
+        1
+      ]
+    ],
+    "queries": [
+      {
+        "step": 0,
+        "intervention": [
+          0,
+          1
+        ],
+        "outcome": 5.067542860340944,
+        "propensity": 0.25,
+        "policy_version": "reservoir-fixed-v1",
+        "context": "empty-reservoirs"
+      },
+      {
+        "step": 1,
+        "intervention": [
+          1,
+          0
+        ],
+        "outcome": 5.066319664571751,
+        "propensity": 0.25,
+        "policy_version": "reservoir-fixed-v1",
+        "context": "empty-reservoirs"
+      },
+      {
+        "step": 2,
+        "intervention": [
+          0,
+          1
+        ],
+        "outcome": 5.0187459210151655,
+        "propensity": 0.25,
+        "policy_version": "reservoir-fixed-v1",
+        "context": "empty-reservoirs"
+      },
+      {
+        "step": 3,
+        "intervention": [
+          1,
+          1
+        ],
+        "outcome": 10.259305140195771,
+        "propensity": 0.25,
+        "policy_version": "reservoir-fixed-v1",
+        "context": "empty-reservoirs"
+      },
+      {
+        "step": 4,
+        "intervention": [
+          0,
+          1
+        ],
+        "outcome": 5.1790550092464995,
+        "propensity": 0.25,
+        "policy_version": "reservoir-fixed-v1",
+        "context": "empty-reservoirs"
+      },
+      {
+        "step": 5,
+        "intervention": [
+          1,
+          0
+        ],
+        "outcome": 5.182217361878962,
+        "propensity": 0.25,
+        "policy_version": "reservoir-fixed-v1",
+        "context": "empty-reservoirs"
+      },
+      {
+        "step": 6,
+        "intervention": [
+          0,
+          1
+        ],
+        "outcome": 5.172748505654735,
+        "propensity": 0.25,
+        "policy_version": "reservoir-fixed-v1",
+        "context": "empty-reservoirs"
+      },
+      {
+        "step": 7,
+        "intervention": [
+          1,
+          0
+        ],
+        "outcome": 5.131723511062137,
+        "propensity": 0.25,
+        "policy_version": "reservoir-fixed-v1",
+        "context": "empty-reservoirs"
+      },
+      {
+        "step": 8,
+        "intervention": [
+          0,
+          0
+        ],
+        "outcome": 0.07527405781919216,
+        "propensity": 0.25,
+        "policy_version": "reservoir-fixed-v1",
+        "context": "empty-reservoirs"
+      },
+      {
+        "step": 9,
+        "intervention": [
+          0,
+          0
+        ],
+        "outcome": -0.03267972667085243,
+        "propensity": 0.25,
+        "policy_version": "reservoir-fixed-v1",
+        "context": "empty-reservoirs"
+      },
+      {
+        "step": 10,
+        "intervention": [
+          1,
+          1
+        ],
+        "outcome": 10.266616308614458,
+        "propensity": 0.25,
+        "policy_version": "reservoir-fixed-v1",
+        "context": "empty-reservoirs"
+      },
+      {
+        "step": 11,
+        "intervention": [
+          1,
+          0
+        ],
+        "outcome": 5.206375836270762,
+        "propensity": 0.25,
+        "policy_version": "reservoir-fixed-v1",
+        "context": "empty-reservoirs"
+      },
+      {
+        "step": 12,
+        "intervention": [
+          1,
+          0
+        ],
+        "outcome": 5.119297669521724,
+        "propensity": 0.25,
+        "policy_version": "reservoir-fixed-v1",
+        "context": "empty-reservoirs"
+      },
+      {
+        "step": 13,
+        "intervention": [
+          0,
+          1
+        ],
+        "outcome": 5.152491929658472,
+        "propensity": 0.25,
+        "policy_version": "reservoir-fixed-v1",
+        "context": "empty-reservoirs"
+      },
+      {
+        "step": 14,
+        "intervention": [
+          0,
+          1
+        ],
+        "outcome": 5.052402601877618,
+        "propensity": 0.25,
+        "policy_version": "reservoir-fixed-v1",
+        "context": "empty-reservoirs"
+      },
+      {
+        "step": 15,
+        "intervention": [
+          0,
+          0
+        ],
+        "outcome": 0.0180077616118693,
+        "propensity": 0.25,
+        "policy_version": "reservoir-fixed-v1",
+        "context": "empty-reservoirs"
+      }
+    ],
+    "prediction": [
+      0.012470573539517513,
+      5.146842271496686,
+      5.111883183509922,
+      10.24625488146709
+    ],
+    "radius": [
+      0.7790711161336276,
+      0.6483578963721429,
+      0.6016552469240548,
+      0.8575897293864081
+    ],
+    "selected": 3,
+    "evaluation_only_values": [
+      0.0,
+      5.134375,
+      5.134375,
+      10.26875
+    ],
+    "simultaneous_coverage": true,
+    "conditional_certification": true,
+    "guarantee": "expected value on confidence event, assuming exact SCM and stated noise bound"
+  },
+  {
+    "seed": 7,
+    "coupling": true,
+    "family": [
+      [],
+      [
+        0
+      ],
+      [
+        1
+      ],
+      [
+        0,
+        1
+      ]
+    ],
+    "queries": [
+      {
+        "step": 0,
+        "intervention": [
+          1,
+          1
+        ],
+        "outcome": 3.0955622768754245,
+        "propensity": 0.25,
+        "policy_version": "reservoir-fixed-v1",
+        "context": "empty-reservoirs"
+      },
+      {
+        "step": 1,
+        "intervention": [
+          0,
+          1
+        ],
+        "outcome": 5.120668107231889,
+        "propensity": 0.25,
+        "policy_version": "reservoir-fixed-v1",
+        "context": "empty-reservoirs"
+      },
+      {
+        "step": 2,
+        "intervention": [
+          1,
+          1
+        ],
+        "outcome": 3.0578914607414145,
+        "propensity": 0.25,
+        "policy_version": "reservoir-fixed-v1",
+        "context": "empty-reservoirs"
+      },
+      {
+        "step": 3,
+        "intervention": [
+          0,
+          0
+        ],
+        "outcome": -0.04958232774982312,
+        "propensity": 0.25,
+        "policy_version": "reservoir-fixed-v1",
+        "context": "empty-reservoirs"
+      },
+      {
+        "step": 4,
+        "intervention": [
+          1,
+          1
+        ],
+        "outcome": 3.1476357622777273,
+        "propensity": 0.25,
+        "policy_version": "reservoir-fixed-v1",
+        "context": "empty-reservoirs"
+      },
+      {
+        "step": 5,
+        "intervention": [
+          0,
+          0
+        ],
+        "outcome": -0.024610325927566484,
+        "propensity": 0.25,
+        "policy_version": "reservoir-fixed-v1",
+        "context": "empty-reservoirs"
+      },
+      {
+        "step": 6,
+        "intervention": [
+          0,
+          0
+        ],
+        "outcome": 0.024492102509259914,
+        "propensity": 0.25,
+        "policy_version": "reservoir-fixed-v1",
+        "context": "empty-reservoirs"
+      },
+      {
+        "step": 7,
+        "intervention": [
+          1,
+          0
+        ],
+        "outcome": 5.152219350408004,
+        "propensity": 0.25,
+        "policy_version": "reservoir-fixed-v1",
+        "context": "empty-reservoirs"
+      },
+      {
+        "step": 8,
+        "intervention": [
+          0,
+          1
+        ],
+        "outcome": 5.08785159776459,
+        "propensity": 0.25,
+        "policy_version": "reservoir-fixed-v1",
+        "context": "empty-reservoirs"
+      },
+      {
+        "step": 9,
+        "intervention": [
+          1,
+          0
+        ],
+        "outcome": 5.1329124088768365,
+        "propensity": 0.25,
+        "policy_version": "reservoir-fixed-v1",
+        "context": "empty-reservoirs"
+      },
+      {
+        "step": 10,
+        "intervention": [
+          0,
+          1
+        ],
+        "outcome": 5.067164272635746,
+        "propensity": 0.25,
+        "policy_version": "reservoir-fixed-v1",
+        "context": "empty-reservoirs"
+      },
+      {
+        "step": 11,
+        "intervention": [
+          0,
+          1
+        ],
+        "outcome": 5.111494211947989,
+        "propensity": 0.25,
+        "policy_version": "reservoir-fixed-v1",
+        "context": "empty-reservoirs"
+      },
+      {
+        "step": 12,
+        "intervention": [
+          0,
+          1
+        ],
+        "outcome": 5.069898113010751,
+        "propensity": 0.25,
+        "policy_version": "reservoir-fixed-v1",
+        "context": "empty-reservoirs"
+      },
+      {
+        "step": 13,
+        "intervention": [
+          0,
+          1
+        ],
+        "outcome": 5.042288248110414,
+        "propensity": 0.25,
+        "policy_version": "reservoir-fixed-v1",
+        "context": "empty-reservoirs"
+      },
+      {
+        "step": 14,
+        "intervention": [
+          1,
+          1
+        ],
+        "outcome": 3.0172526759278155,
+        "propensity": 0.25,
+        "policy_version": "reservoir-fixed-v1",
+        "context": "empty-reservoirs"
+      },
+      {
+        "step": 15,
+        "intervention": [
+          0,
+          0
+        ],
+        "outcome": 0.013563217941085077,
+        "propensity": 0.25,
+        "policy_version": "reservoir-fixed-v1",
+        "context": "empty-reservoirs"
+      }
+    ],
+    "prediction": [
+      -0.004691177585245986,
+      5.136424854188227,
+      5.081189622504112,
+      3.0813707776747474
+    ],
+    "radius": [
+      1.2427762160213498,
+      1.757550961413235,
+      1.0150603815322685,
+      1.243241743228332
+    ],
+    "selected": 2,
+    "evaluation_only_values": [
+      0.0,
+      5.134375,
+      5.134375,
+      3.080625000000001
+    ],
+    "simultaneous_coverage": true,
+    "conditional_certification": true,
+    "guarantee": "expected value on confidence event, assuming exact SCM and stated noise bound"
+  },
+  {
+    "seed": 8,
+    "coupling": true,
+    "family": [
+      [],
+      [
+        0
+      ],
+      [
+        1
+      ],
+      [
+        0,
+        1
+      ]
+    ],
+    "queries": [
+      {
+        "step": 0,
+        "intervention": [
+          0,
+          1
+        ],
+        "outcome": 5.067542860340944,
+        "propensity": 0.25,
+        "policy_version": "reservoir-fixed-v1",
+        "context": "empty-reservoirs"
+      },
+      {
+        "step": 1,
+        "intervention": [
+          1,
+          0
+        ],
+        "outcome": 5.066319664571751,
+        "propensity": 0.25,
+        "policy_version": "reservoir-fixed-v1",
+        "context": "empty-reservoirs"
+      },
+      {
+        "step": 2,
+        "intervention": [
+          0,
+          1
+        ],
+        "outcome": 5.0187459210151655,
+        "propensity": 0.25,
+        "policy_version": "reservoir-fixed-v1",
+        "context": "empty-reservoirs"
+      },
+      {
+        "step": 3,
+        "intervention": [
+          1,
+          1
+        ],
+        "outcome": 3.0711801401957706,
+        "propensity": 0.25,
+        "policy_version": "reservoir-fixed-v1",
+        "context": "empty-reservoirs"
+      },
+      {
+        "step": 4,
+        "intervention": [
+          0,
+          1
+        ],
+        "outcome": 5.1790550092464995,
+        "propensity": 0.25,
+        "policy_version": "reservoir-fixed-v1",
+        "context": "empty-reservoirs"
+      },
+      {
+        "step": 5,
+        "intervention": [
+          1,
+          0
+        ],
+        "outcome": 5.182217361878962,
+        "propensity": 0.25,
+        "policy_version": "reservoir-fixed-v1",
+        "context": "empty-reservoirs"
+      },
+      {
+        "step": 6,
+        "intervention": [
+          0,
+          1
+        ],
+        "outcome": 5.172748505654735,
+        "propensity": 0.25,
+        "policy_version": "reservoir-fixed-v1",
+        "context": "empty-reservoirs"
+      },
+      {
+        "step": 7,
+        "intervention": [
+          1,
+          0
+        ],
+        "outcome": 5.131723511062137,
+        "propensity": 0.25,
+        "policy_version": "reservoir-fixed-v1",
+        "context": "empty-reservoirs"
+      },
+      {
+        "step": 8,
+        "intervention": [
+          0,
+          0
+        ],
+        "outcome": 0.07527405781919216,
+        "propensity": 0.25,
+        "policy_version": "reservoir-fixed-v1",
+        "context": "empty-reservoirs"
+      },
+      {
+        "step": 9,
+        "intervention": [
+          0,
+          0
+        ],
+        "outcome": -0.03267972667085243,
+        "propensity": 0.25,
+        "policy_version": "reservoir-fixed-v1",
+        "context": "empty-reservoirs"
+      },
+      {
+        "step": 10,
+        "intervention": [
+          1,
+          1
+        ],
+        "outcome": 3.078491308614458,
+        "propensity": 0.25,
+        "policy_version": "reservoir-fixed-v1",
+        "context": "empty-reservoirs"
+      },
+      {
+        "step": 11,
+        "intervention": [
+          1,
+          0
+        ],
+        "outcome": 5.206375836270762,
+        "propensity": 0.25,
+        "policy_version": "reservoir-fixed-v1",
+        "context": "empty-reservoirs"
+      },
+      {
+        "step": 12,
+        "intervention": [
+          1,
+          0
+        ],
+        "outcome": 5.119297669521724,
+        "propensity": 0.25,
+        "policy_version": "reservoir-fixed-v1",
+        "context": "empty-reservoirs"
+      },
+      {
+        "step": 13,
+        "intervention": [
+          0,
+          1
+        ],
+        "outcome": 5.152491929658472,
+        "propensity": 0.25,
+        "policy_version": "reservoir-fixed-v1",
+        "context": "empty-reservoirs"
+      },
+      {
+        "step": 14,
+        "intervention": [
+          0,
+          1
+        ],
+        "outcome": 5.052402601877618,
+        "propensity": 0.25,
+        "policy_version": "reservoir-fixed-v1",
+        "context": "empty-reservoirs"
+      },
+      {
+        "step": 15,
+        "intervention": [
+          0,
+          0
+        ],
+        "outcome": 0.0180077616118693,
+        "propensity": 0.25,
+        "policy_version": "reservoir-fixed-v1",
+        "context": "empty-reservoirs"
+      }
+    ],
+    "prediction": [
+      0.02596917978203035,
+      5.138736357277951,
+      5.105128029867544,
+      3.07840546927416
+    ],
+    "radius": [
+      1.4346460483876842,
+      1.1117901743312266,
+      1.0149547174064393,
+      1.7578067186738315
+    ],
+    "selected": 2,
+    "evaluation_only_values": [
+      0.0,
+      5.134375,
+      5.134375,
+      3.080625000000001
+    ],
+    "simultaneous_coverage": true,
+    "conditional_certification": true,
+    "guarantee": "expected value on confidence event, assuming exact SCM and stated noise bound"
+  }
+]

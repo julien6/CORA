@@ -1,0 +1,43 @@
+{
+  "purpose": "technical_interface_validation_only",
+  "native_environments": [
+    "world_comm",
+    "smax",
+    "overcooked_v2",
+    "jaxnav"
+  ],
+  "native_tests_passed": 27,
+  "regression_tests_passed": 25,
+  "learner_environment_combinations_abstractly_traced": 20,
+  "learner_names": [
+    "ippo",
+    "mappo",
+    "iql",
+    "vdn",
+    "qmix"
+  ],
+  "optimizer_updates": 0,
+  "training_steps": 0,
+  "baseline_campaigns_executed": false,
+  "reference_rollouts_executed": false,
+  "checks": [
+    "raw-versus-adapted single transitions",
+    "atomic reassignment and navigation goal delegation",
+    "nested state round-trip and native snapshots",
+    "abstract trainer tracing",
+    "SMAX frozen Q action masks",
+    "read-only preflight and regression fixtures"
+  ],
+  "source_sha256": {
+    "src/cora/benchmarks/native_env.py": "a51b41ee73c17d650cc0d2da3cf058bc2a5324431dfcbf38e5729b27e6af44a7",
+    "src/cora/benchmarks/native_trial.py": "6e3df2ffb31c27d3d44b43edb63e0fdbfc6f17f2f8027933f84c8fbc395c4dd7",
+    "src/cora/benchmarks/native_media.py": "b052be76aaeee1e76a324d45d383ecc2c163587d8756cd510a6ec93e6152a71e",
+    "src/cora/benchmarks/release.py": "d1c80e04998f6ba49e4f61a6e7e1ac9345344337262b3ef08e3d18d8e61645d1",
+    "src/cora/benchmarks/learners.py": "cc169866d912264c8840ade9ad595956f14d128226141bf71244dbccbffa3b0f",
+    "src/cora/benchmarks/simulation.py": "25a48cc887e76871120eaf5841bf2fe5a6dae5c6adbd95916b7f8ab0ede7a6d1",
+    "src/cora/benchmarks/runner.py": "25361ce266654cd68e2101d3b2030bed6c3ab3c4093f8f4d49f314563eedfeee"
+  },
+  "limits": "No convergence, performance, causal locality or publication-readiness validation.",
+  "reset_adoption_cache_check": true,
+  "latest_native_validation": "7 interface tests + 20 abstract learner tests on final reset implementation"
+}

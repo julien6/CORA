@@ -1,0 +1,47 @@
+purpose: research_configuration_not_executed
+output: outputs/native-frozen
+protocol: frozen
+rounds: 1
+seeds: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+budgets: [4, 8, 16, 32]
+domains: [world_comm, smax, overcooked_v2, jaxnav]
+policies: [random, ippo, mappo, iql, vdn, qmix]
+methods: [cora, random, uniform_tabular, global_linear, global_neural, compositional_modular, factorized_uniform, structure_blind_active, cora_no_confidence, cora_incomplete_graph, greedy_swap, organization_mdp, no_op, oracle]
+environment:
+  horizon: 25
+  options:
+    smax:
+      scenario: 3m
+    overcooked_v2:
+      layout: cramped_room_v2
+    jaxnav:
+      num_agents: 3
+      lidar_num_beams: 32
+      map_params:
+        map_size: [7, 7]
+        fill: 0.2
+evaluation:
+  horizon: 25
+  gamma: 0.99
+  swap_cost: 0.1
+  diagnostic_scale: 1.0
+  oracle_repeats: 64
+training:
+  total_environment_steps: 40400
+  environments: 4
+  updates: 100
+  epochs: 1
+  minibatches: 1
+  hidden_size: 64
+estimation:
+  ridge: 0.01
+  diagnostic_scale: 1.0
+  experiment_cost_weight: 0.0
+  regret_threshold: 0.1
+media:
+  enabled: true
+  seed: 0
+  fps: 10
+statistics:
+  bootstrap_samples: 1000
+  confidence: 0.95

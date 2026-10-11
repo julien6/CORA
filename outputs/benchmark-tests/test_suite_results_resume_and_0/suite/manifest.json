@@ -1,0 +1,142 @@
+{
+  "schema_version": 1,
+  "config_sha256": "fcc47a572f0cf17457e5e5ce3ff17037f9978b5cc62ceedb19cf41fdb025c8d6",
+  "config": {
+    "purpose": "technical_validation",
+    "seeds": [
+      7
+    ],
+    "budgets": [
+      2,
+      4
+    ],
+    "benchmarks": [
+      "synthetic"
+    ],
+    "methods": [
+      "cora",
+      "random",
+      "uniform_tabular",
+      "global_linear",
+      "global_neural",
+      "factorized_uniform",
+      "structure_blind_active",
+      "cora_no_confidence",
+      "cora_incomplete_graph",
+      "cora_no_constraints",
+      "greedy_swap",
+      "no_op",
+      "oracle"
+    ],
+    "synthetic": {
+      "edits": 5,
+      "interaction_order": 2,
+      "density": 0.6,
+      "noise": 0.1,
+      "edit_cost": 0.1,
+      "forbidden_pairs": [
+        [
+          0,
+          4
+        ]
+      ],
+      "shift_magnitude": 0.5,
+      "scenarios": [
+        "sparse"
+      ]
+    },
+    "estimation": {
+      "ridge": 0.01,
+      "diagnostic_scale": 1.0,
+      "experiment_cost_weight": 0.0,
+      "regret_threshold": 0.1
+    },
+    "mpe": {
+      "horizon": 20,
+      "gamma": 0.99,
+      "swap_cost": 0.1,
+      "diagnostic_scale": 1.0,
+      "oracle_repeats": 4,
+      "u_noise": 0.05,
+      "policies": [
+        "guided",
+        "random",
+        "ippo",
+        "mappo",
+        "iql",
+        "vdn",
+        "qmix"
+      ]
+    },
+    "training": {
+      "total_environment_steps": 20,
+      "environments": 1,
+      "updates": 1,
+      "epochs": 1,
+      "minibatches": 1,
+      "hidden_size": 16
+    },
+    "media": {
+      "enabled": false,
+      "seed": 7,
+      "fps": 10,
+      "comparison_methods": [
+        "no_op",
+        "cora",
+        "factorized_uniform",
+        "structure_blind_active"
+      ]
+    },
+    "statistics": {
+      "bootstrap_samples": 10,
+      "confidence": 0.95
+    }
+  },
+  "purpose": "technical_validation",
+  "upstream_revision": "976aeb152cb184a5095021968bba94da96eb6394",
+  "hardware": {
+    "platform": "Linux-6.8.0-146-generic-x86_64-with-glibc2.39",
+    "python": "3.12.3",
+    "devices": [
+      "TFRT_CPU_0"
+    ]
+  },
+  "dependencies": {
+    "jax": "0.4.38",
+    "jaxlib": "0.4.38",
+    "jaxmarl": "0.2.0",
+    "flax": "0.10.2",
+    "flashbax": "0.1.3",
+    "optax": "0.2.4",
+    "numpy": "2.2.6",
+    "pillow": "12.3.0"
+  },
+  "methods": {
+    "cora": "Structured ridge; decision-difference active design; diagnostic conservative commit",
+    "random": "Uniform experiments; random admissible final intervention",
+    "uniform_tabular": "Unstructured arm means via one-hot ridge; uniform design",
+    "global_linear": "Global additive linear value model; uniform design",
+    "global_neural": "Global MLP value model; uniform design",
+    "factorized_uniform": "Same structured ridge as CORA; uniform design and greedy commit",
+    "structure_blind_active": "Unstructured arm ridge; decision-difference active design",
+    "cora_no_confidence": "CORA acquisition with greedy net-value commit",
+    "cora_incomplete_graph": "CORA with singleton-only dependencies",
+    "cora_no_constraints": "Synthetic-only ablation admitting forbidden edit combinations",
+    "greedy_swap": "Internal singleton-edit reorganization heuristic; not a published baseline",
+    "no_op": "Always retain the current organization; no experiments",
+    "oracle": "Privileged evaluation-only best admissible net value; no learning budget"
+  },
+  "unresolved_baselines": {
+    "published_compositional": "Paper/implementation not identified in the supplied specification",
+    "published_organizational": "Paper/implementation not identified in the supplied specification"
+  },
+  "unsupported_combinations": {
+    "cora_no_constraints": [
+      "simple_spread"
+    ]
+  },
+  "status": "complete",
+  "result_rows": 24,
+  "media_replays": 0,
+  "wall_seconds": 1.5910186039982364
+}

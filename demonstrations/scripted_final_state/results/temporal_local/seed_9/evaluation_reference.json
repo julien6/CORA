@@ -1,0 +1,47 @@
+{
+  "bits": [
+    [
+      0,
+      0
+    ],
+    [
+      1,
+      0
+    ],
+    [
+      0,
+      1
+    ],
+    [
+      1,
+      1
+    ]
+  ],
+  "values": [
+    0.0,
+    5.134375,
+    5.134375,
+    10.26875
+  ],
+  "costs": [
+    0.0,
+    0.1,
+    0.1,
+    0.2
+  ],
+  "valid": [
+    true,
+    true,
+    true,
+    true
+  ],
+  "standard_errors": [
+    0.0,
+    0.0,
+    0.0,
+    0.0
+  ],
+  "reference_kind": "exact_known_scm",
+  "privileged": true,
+  "label": "SCRIPTED DEMO \u2014 NO TRAINING \u2014 NOT LEARNED BASELINE RESULTS"
+}

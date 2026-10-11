@@ -1,0 +1,20 @@
+{
+  "status": "preparation_checks_passed",
+  "campaigns_executed": false,
+  "training_executed": false,
+  "tests_passed": 5,
+  "shell_syntax_check": "passed",
+  "dry_run_exit_code": 0,
+  "expected_result_rows": 56360,
+  "suites": {
+    "synthetic": 2600,
+    "native-frozen": 13440,
+    "native-adaptive": 40320
+  },
+  "default_campaign_directory_created": false,
+  "source_sha256": {
+    "run_all_baselines.sh": "abda6425a5c89f8f5d6dda003a7c301f85effbc566ec6948c4e6c2100bd00341",
+    "src/cora/benchmarks/campaign.py": "ea48da6b45fbbe59c7c570bbf7b9da64686e42120efb786387a97f74ec69da94",
+    "src/cora/benchmarks/native_media.py": "51ffbbd1b9e9e4365e084e3773c71e5d528ce8cc50705bf437cd80fa1f127f8d"
+  }
+}

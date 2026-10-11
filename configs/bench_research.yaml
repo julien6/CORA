@@ -1,0 +1,46 @@
+# Native sequential benchmarks run through applications.yaml; Simple Spread is legacy only.
+# Example computational protocol; not a preregistered publication experiment.
+purpose: research_exploration
+output: outputs/bench-research
+seeds: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+budgets: [4, 8, 16, 32, 64]
+benchmarks: [synthetic]
+methods: [cora, random, uniform_tabular, global_linear, global_neural, factorized_uniform, structure_blind_active, cora_no_confidence, cora_incomplete_graph, cora_no_constraints, greedy_swap, no_op, oracle]
+synthetic:
+  edits: 6
+  interaction_order: 3
+  density: 0.5
+  noise: 0.2
+  edit_cost: 0.1
+  forbidden_pairs: [[0, 5]]
+  shift_magnitude: 0.5
+  scenarios: [sparse, dense, misspecified, policy_shift]
+estimation:
+  ridge: 0.01
+  diagnostic_scale: 1.0
+  experiment_cost_weight: 0.0
+  regret_threshold: 0.1
+mpe:
+  horizon: 25
+  gamma: 0.99
+  swap_cost: 0.1
+  diagnostic_scale: 1.0
+  oracle_repeats: 64
+  u_noise: 0.05
+  policies: [guided, random, ippo, mappo, iql, vdn, qmix]
+training:
+  # Divisible by 4*100 and 4*(100+1), including Q replay initialization.
+  total_environment_steps: 40400
+  environments: 4
+  updates: 100
+  epochs: 1
+  minibatches: 1
+  hidden_size: 64
+media:
+  enabled: true
+  seed: 0
+  fps: 10
+  comparison_methods: [no_op, cora, factorized_uniform, structure_blind_active]
+statistics:
+  bootstrap_samples: 2000
+  confidence: 0.95

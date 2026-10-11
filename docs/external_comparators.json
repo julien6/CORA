@@ -1,0 +1,25 @@
+{
+  "compositional": {
+    "paper": "Compositional Models for Estimating Causal Effects",
+    "authors": ["Purva Pruthi", "David Jensen"],
+    "venue": "CLeaR 2025, PMLR 275, pages 1365–1404",
+    "paper_url": "https://proceedings.mlr.press/v275/pruthi25a.html",
+    "source_url": "https://github.com/KDL-umass/compositional_models_cate",
+    "source_revision": "c75c0ff0ba5ae4c6e5e452ed42bc7af3d1b33887",
+    "source_entrypoint": "synthetic_data/parallel_compositional_generalization.py",
+    "executed": false,
+    "cora_adapter": "compositional_modular",
+    "adapter_status": "documented CCOR adaptation, not original experiment reproduction",
+    "original_environment_status": "not installed: upstream dependency set includes different JAX/NumPy, PyTorch, TensorFlow, EconML and catenets",
+    "original_data_contract": "structured units, shared binary treatment, component covariates and optionally component outcomes",
+    "cora_data_contract": "single-context compound binary edit vector and scalar finite-horizon outcomes"
+  },
+  "organizational": {
+    "candidate_paper": "Toward an Effective Organizational Adaptation in Multi-Agent Systems: A Model Based on Markov Decision Processes",
+    "paper_url": "https://www.mdpi.com/2079-8954/14/7/741",
+    "full_text_audit_status": "publisher access failed (429); not claimed reproduced",
+    "cora_comparator": "organization_mdp",
+    "comparator_status": "generic one-decision empirical MDP; not paper reproduction",
+    "executed": false
+  }
+}

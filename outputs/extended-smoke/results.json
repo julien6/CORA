@@ -1,0 +1,338 @@
+[
+  {
+    "domain": "warehouse",
+    "method": "cora",
+    "regret_mc_reference": 0.0,
+    "selected": 0,
+    "certified": false
+  },
+  {
+    "domain": "warehouse",
+    "method": "random",
+    "regret_mc_reference": 0.0,
+    "selected": 0,
+    "certified": false
+  },
+  {
+    "domain": "warehouse",
+    "method": "uniform_tabular",
+    "regret_mc_reference": 0.0,
+    "selected": 0,
+    "certified": false
+  },
+  {
+    "domain": "warehouse",
+    "method": "global_linear",
+    "regret_mc_reference": 0.0,
+    "selected": 0,
+    "certified": false
+  },
+  {
+    "domain": "warehouse",
+    "method": "global_neural",
+    "regret_mc_reference": 0.0,
+    "selected": 0,
+    "certified": false
+  },
+  {
+    "domain": "warehouse",
+    "method": "compositional_modular",
+    "regret_mc_reference": 0.0,
+    "selected": 0,
+    "certified": false
+  },
+  {
+    "domain": "warehouse",
+    "method": "factorized_uniform",
+    "regret_mc_reference": 0.0,
+    "selected": 0,
+    "certified": false
+  },
+  {
+    "domain": "warehouse",
+    "method": "structure_blind_active",
+    "regret_mc_reference": 0.0,
+    "selected": 0,
+    "certified": false
+  },
+  {
+    "domain": "warehouse",
+    "method": "cora_no_confidence",
+    "regret_mc_reference": 0.0,
+    "selected": 0,
+    "certified": false
+  },
+  {
+    "domain": "warehouse",
+    "method": "cora_incomplete_graph",
+    "regret_mc_reference": 0.0,
+    "selected": 0,
+    "certified": false
+  },
+  {
+    "domain": "warehouse",
+    "method": "greedy_swap",
+    "regret_mc_reference": 0.6923947116788849,
+    "selected": 1,
+    "certified": false
+  },
+  {
+    "domain": "warehouse",
+    "method": "no_op",
+    "regret_mc_reference": 0.0,
+    "selected": 0,
+    "certified": false
+  },
+  {
+    "domain": "rescue",
+    "method": "cora",
+    "regret_mc_reference": 0.0,
+    "selected": 0,
+    "certified": false
+  },
+  {
+    "domain": "rescue",
+    "method": "random",
+    "regret_mc_reference": 0.0,
+    "selected": 0,
+    "certified": false
+  },
+  {
+    "domain": "rescue",
+    "method": "uniform_tabular",
+    "regret_mc_reference": 0.0,
+    "selected": 0,
+    "certified": false
+  },
+  {
+    "domain": "rescue",
+    "method": "global_linear",
+    "regret_mc_reference": 0.0,
+    "selected": 0,
+    "certified": false
+  },
+  {
+    "domain": "rescue",
+    "method": "global_neural",
+    "regret_mc_reference": 0.0,
+    "selected": 0,
+    "certified": false
+  },
+  {
+    "domain": "rescue",
+    "method": "compositional_modular",
+    "regret_mc_reference": 0.0,
+    "selected": 0,
+    "certified": false
+  },
+  {
+    "domain": "rescue",
+    "method": "factorized_uniform",
+    "regret_mc_reference": 0.0,
+    "selected": 0,
+    "certified": false
+  },
+  {
+    "domain": "rescue",
+    "method": "structure_blind_active",
+    "regret_mc_reference": 0.0,
+    "selected": 0,
+    "certified": false
+  },
+  {
+    "domain": "rescue",
+    "method": "cora_no_confidence",
+    "regret_mc_reference": 0.0,
+    "selected": 0,
+    "certified": false
+  },
+  {
+    "domain": "rescue",
+    "method": "cora_incomplete_graph",
+    "regret_mc_reference": 0.0,
+    "selected": 0,
+    "certified": false
+  },
+  {
+    "domain": "rescue",
+    "method": "greedy_swap",
+    "regret_mc_reference": 0.0,
+    "selected": 0,
+    "certified": false
+  },
+  {
+    "domain": "rescue",
+    "method": "no_op",
+    "regret_mc_reference": 0.0,
+    "selected": 0,
+    "certified": false
+  },
+  {
+    "domain": "wildfire",
+    "method": "cora",
+    "regret_mc_reference": 0.0,
+    "selected": 0,
+    "certified": false
+  },
+  {
+    "domain": "wildfire",
+    "method": "random",
+    "regret_mc_reference": 0.0,
+    "selected": 0,
+    "certified": false
+  },
+  {
+    "domain": "wildfire",
+    "method": "uniform_tabular",
+    "regret_mc_reference": 0.0,
+    "selected": 0,
+    "certified": false
+  },
+  {
+    "domain": "wildfire",
+    "method": "global_linear",
+    "regret_mc_reference": 0.0,
+    "selected": 0,
+    "certified": false
+  },
+  {
+    "domain": "wildfire",
+    "method": "global_neural",
+    "regret_mc_reference": 0.0,
+    "selected": 0,
+    "certified": false
+  },
+  {
+    "domain": "wildfire",
+    "method": "compositional_modular",
+    "regret_mc_reference": 0.0,
+    "selected": 0,
+    "certified": false
+  },
+  {
+    "domain": "wildfire",
+    "method": "factorized_uniform",
+    "regret_mc_reference": 0.0,
+    "selected": 0,
+    "certified": false
+  },
+  {
+    "domain": "wildfire",
+    "method": "structure_blind_active",
+    "regret_mc_reference": 0.0,
+    "selected": 0,
+    "certified": false
+  },
+  {
+    "domain": "wildfire",
+    "method": "cora_no_confidence",
+    "regret_mc_reference": 0.0,
+    "selected": 0,
+    "certified": false
+  },
+  {
+    "domain": "wildfire",
+    "method": "cora_incomplete_graph",
+    "regret_mc_reference": 0.0,
+    "selected": 0,
+    "certified": false
+  },
+  {
+    "domain": "wildfire",
+    "method": "greedy_swap",
+    "regret_mc_reference": 0.0,
+    "selected": 0,
+    "certified": false
+  },
+  {
+    "domain": "wildfire",
+    "method": "no_op",
+    "regret_mc_reference": 0.0,
+    "selected": 0,
+    "certified": false
+  },
+  {
+    "domain": "hospital",
+    "method": "cora",
+    "regret_mc_reference": 0.0,
+    "selected": 0,
+    "certified": false
+  },
+  {
+    "domain": "hospital",
+    "method": "random",
+    "regret_mc_reference": 0.0,
+    "selected": 0,
+    "certified": false
+  },
+  {
+    "domain": "hospital",
+    "method": "uniform_tabular",
+    "regret_mc_reference": 0.0,
+    "selected": 0,
+    "certified": false
+  },
+  {
+    "domain": "hospital",
+    "method": "global_linear",
+    "regret_mc_reference": 3.4430586055382726,
+    "selected": 1,
+    "certified": false
+  },
+  {
+    "domain": "hospital",
+    "method": "global_neural",
+    "regret_mc_reference": 3.4430586055382726,
+    "selected": 1,
+    "certified": false
+  },
+  {
+    "domain": "hospital",
+    "method": "compositional_modular",
+    "regret_mc_reference": 3.4430586055382726,
+    "selected": 1,
+    "certified": false
+  },
+  {
+    "domain": "hospital",
+    "method": "factorized_uniform",
+    "regret_mc_reference": 3.4430586055382726,
+    "selected": 1,
+    "certified": false
+  },
+  {
+    "domain": "hospital",
+    "method": "structure_blind_active",
+    "regret_mc_reference": 0.0,
+    "selected": 0,
+    "certified": false
+  },
+  {
+    "domain": "hospital",
+    "method": "cora_no_confidence",
+    "regret_mc_reference": 0.0,
+    "selected": 0,
+    "certified": false
+  },
+  {
+    "domain": "hospital",
+    "method": "cora_incomplete_graph",
+    "regret_mc_reference": 0.0,
+    "selected": 0,
+    "certified": false
+  },
+  {
+    "domain": "hospital",
+    "method": "greedy_swap",
+    "regret_mc_reference": 0.0,
+    "selected": 0,
+    "certified": false
+  },
+  {
+    "domain": "hospital",
+    "method": "no_op",
+    "regret_mc_reference": 0.0,
+    "selected": 0,
+    "certified": false
+  }
+]

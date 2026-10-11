@@ -1,0 +1,289 @@
+{
+  "status": "complete",
+  "rows": [
+    {
+      "benchmark": "simple_spread_vdn",
+      "method": "cora",
+      "seed": 7,
+      "budget": 4,
+      "queries": 4,
+      "selected_index": 5,
+      "selected_intervention": [
+        1,
+        0,
+        1
+      ],
+      "policy_version": "vdn-seed7-updates1-15746ac3a5e5",
+      "simple_regret": 0.0,
+      "heldout_mae": 0.6887820451590791,
+      "heldout_effect_mae": 0.9725104017046065,
+      "heldout_count": 5,
+      "selected_net_value": -28.2975923538208,
+      "noop_net_value": -31.101459503173828,
+      "oracle_net_value": -28.2975923538208,
+      "harmful_reference": 0,
+      "harm_reference_standard_error": 0.07214784667626455,
+      "harm_sign_resolved_at_approx_95pct": true,
+      "constraint_violation": 0,
+      "abstention": 0,
+      "truth_kind": "monte_carlo",
+      "oracle_samples": 32,
+      "oracle_standard_error": 0.077039774029294,
+      "diagnostic_coverage": 0.875,
+      "certified": false,
+      "design_rank": 3,
+      "experiment_cost": 0.8,
+      "wall_seconds": 0.017955584997253027,
+      "budget_to_regret_threshold": 4
+    },
+    {
+      "benchmark": "simple_spread_vdn",
+      "method": "cora",
+      "seed": 7,
+      "budget": 8,
+      "queries": 8,
+      "selected_index": 5,
+      "selected_intervention": [
+        1,
+        0,
+        1
+      ],
+      "policy_version": "vdn-seed7-updates1-15746ac3a5e5",
+      "simple_regret": 0.0,
+      "heldout_mae": 0.22767140379443518,
+      "heldout_effect_mae": 0.4241810962183763,
+      "heldout_count": 2,
+      "selected_net_value": -28.2975923538208,
+      "noop_net_value": -31.101459503173828,
+      "oracle_net_value": -28.2975923538208,
+      "harmful_reference": 0,
+      "harm_reference_standard_error": 0.07214784667626455,
+      "harm_sign_resolved_at_approx_95pct": true,
+      "constraint_violation": 0,
+      "abstention": 0,
+      "truth_kind": "monte_carlo",
+      "oracle_samples": 32,
+      "oracle_standard_error": 0.077039774029294,
+      "diagnostic_coverage": 0.875,
+      "certified": false,
+      "design_rank": 6,
+      "experiment_cost": 1.6,
+      "wall_seconds": 0.03732593099994119,
+      "budget_to_regret_threshold": 4
+    }
+  ],
+  "decisions": [
+    {
+      "budget": 4,
+      "selected_index": 5,
+      "predictions": [
+        -30.8177311466283,
+        -29.86296843561862,
+        -31.73269093833106,
+        -31.69288801902391,
+        -29.862968435621195,
+        -27.953443013602406,
+        -31.692888019026782,
+        -31.61328218041215
+      ],
+      "diagnostic_radius": [
+        0.9934046825421248,
+        8.198609012389353,
+        8.722294079886062,
+        12.932779996062974,
+        8.198609012389342,
+        0.9971030139339688,
+        12.932779996062974,
+        0.7066663497424505
+      ],
+      "rank": 3,
+      "parameters": [
+        -30.8177311466283,
+        0.9547627110071062,
+        -0.9149597917027581,
+        0.9547627110096837,
+        -0.9149597917028269,
+        0.9547627110091046,
+        -0.9149597917025387,
+        -0.9149597917016186
+      ],
+      "value_identifiable": [
+        true,
+        false,
+        false,
+        false,
+        false,
+        true,
+        false,
+        true
+      ],
+      "certified": false,
+      "queries": 4,
+      "experiment_cost": 0.8,
+      "wall_seconds": 0.017955584997253027
+    },
+    {
+      "budget": 8,
+      "selected_index": 5,
+      "predictions": [
+        -30.80671119823573,
+        -29.606008385319093,
+        -31.123296631292973,
+        -30.79032370210425,
+        -29.54788472044189,
+        -27.955430115540018,
+        -30.99000660747049,
+        -31.94196279094576
+      ],
+      "diagnostic_radius": [
+        0.9870335480670462,
+        5.851179510401239,
+        5.8511795104012645,
+        0.9967115746780811,
+        0.9871122942739515,
+        0.995100911113898,
+        0.995100911113898,
+        0.5767176542175908
+      ],
+      "rank": 6,
+      "parameters": [
+        -30.80671119823573,
+        1.2588264777938392,
+        -0.3165854330572433,
+        1.200702812916635,
+        -1.1255364539713604,
+        0.391751791985234,
+        -0.8677298837279146,
+        -1.6766809046492188
+      ],
+      "value_identifiable": [
+        true,
+        false,
+        false,
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "certified": false,
+      "queries": 8,
+      "experiment_cost": 1.6,
+      "wall_seconds": 0.03732593099994119
+    }
+  ],
+  "experiments": [
+    {
+      "step": 1,
+      "index": 0,
+      "intervention": [
+        0,
+        0,
+        0
+      ],
+      "outcome": -31.135456085205078,
+      "cost": 0.0,
+      "assignment_probability": 1.0,
+      "policy_version": "vdn-seed7-updates1-15746ac3a5e5",
+      "admissible": true
+    },
+    {
+      "step": 2,
+      "index": 7,
+      "intervention": [
+        1,
+        1,
+        1
+      ],
+      "outcome": -30.60955047607422,
+      "cost": 0.30000000000000004,
+      "assignment_probability": 1.0,
+      "policy_version": "vdn-seed7-updates1-15746ac3a5e5",
+      "admissible": true
+    },
+    {
+      "step": 3,
+      "index": 7,
+      "intervention": [
+        1,
+        1,
+        1
+      ],
+      "outcome": -32.626163482666016,
+      "cost": 0.30000000000000004,
+      "assignment_probability": 0.125,
+      "policy_version": "vdn-seed7-updates1-15746ac3a5e5",
+      "admissible": true
+    },
+    {
+      "step": 4,
+      "index": 5,
+      "intervention": [
+        1,
+        0,
+        1
+      ],
+      "outcome": -27.93474578857422,
+      "cost": 0.2,
+      "assignment_probability": 0.125,
+      "policy_version": "vdn-seed7-updates1-15746ac3a5e5",
+      "admissible": true
+    },
+    {
+      "step": 5,
+      "index": 6,
+      "intervention": [
+        1,
+        1,
+        0
+      ],
+      "outcome": -30.984495162963867,
+      "cost": 0.2,
+      "assignment_probability": 0.5,
+      "policy_version": "vdn-seed7-updates1-15746ac3a5e5",
+      "admissible": true
+    },
+    {
+      "step": 6,
+      "index": 3,
+      "intervention": [
+        0,
+        1,
+        1
+      ],
+      "outcome": -30.78223419189453,
+      "cost": 0.2,
+      "assignment_probability": 1.0,
+      "policy_version": "vdn-seed7-updates1-15746ac3a5e5",
+      "admissible": true
+    },
+    {
+      "step": 7,
+      "index": 7,
+      "intervention": [
+        1,
+        1,
+        1
+      ],
+      "outcome": -32.60694122314453,
+      "cost": 0.30000000000000004,
+      "assignment_probability": 0.125,
+      "policy_version": "vdn-seed7-updates1-15746ac3a5e5",
+      "admissible": true
+    },
+    {
+      "step": 8,
+      "index": 4,
+      "intervention": [
+        1,
+        0,
+        0
+      ],
+      "outcome": -29.54472541809082,
+      "cost": 0.1,
+      "assignment_probability": 0.125,
+      "policy_version": "vdn-seed7-updates1-15746ac3a5e5",
+      "admissible": true
+    }
+  ]
+}

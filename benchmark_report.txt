@@ -1,0 +1,181 @@
+CORA runnable benchmark extension
+Date: 11 October 2026, Europe/Paris
+
+Purpose and scope
+The user authorized extending the minimal PoC to run baselines, save results,
+and produce benchmark screenshots and animated GIFs. The implementation adds
+configurable experiment execution, resume support, oracle-isolated evaluation,
+upstream learner adapters, frozen trained-policy intervention evaluation,
+statistics, plots and a local HTML results gallery. The default execution is
+technical validation; no publication claim or convergence finding is inferred.
+Original manuscript/template files and the original PoC are preserved.
+
+Runnable intervention methods
+cora: public dependency-family ridge model, decision-focused acquisition from
+  draft Eq. 12, pessimistic diagnostic commit with no-op and identifiability checks.
+random: uniform admissible experiments, randomly chosen admissible final edit.
+uniform_tabular: one-hot arm-value ridge estimator, uniform experiments, greedy commit.
+global_linear: intercept plus elementary indicators, uniform experiments, greedy commit.
+global_neural: 32/32 tanh global MLP trained on observed interventions only, uniform
+  experiments, greedy commit; forty tiny estimator optimization steps per budget.
+factorized_uniform: same monomial family/ridge as CORA, uniform acquisition,
+  greedy commit. Compare against cora_no_confidence to isolate active design.
+structure_blind_active: one-hot arm model, same decision-difference acquisition,
+  greedy commit. Compare against cora_no_confidence to isolate the representation.
+cora_no_confidence: CORA features/acquisition with greedy commit. Compare directly
+  with cora to isolate conservative commitment.
+cora_incomplete_graph: CORA with singleton-only interaction structure.
+cora_no_constraints: synthetic-only ablation allowing forbidden edit combinations;
+  invalid acquisitions are logged and invalid decisions are counted. Simple Spread
+  transactions remain validated, and this unsupported combination is reported.
+greedy_swap: internal one-edit-at-a-time experiment/selection heuristic.
+no_op: zero experiments, retain initial organization.
+oracle: zero learning experiments, privileged maximum admissible reference net value.
+  Oracle computation is separately counted and never given to learned methods.
+
+Unresolved external baseline identities
+The draft says "published compositional causal estimator" and "published
+organizational adaptation method" without naming a paper or repository. These
+are registered as unavailable, and selecting them gives an actionable error.
+They have not been invented or silently replaced with internal heuristics.
+The user was asked for the two references while independent work continued.
+
+Benchmarks and estimands
+Synthetic: generated finite set functions with known coefficients and constrained
+  edit combinations. Controlled edits, interaction order/density, observation
+  noise, edit costs, forbidden pairs, sparse/dense public dependencies, deliberately
+  missing dependencies, and reference-to-deployment policy shift are configurable.
+  The exact enumerated runner supports 2–10 edits; it deliberately does not claim
+  combinatorial scalability. Coefficients/true values belong to SyntheticTrial,
+  not PublicProblem. Methods receive only public binary candidates, costs,
+  admissibility, declared feature family, and logged observed scalar outcomes.
+Simple Spread: unchanged JaxMARL dynamics/rewards, organization-conditioned
+  observations, ordered atomic swaps, and frozen guided/random/trained actors.
+  Policies are trained separately, then held fixed throughout every intervention
+  dataset. Synthetic experiments exercise policy shift; this suite does not
+  implement online adaptive-policy causal estimation or distributed commit.
+  The conditional estimand fixes one reset state/context per seed and a finite
+  horizon. Experiment rollout streams are matched by experiment index across
+  methods. Oracle Monte Carlo streams and final replay streams are separate.
+  Final replays for all methods within a policy condition use the same initial
+  physical state, environment noise stream and policy PRNG stream.
+
+Existing MARL implementations
+Reuse unchanged pinned JaxMARL commit 976aeb152cb184a5095021968bba94da96eb6394:
+  IPPO: baselines/IPPO/ippo_ff_mpe.py (feed-forward actor/local value).
+  MAPPO: baselines/MAPPO/mappo_rnn_mpe.py (recurrent local actor/centralized critic).
+  IQL/VDN/QMIX: baselines/QLearning/{iql_rnn,vdn_rnn,qmix_rnn}.py.
+Each trainer source is checked against Git HEAD and its SHA256 is saved.
+Environment/logging references are injected into a privately loaded module.
+No remote WandB session is initialized or metrics transmitted. Q-learning's
+public agent-identity observation suffix is reproduced at actor evaluation.
+Checkpoint serialization preserves the actor and, separately, the complete
+train states including MAPPO critic and Q-learning mixer/target state.
+IPPO and MAPPO sample their learned policies; Q-learning uses greedy evaluation,
+following the upstream evaluation convention. Different policy families are
+distinct continuation protocols, not identical estimands.
+
+Budget and reproducibility protocol
+Every learned intervention method uses exactly the allocated number of oracle
+queries, including a common initial no-op experiment. No-op and oracle references
+have zero learning-query budgets, explicitly distinguished from other methods.
+Uniform selection uses replacement after the initial no-op; adaptive tie-breaking
+logs its actual conditional propensity. A deterministic learned design has no
+general positivity guarantee. Contexts, policy versions, seed configuration,
+interventions, outcomes, costs, propensities and model predictions are saved.
+MARL total environment budgets include Q-learning's replay-shape initialization
+trajectory; configuration division must be exact. The technical configuration
+allocates twenty environment interactions per learner/seed: PPO collects twenty
+training steps, whereas Q learning collects ten initialization and ten training
+steps. Each uses one optimizer update; MAPPO updates actor and critic together.
+The twenty steps are training interactions only. Evaluation/oracle interactions
+are extra, with oracle replication counts explicitly stored. Different network
+architectures and optimizer choices follow upstream defaults; there is no tuning.
+Resume skips completed method files and reuses saved learner checkpoints only
+when the same configuration fingerprint is supplied. A changed configuration
+requires a new output directory. Intermediate per-method files are atomic writes;
+failure tracebacks are retained. Larger budgets are possible without altering
+the PoC runtime guards. The research configuration is an unexecuted example.
+
+Metrics and statistical outputs
+Budget-indexed held-out value MAE and effect-difference MAE exclude queried
+interventions. If every valid candidate was queried, held-out error is null,
+not an artificial zero. Simple regret, chosen net value, no-op rate, selected
+constraint violations, query costs, compute time, model rank, diagnostic coverage,
+and first recorded budget reaching a configured regret threshold are saved.
+Invalid ablation decisions have null admissible regret and explicit violations.
+Synthetic truth is exact. MPE values are Monte Carlo references, not exact causal
+truth. Their standard errors and raw replicate values are saved; harmful net-value
+labels use that reference. Paired reference standard errors and a diagnostic sign
+resolution indicator distinguish uncertain harm classifications. Oracle maximization
+over noisy estimates can be optimistic, especially with four technical replicates.
+Rank/row-space checks are algebraic model identifiability, not causal identification.
+Conservative radii remain configurable leverage heuristics. Structural/shift bounds
+are not certified; every learned decision reports certified=false.
+Across seeds, save mean/median/IQM and seed-bootstrap descriptive intervals.
+IQM uses fractional quartile boundaries. Paired regret tests are reported only
+with at least three paired seeds and receive Holm correction over all reported
+tests. Two-seed technical intervals cannot support research conclusions. Merely
+meeting a ten-seed recommendation does not establish power or sound assumptions.
+
+Visual outputs
+All plots derive from saved raw outcomes. Produce regret/error/harm/constraint/
+abstention/compute curves, per-seed regret heatmaps, predicted-versus-reference
+panels, true-versus-estimated synthetic pairwise Mobius interaction heatmaps,
+and algorithm-specific training diagnostics. Training losses are not displayed
+as directly comparable performance scores. Pairwise plots omit higher orders
+and identify oracle-only forbidden combinations.
+Save native MPE state arrays, actions, rewards and assignments. Reconstruct the
+existing MPEVisualizer for faithful individual frames and Pillow-encoded GIFs.
+Save first/middle/last PNG screenshots and explicit organization diagrams.
+Generate synchronized comparison PNGs/GIFs using common plot bounds and matched
+initial states; compare no-op, CORA, factorized-uniform and structure-blind-active.
+The configured visualization seed is fixed before execution, rather than picked
+for favorable outcomes. Local index.html links figures, CSV/JSON, screenshots,
+raw traces, individual animations and comparisons. No hosting or publication.
+
+Compatibility and remaining scientific scope
+Recurrent adapters exposed Flax 0.10.4 calling a missing JAX scan API; Flax 0.10.2
+works with JAX 0.4.38. Flashbax 0.1.3 supplies the existing replay implementation.
+The updated principal and transitive dependencies are pinned. No new MARL
+algorithm, optimizer, simulator, or rendering engine was invented.
+This does not complete four-domain CORA-Bench, causal graph discovery, a temporal
+SCM, calibrated confidence bounds, policy-shift certification, continuous online
+adaptation, decentralized organizational consensus, or the two unnamed external
+reproductions. Those require additional authoritative scientific definitions.
+
+Verification
+All five upstream learners executed; checkpoints and frozen actor rollouts
+completed. The original PoC and new benchmark tests passed: 42 tests, 42.88 seconds.
+Tests cover public/oracle separation, every executable intervention method,
+seeded outcomes/decisions, budgets, exact Eq. 12 acquisition versus direct inverse,
+fractional IQM, Holm correction, resume, unavailable external method rejection,
+native screenshots and multi-frame GIFs. Final suite counts and artifact verification
+are recorded in outputs/bench-smoke/verification.json after execution completes.
+
+Final execution record
+The default suite completed with 544 budget-indexed result rows, eleven benchmark
+conditions, thirteen intervention conditions (the constraint ablation is synthetic
+only), two independent seeds, and ten trained MARL checkpoints. Each of IPPO,
+MAPPO, IQL, VDN and QMIX executed one update for each of seeds 7 and 8, at twenty
+training environment interactions including Q initialization. No long research
+run, convergence experiment or parameter sweep was executed.
+Saved media contain 84 individual benchmark GIFs, seven synchronized comparison
+GIFs, 252 individual screenshots, 21 comparison screenshots, and 84 organization
+diagrams. Analysis adds 38 PNG figures and eleven PDF summary figures, including
+prediction and synthetic interaction displays. The local HTML gallery is
+outputs/bench-smoke/index.html. Raw rows are results.csv and results.jsonl.
+The final plotting tests exposed a filename collision between the evaluation
+oracle export and the oracle comparator log. It was fixed using separate
+evaluation_oracle.json and oracle.json files, with a regression assertion. Raw
+reference values were regenerated from the same seeds/checkpoints without
+retraining or changing the logged benchmark decisions/results. All nineteen
+extension tests then passed in 14.46 seconds. Original PoC/core tests had also
+passed in the full forty-two-test run with the updated dependencies.
+Artifact auditing checks all 544 unique result keys, finite metrics, matched
+budgets, zero violations for constrained methods, oracle zero regret, checkpoint
+reloads and first replay actions, exact reference/comparator export consistency,
+and valid twenty-frame GIFs. The verification JSON records its implementation
+snapshot; raw source hashes in execution manifests guard future resume calls.
+Regenerating analysis/media is allowed with updated postprocessing source;
+resuming experiments under changed recorded source requires a new destination.

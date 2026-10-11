@@ -1,0 +1,11 @@
+{
+  "seeds": [7, 8, 9],
+  "horizon": 25,
+  "gamma": 0.99,
+  "oracle_repeats": 4,
+  "swap_cost": 0.1,
+  "disruption_step": 10,
+  "render_seed": 7,
+  "fps": 8,
+  "profiles": ["status_quo", "fixed_swap", "random_admissible", "singleton_reference", "compound_reference"]
+}

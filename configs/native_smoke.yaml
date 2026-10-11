@@ -1,0 +1,36 @@
+purpose: optional_native_interface_smoke_no_training
+output: outputs/native-smoke
+protocol: frozen
+rounds: 1
+seeds: [0]
+budgets: [1]
+domains: [world_comm, smax, overcooked_v2, jaxnav]
+policies: [random]
+methods: [no_op]
+environment:
+  horizon: 3
+evaluation:
+  horizon: 2
+  gamma: 0.99
+  swap_cost: 0.1
+  diagnostic_scale: 1.0
+  oracle_repeats: 2
+training:
+  total_environment_steps: 4
+  environments: 1
+  updates: 1
+  epochs: 1
+  minibatches: 1
+  hidden_size: 8
+estimation:
+  ridge: 0.01
+  diagnostic_scale: 1.0
+  experiment_cost_weight: 0.0
+  regret_threshold: 0.1
+media:
+  enabled: true
+  seed: 0
+  fps: 8
+statistics:
+  bootstrap_samples: 10
+  confidence: 0.95

@@ -1,0 +1,32 @@
+{
+  "environment": "overcooked_v2",
+  "profile": "reference",
+  "seed": 7,
+  "steps": 110,
+  "per_agent_return": [
+    0.0,
+    0.0
+  ],
+  "mean_return": 0.0,
+  "team_returns": null,
+  "policy_access": "random legal actions",
+  "training_steps": 0,
+  "terminal_reached": false,
+  "terminal_handling": "freeze final state and zero rewards after episode ends; no autoreset",
+  "state_leaf_paths": [
+    ".done",
+    ".step",
+    ".agents.dir",
+    ".agents.inventory",
+    ".agents.pos.x",
+    ".agents.pos.y",
+    ".grid",
+    ".recipe",
+    ".new_correct_delivery"
+  ],
+  "action_storage": "Each agent action flattened and right-zero-padded to length 9; native sizes in action_sizes",
+  "action_sizes": {
+    "agent_0": 1,
+    "agent_1": 1
+  }
+}

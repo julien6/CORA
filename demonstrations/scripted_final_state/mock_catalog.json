@@ -1,0 +1,99 @@
+{
+  "label": "MOCK ONLY \u2014 algorithms not executed; no training or convergence predictions",
+  "learners": {
+    "IPPO": {
+      "replacement": "same handwritten observation-only controller",
+      "learned_checkpoint": false
+    },
+    "MAPPO": {
+      "replacement": "same handwritten observation-only controller",
+      "learned_checkpoint": false
+    },
+    "IQL": {
+      "replacement": "same handwritten observation-only controller",
+      "learned_checkpoint": false
+    },
+    "VDN": {
+      "replacement": "same handwritten observation-only controller",
+      "learned_checkpoint": false
+    },
+    "QMIX": {
+      "replacement": "same handwritten observation-only controller",
+      "learned_checkpoint": false
+    }
+  },
+  "organizational_methods": {
+    "cora": {
+      "replacement_profile": "compound_reference",
+      "method_executed": false,
+      "faithful_reproduction": false
+    },
+    "random": {
+      "replacement_profile": "random_admissible",
+      "method_executed": false,
+      "faithful_reproduction": false
+    },
+    "uniform_tabular": {
+      "replacement_profile": "compound_reference",
+      "method_executed": false,
+      "faithful_reproduction": false
+    },
+    "global_linear": {
+      "replacement_profile": "singleton_reference",
+      "method_executed": false,
+      "faithful_reproduction": false
+    },
+    "global_neural": {
+      "replacement_profile": "compound_reference",
+      "method_executed": false,
+      "faithful_reproduction": false
+    },
+    "compositional_modular": {
+      "replacement_profile": "compound_reference",
+      "method_executed": false,
+      "faithful_reproduction": false
+    },
+    "factorized_uniform": {
+      "replacement_profile": "compound_reference",
+      "method_executed": false,
+      "faithful_reproduction": false
+    },
+    "structure_blind_active": {
+      "replacement_profile": "compound_reference",
+      "method_executed": false,
+      "faithful_reproduction": false
+    },
+    "cora_no_confidence": {
+      "replacement_profile": "compound_reference",
+      "method_executed": false,
+      "faithful_reproduction": false
+    },
+    "cora_incomplete_graph": {
+      "replacement_profile": "singleton_reference",
+      "method_executed": false,
+      "faithful_reproduction": false
+    },
+    "greedy_swap": {
+      "replacement_profile": "singleton_reference",
+      "method_executed": false,
+      "faithful_reproduction": false
+    },
+    "organization_mdp": {
+      "replacement_profile": "compound_reference",
+      "method_executed": false,
+      "faithful_reproduction": false
+    },
+    "no_op": {
+      "replacement_profile": "status_quo",
+      "method_executed": false,
+      "faithful_reproduction": false
+    },
+    "oracle": {
+      "replacement_profile": "compound_reference",
+      "method_executed": false,
+      "faithful_reproduction": false
+    }
+  },
+  "interpretation": "Profile mapping is a manually chosen visualization fixture, not a method-performance model. Methods sharing a profile necessarily share its outcomes.",
+  "certification": "No conservative guarantee is mocked or claimed"
+}

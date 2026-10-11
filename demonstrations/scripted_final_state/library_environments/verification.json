@@ -1,0 +1,7 @@
+{
+  "validated_rollouts": 8,
+  "training_steps": 0,
+  "finite_rewards": true,
+  "trace_returns_match": true,
+  "gif_frames_match": true
+}

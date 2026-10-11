@@ -1,0 +1,100 @@
+{
+  "status": "complete",
+  "rows": [
+    {
+      "benchmark": "simple_spread_iql",
+      "method": "no_op",
+      "seed": 7,
+      "budget": 4,
+      "queries": 0,
+      "selected_index": 0,
+      "selected_intervention": [
+        0,
+        0,
+        0
+      ],
+      "policy_version": "iql-seed7-updates1-da672ce3eb98",
+      "simple_regret": 1.1627409934997566,
+      "heldout_mae": null,
+      "heldout_effect_mae": null,
+      "heldout_count": 8,
+      "selected_net_value": -30.79556655883789,
+      "noop_net_value": -30.79556655883789,
+      "oracle_net_value": -29.632825565338134,
+      "harmful_reference": 0,
+      "harm_reference_standard_error": 0.0,
+      "harm_sign_resolved_at_approx_95pct": true,
+      "constraint_violation": 0,
+      "abstention": 1,
+      "truth_kind": "monte_carlo",
+      "oracle_samples": 32,
+      "oracle_standard_error": 0.0698671043210633,
+      "diagnostic_coverage": null,
+      "certified": false,
+      "design_rank": 0,
+      "experiment_cost": 0.0,
+      "wall_seconds": 3.2017000194173306e-05,
+      "budget_to_regret_threshold": null
+    },
+    {
+      "benchmark": "simple_spread_iql",
+      "method": "no_op",
+      "seed": 7,
+      "budget": 8,
+      "queries": 0,
+      "selected_index": 0,
+      "selected_intervention": [
+        0,
+        0,
+        0
+      ],
+      "policy_version": "iql-seed7-updates1-da672ce3eb98",
+      "simple_regret": 1.1627409934997566,
+      "heldout_mae": null,
+      "heldout_effect_mae": null,
+      "heldout_count": 8,
+      "selected_net_value": -30.79556655883789,
+      "noop_net_value": -30.79556655883789,
+      "oracle_net_value": -29.632825565338134,
+      "harmful_reference": 0,
+      "harm_reference_standard_error": 0.0,
+      "harm_sign_resolved_at_approx_95pct": true,
+      "constraint_violation": 0,
+      "abstention": 1,
+      "truth_kind": "monte_carlo",
+      "oracle_samples": 32,
+      "oracle_standard_error": 0.0698671043210633,
+      "diagnostic_coverage": null,
+      "certified": false,
+      "design_rank": 0,
+      "experiment_cost": 0.0,
+      "wall_seconds": 4.7283996536862105e-05,
+      "budget_to_regret_threshold": null
+    }
+  ],
+  "decisions": [
+    {
+      "budget": 4,
+      "selected_index": 0,
+      "predictions": null,
+      "diagnostic_radius": null,
+      "rank": 0,
+      "certified": false,
+      "queries": 0,
+      "experiment_cost": 0,
+      "wall_seconds": 3.2017000194173306e-05
+    },
+    {
+      "budget": 8,
+      "selected_index": 0,
+      "predictions": null,
+      "diagnostic_radius": null,
+      "rank": 0,
+      "certified": false,
+      "queries": 0,
+      "experiment_cost": 0,
+      "wall_seconds": 4.7283996536862105e-05
+    }
+  ],
+  "experiments": []
+}

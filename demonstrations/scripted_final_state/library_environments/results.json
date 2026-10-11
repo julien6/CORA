@@ -1,0 +1,288 @@
+[
+  {
+    "environment": "world_comm",
+    "profile": "reference",
+    "seed": 7,
+    "steps": 70,
+    "per_agent_return": [
+      17.29761126730591,
+      16.922151170670986,
+      16.684880431741476,
+      17.077163100242615,
+      17.328941449755803,
+      -19.16897686664015
+    ],
+    "mean_return": 11.023628425512774,
+    "team_returns": {
+      "pursuers_mean": 16.995451492490247,
+      "foragers_mean": -0.9200177084421739
+    },
+    "policy_access": "local observations, leader communication",
+    "training_steps": 0,
+    "terminal_reached": false,
+    "terminal_handling": "freeze final state and zero rewards after episode ends; no autoreset",
+    "state_leaf_paths": [
+      ".done",
+      ".step",
+      ".p_pos",
+      ".p_vel",
+      ".c"
+    ],
+    "action_storage": "Each agent action flattened and right-zero-padded to length 9; native sizes in action_sizes",
+    "action_sizes": {
+      "leadadversary_0": 9,
+      "adversary_0": 5,
+      "adversary_1": 5,
+      "adversary_2": 5,
+      "agent_0": 5,
+      "agent_1": 5
+    }
+  },
+  {
+    "environment": "world_comm",
+    "profile": "guided",
+    "seed": 7,
+    "steps": 70,
+    "per_agent_return": [
+      97.45793543756008,
+      97.99322730768472,
+      97.65175413433462,
+      97.86722110398114,
+      -7.974272051826119,
+      -50.050933368038386
+    ],
+    "mean_return": 55.49082209394934,
+    "team_returns": {
+      "pursuers_mean": 97.74253449589014,
+      "foragers_mean": -29.012602709932253
+    },
+    "policy_access": "local observations, leader communication",
+    "training_steps": 0,
+    "terminal_reached": false,
+    "terminal_handling": "freeze final state and zero rewards after episode ends; no autoreset",
+    "state_leaf_paths": [
+      ".done",
+      ".step",
+      ".p_pos",
+      ".p_vel",
+      ".c"
+    ],
+    "action_storage": "Each agent action flattened and right-zero-padded to length 9; native sizes in action_sizes",
+    "action_sizes": {
+      "leadadversary_0": 9,
+      "adversary_0": 5,
+      "adversary_1": 5,
+      "adversary_2": 5,
+      "agent_0": 5,
+      "agent_1": 5
+    }
+  },
+  {
+    "environment": "smax",
+    "profile": "reference",
+    "seed": 7,
+    "steps": 45,
+    "per_agent_return": [
+      0.13333334028720856,
+      0.13333334028720856,
+      0.13333334028720856
+    ],
+    "mean_return": 0.13333334028720856,
+    "team_returns": null,
+    "policy_access": "random legal actions",
+    "training_steps": 0,
+    "terminal_reached": true,
+    "terminal_handling": "freeze final state and zero rewards after episode ends; no autoreset",
+    "state_leaf_paths": [
+      ".state.done",
+      ".state.step",
+      ".state.unit_positions",
+      ".state.unit_alive",
+      ".state.unit_teams",
+      ".state.unit_health",
+      ".state.unit_types",
+      ".state.unit_weapon_cooldowns",
+      ".state.prev_movement_actions",
+      ".state.prev_attack_actions",
+      ".enemy_policy_state.default_target",
+      ".enemy_policy_state.last_attacked_enemy"
+    ],
+    "action_storage": "Each agent action flattened and right-zero-padded to length 9; native sizes in action_sizes",
+    "action_sizes": {
+      "ally_0": 1,
+      "ally_1": 1,
+      "ally_2": 1
+    }
+  },
+  {
+    "environment": "smax",
+    "profile": "guided",
+    "seed": 7,
+    "steps": 45,
+    "per_agent_return": [
+      0.9333333894610405,
+      0.9333333894610405,
+      0.9333333894610405
+    ],
+    "mean_return": 0.9333333894610405,
+    "team_returns": null,
+    "policy_access": "unit-list observations; native legal-action mask",
+    "training_steps": 0,
+    "terminal_reached": true,
+    "terminal_handling": "freeze final state and zero rewards after episode ends; no autoreset",
+    "state_leaf_paths": [
+      ".state.done",
+      ".state.step",
+      ".state.unit_positions",
+      ".state.unit_alive",
+      ".state.unit_teams",
+      ".state.unit_health",
+      ".state.unit_types",
+      ".state.unit_weapon_cooldowns",
+      ".state.prev_movement_actions",
+      ".state.prev_attack_actions",
+      ".enemy_policy_state.default_target",
+      ".enemy_policy_state.last_attacked_enemy"
+    ],
+    "action_storage": "Each agent action flattened and right-zero-padded to length 9; native sizes in action_sizes",
+    "action_sizes": {
+      "ally_0": 1,
+      "ally_1": 1,
+      "ally_2": 1
+    }
+  },
+  {
+    "environment": "overcooked_v2",
+    "profile": "reference",
+    "seed": 7,
+    "steps": 110,
+    "per_agent_return": [
+      0.0,
+      0.0
+    ],
+    "mean_return": 0.0,
+    "team_returns": null,
+    "policy_access": "random legal actions",
+    "training_steps": 0,
+    "terminal_reached": false,
+    "terminal_handling": "freeze final state and zero rewards after episode ends; no autoreset",
+    "state_leaf_paths": [
+      ".done",
+      ".step",
+      ".agents.dir",
+      ".agents.inventory",
+      ".agents.pos.x",
+      ".agents.pos.y",
+      ".grid",
+      ".recipe",
+      ".new_correct_delivery"
+    ],
+    "action_storage": "Each agent action flattened and right-zero-padded to length 9; native sizes in action_sizes",
+    "action_sizes": {
+      "agent_0": 1,
+      "agent_1": 1
+    }
+  },
+  {
+    "environment": "overcooked_v2",
+    "profile": "guided",
+    "seed": 7,
+    "steps": 110,
+    "per_agent_return": [
+      40.0,
+      40.0
+    ],
+    "mean_return": 40.0,
+    "team_returns": null,
+    "policy_access": "privileged full simulator state for scripted kitchen planner",
+    "training_steps": 0,
+    "terminal_reached": false,
+    "terminal_handling": "freeze final state and zero rewards after episode ends; no autoreset",
+    "state_leaf_paths": [
+      ".done",
+      ".step",
+      ".agents.dir",
+      ".agents.inventory",
+      ".agents.pos.x",
+      ".agents.pos.y",
+      ".grid",
+      ".recipe",
+      ".new_correct_delivery"
+    ],
+    "action_storage": "Each agent action flattened and right-zero-padded to length 9; native sizes in action_sizes",
+    "action_sizes": {
+      "agent_0": 1,
+      "agent_1": 1
+    }
+  },
+  {
+    "environment": "jaxnav",
+    "profile": "reference",
+    "seed": 7,
+    "steps": 100,
+    "per_agent_return": [
+      -2.287208504974842,
+      -2.287208504974842
+    ],
+    "mean_return": -2.287208504974842,
+    "team_returns": null,
+    "policy_access": "random legal actions",
+    "training_steps": 0,
+    "terminal_reached": false,
+    "terminal_handling": "freeze final state and zero rewards after episode ends; no autoreset",
+    "state_leaf_paths": [
+      ".done",
+      ".step",
+      ".pos",
+      ".theta",
+      ".vel",
+      ".term",
+      ".goal_reached",
+      ".move_term",
+      ".ep_done",
+      ".goal",
+      ".map_data",
+      ".rew_lambda"
+    ],
+    "action_storage": "Each agent action flattened and right-zero-padded to length 9; native sizes in action_sizes",
+    "action_sizes": {
+      "agent_0": 2,
+      "agent_1": 2
+    }
+  },
+  {
+    "environment": "jaxnav",
+    "profile": "guided",
+    "seed": 7,
+    "steps": 100,
+    "per_agent_return": [
+      -3.9250006210058928,
+      -3.9250006210058928
+    ],
+    "mean_return": -3.9250006210058928,
+    "team_returns": null,
+    "policy_access": "local goal bearing, range and LiDAR observations",
+    "training_steps": 0,
+    "terminal_reached": true,
+    "terminal_handling": "freeze final state and zero rewards after episode ends; no autoreset",
+    "state_leaf_paths": [
+      ".done",
+      ".step",
+      ".pos",
+      ".theta",
+      ".vel",
+      ".term",
+      ".goal_reached",
+      ".move_term",
+      ".ep_done",
+      ".goal",
+      ".map_data",
+      ".rew_lambda"
+    ],
+    "action_storage": "Each agent action flattened and right-zero-padded to length 9; native sizes in action_sizes",
+    "action_sizes": {
+      "agent_0": 2,
+      "agent_1": 2
+    }
+  }
+]

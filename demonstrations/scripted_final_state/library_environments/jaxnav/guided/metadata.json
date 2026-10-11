@@ -1,0 +1,35 @@
+{
+  "environment": "jaxnav",
+  "profile": "guided",
+  "seed": 7,
+  "steps": 100,
+  "per_agent_return": [
+    -3.9250006210058928,
+    -3.9250006210058928
+  ],
+  "mean_return": -3.9250006210058928,
+  "team_returns": null,
+  "policy_access": "local goal bearing, range and LiDAR observations",
+  "training_steps": 0,
+  "terminal_reached": true,
+  "terminal_handling": "freeze final state and zero rewards after episode ends; no autoreset",
+  "state_leaf_paths": [
+    ".done",
+    ".step",
+    ".pos",
+    ".theta",
+    ".vel",
+    ".term",
+    ".goal_reached",
+    ".move_term",
+    ".ep_done",
+    ".goal",
+    ".map_data",
+    ".rew_lambda"
+  ],
+  "action_storage": "Each agent action flattened and right-zero-padded to length 9; native sizes in action_sizes",
+  "action_sizes": {
+    "agent_0": 2,
+    "agent_1": 2
+  }
+}

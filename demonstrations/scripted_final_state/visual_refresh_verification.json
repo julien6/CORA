@@ -1,0 +1,8 @@
+{
+  "saved_domain_traces_unchanged": true,
+  "new_training_steps": 0,
+  "renderer": "scene_renderer.py",
+  "native_environments": "library_environments/",
+  "legacy": "legacy_simple_spread/",
+  "current_static_rows": 165
+}

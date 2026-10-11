@@ -1,0 +1,169 @@
+{
+  "schema_version": 1,
+  "config_sha256": "d09b5e728a63ce2d8aed3286b06d0021d4303051e0ff2c9b990042fb5ec85dcf",
+  "config": {
+    "purpose": "technical_validation",
+    "seeds": [
+      7,
+      8
+    ],
+    "budgets": [
+      4,
+      8
+    ],
+    "benchmarks": [
+      "synthetic",
+      "simple_spread"
+    ],
+    "methods": [
+      "cora",
+      "random",
+      "uniform_tabular",
+      "global_linear",
+      "global_neural",
+      "factorized_uniform",
+      "structure_blind_active",
+      "cora_no_confidence",
+      "cora_incomplete_graph",
+      "cora_no_constraints",
+      "greedy_swap",
+      "no_op",
+      "oracle"
+    ],
+    "synthetic": {
+      "edits": 5,
+      "interaction_order": 2,
+      "density": 0.6,
+      "noise": 0.1,
+      "edit_cost": 0.1,
+      "forbidden_pairs": [
+        [
+          0,
+          4
+        ]
+      ],
+      "shift_magnitude": 0.5,
+      "scenarios": [
+        "sparse",
+        "dense",
+        "misspecified",
+        "policy_shift"
+      ]
+    },
+    "estimation": {
+      "ridge": 0.01,
+      "diagnostic_scale": 1.0,
+      "experiment_cost_weight": 0.0,
+      "regret_threshold": 0.1
+    },
+    "mpe": {
+      "horizon": 20,
+      "gamma": 0.99,
+      "swap_cost": 0.1,
+      "diagnostic_scale": 1.0,
+      "oracle_repeats": 4,
+      "u_noise": 0.05,
+      "policies": [
+        "guided",
+        "random",
+        "ippo",
+        "mappo",
+        "iql",
+        "vdn",
+        "qmix"
+      ]
+    },
+    "training": {
+      "total_environment_steps": 20,
+      "environments": 1,
+      "updates": 1,
+      "epochs": 1,
+      "minibatches": 1,
+      "hidden_size": 16
+    },
+    "media": {
+      "enabled": true,
+      "seed": 7,
+      "fps": 10,
+      "comparison_methods": [
+        "no_op",
+        "cora",
+        "factorized_uniform",
+        "structure_blind_active"
+      ]
+    },
+    "statistics": {
+      "bootstrap_samples": 500,
+      "confidence": 0.95
+    }
+  },
+  "purpose": "technical_validation",
+  "upstream_revision": "976aeb152cb184a5095021968bba94da96eb6394",
+  "hardware": {
+    "platform": "Linux-6.8.0-146-generic-x86_64-with-glibc2.39",
+    "python": "3.12.3",
+    "devices": [
+      "TFRT_CPU_0"
+    ]
+  },
+  "dependencies": {
+    "jax": "0.4.38",
+    "jaxlib": "0.4.38",
+    "jaxmarl": "0.2.0",
+    "flax": "0.10.2",
+    "flashbax": "0.1.3",
+    "optax": "0.2.4",
+    "numpy": "2.2.6",
+    "pillow": "12.3.0"
+  },
+  "methods": {
+    "cora": "Structured ridge; decision-difference active design; diagnostic conservative commit",
+    "random": "Uniform experiments; random admissible final intervention",
+    "uniform_tabular": "Unstructured arm means via one-hot ridge; uniform design",
+    "global_linear": "Global additive linear value model; uniform design",
+    "global_neural": "Global MLP value model; uniform design",
+    "factorized_uniform": "Same structured ridge as CORA; uniform design and greedy commit",
+    "structure_blind_active": "Unstructured arm ridge; decision-difference active design",
+    "cora_no_confidence": "CORA acquisition with greedy net-value commit",
+    "cora_incomplete_graph": "CORA with singleton-only dependencies",
+    "cora_no_constraints": "Synthetic-only ablation admitting forbidden edit combinations",
+    "greedy_swap": "Internal singleton-edit reorganization heuristic; not a published baseline",
+    "no_op": "Always retain the current organization; no experiments",
+    "oracle": "Privileged evaluation-only best admissible net value; no learning budget"
+  },
+  "unresolved_baselines": {
+    "published_compositional": "Paper/implementation not identified in the supplied specification",
+    "published_organizational": "Paper/implementation not identified in the supplied specification"
+  },
+  "unsupported_combinations": {
+    "cora_no_constraints": [
+      "simple_spread"
+    ]
+  },
+  "status": "complete",
+  "source_sha256": {
+    "src/cora/__init__.py": "76bdd27951e6f95455781ddddc5c5bc2c2388f2a59909cc723ca0251c7652a22",
+    "src/cora/benchmarks/__init__.py": "46805514b4e08ac743df97c6bf93a500a07c02a33cb64626abfdbb35d2f48562",
+    "src/cora/benchmarks/learners.py": "6bd1988f5b59ec2897bbc5fd581eadc73d111aa687851737186dc0b442a31917",
+    "src/cora/benchmarks/media.py": "2bb931bbf09520790115804f5bc5a09d3fca35f6c92380823c02a5300954918e",
+    "src/cora/benchmarks/methods.py": "16d1dbb70c950e88dcb54e3cd09a1063eaccf9e82a2a817473c3321d0eb09d91",
+    "src/cora/benchmarks/problems.py": "d1938af390feda2bd33e10cdf085102921011ef1b47013719c0c80d3e4429c79",
+    "src/cora/benchmarks/runner.py": "55a4544f34d65d50d567e42572add57ff923d5627ec252932e53ffc7de3e9350",
+    "src/cora/benchmarks/simulation.py": "98e8b10a0b88c5a6055afc1438dc3b60e7e25b755d9b44dc20fa992e0e41057a",
+    "src/cora/benchmarks/statistics.py": "7b46e1a7f4b157e122e4e097237ed197729ab3dcc7d4e5bb34ee32a16f41383a",
+    "src/cora/env_wrapper.py": "8ca10927804543e14b424a24a9ea39e24a41dfa66f236d8af85630ae6559e1a5",
+    "src/cora/estimator.py": "a1f32f87b681a8bac935f29487d18835bfac3116521d47b98c0cd0a81ff26cdc",
+    "src/cora/exploration.py": "2e2177e15425d987d7f83db0faf1fba8835d67e5d748d3cdc5331561d3dcfafa",
+    "src/cora/features.py": "27ccd411bc969d97a2075c69912dda729f78e0eac6e6e3a39f432185722f2dd2",
+    "src/cora/interventions.py": "878f1fd11c7b3f7243e2e7e276834f9886e996cc4105b26bd16b6b18eb0f4c50",
+    "src/cora/ippo_adapter.py": "5180b8a822c2dab672be0c1fd3bebba1864959001741f74c6209253530cc1574",
+    "src/cora/organization.py": "c124a0956069277f63bd29781c7ba5590f324f2df1e9a24ae3453d5d4ffc7bce",
+    "src/cora/poc.py": "ea291c1271c163fdb7d846bfdc7243b83168de8fa9a2fc057c281dff1997ae02",
+    "src/cora/rollout.py": "0f5bdb60b9a82a2f67815c4de394e96568017bda66de84d267a6f347d300f612",
+    "src/cora/selector.py": "eca8b610c2176dc15b200dce7732710a137caf36a1044cd7dda69d1c0e7e2c2f",
+    "src/cora/visualization.py": "20fd0b621b01243c4ba89151f07606c53ca239597a3cdecad2c186d5dfe57d98"
+  },
+  "result_rows": 544,
+  "media_replays": 84,
+  "wall_seconds": 94.95425532300578
+}

@@ -1,0 +1,27 @@
+{
+  "decisions": [
+    {
+      "budget": 4,
+      "selected_index": 0,
+      "predictions": null,
+      "diagnostic_radius": null,
+      "rank": 0,
+      "certified": false,
+      "queries": 0,
+      "experiment_cost": 0,
+      "wall_seconds": 1.4529003237839788e-05
+    },
+    {
+      "budget": 8,
+      "selected_index": 0,
+      "predictions": null,
+      "diagnostic_radius": null,
+      "rank": 0,
+      "certified": false,
+      "queries": 0,
+      "experiment_cost": 0,
+      "wall_seconds": 2.1466003090608865e-05
+    }
+  ],
+  "queries": []
+}

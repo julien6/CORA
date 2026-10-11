@@ -1,0 +1,11 @@
+{
+  "full_pipeline_same_seed_equal": true,
+  "dataset_equal": true,
+  "raw_traces_equal": true,
+  "png_equal": true,
+  "executions": 2,
+  "ippo_updates_per_execution": 1,
+  "tests_passed": 23,
+  "test_log": "outputs/tests.log",
+  "second_execution": "outputs/test-run/test_full_pipeline_one_ippo_up0"
+}

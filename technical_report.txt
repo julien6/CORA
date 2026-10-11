@@ -1,0 +1,75 @@
+CORA minimal PoC — technical audit and verification
+Date: 11 October 2026 (Europe/Paris)
+
+Scope and authoritative sources
+The supplied minimal implementation roadmap explicitly requests implementation.
+The repository's work_in_progress_document.pdf is the extended scientific draft.
+paper/paper.tex and its compiled artifacts are Springer sample material. There
+was no existing software, dependency configuration, test suite, or Git repository.
+The paper sources and supplied PDF have been preserved.
+
+Audit findings and resolutions
+1. Appendix B leaves exact SCM, transaction ordering, confidence calibration,
+   policy versioning, and decentralized adoption open. This PoC specifies ordered
+   atomic swaps, one fixed reset context, frozen observation-only guidance,
+   logged continuation metadata, and centralized organizational commit. These
+   are limited implementation choices, not claims that the general issues are solved.
+2. Shared physics/global rewards forbid an independence inference from separate
+   assignments. Use one dense three-edit hyperedge and all eight monomial terms.
+3. Eight short samples cannot validate confidence bounds or structural locality.
+   Regularized leverage is diagnostic; decisions explicitly report certified=false.
+4. Common simulator keys correlate branch outcomes. Fixed-design independent-noise
+   bounds from the manuscript do not automatically apply.
+5. Simple Spread has no native organizational mechanism. Append authorized own
+   assignment to the existing observation. Fixed guidance and upstream IPPO both
+   consume that input; physical action/transition/reward semantics are preserved.
+6. Upstream IPPO is a source baseline rather than an installed trainer API.
+   Keep a pinned separate checkout, verify trainer bytes against Git HEAD, and
+   inject the wrapper/local logging only into a privately loaded module.
+7. The original terminal did not expose a `python` command; Python 3.12.3 and
+   python3 -m venv are available. A compatible CPU JAX 0.4.38 stack was installed.
+   Transitive dependencies are frozen to avoid future resolver drift.
+
+Implemented
+M0: existing JaxMARL MPE_simple_spread_v3 reset/random-action step smoke.
+M1: named agents, roles, missions, permission relation, exact mission coverage,
+    immutable PyTree organizational state, no-op and ordered swap transactions.
+M2: short controlled fixed-policy branches, costs/versions/keys/propensities,
+    schema-validated JSON serialization and reload.
+M3: downward-closed fixed hyperedge features, JAX ridge regression, rank and
+    row-space target identifiability diagnostics; exact small Mobius transform.
+M4: uniform and maximum-leverage experiment selection, one acquired branch,
+    pessimistic diagnostic net-value comparison and no-op fallback.
+M5: existing IPPO trainer with one ten-step rollout and one gradient update.
+M6: one-command pipeline, saved JSON/config/dependency metadata, raw traces,
+    Matplotlib trajectory/reward visualization reproducible from saved data.
+
+Verification record
+M0 executed 20 random-action steps with finite state/observations/rewards, expected
+spaces, exact same-seed repeatability, and a distinct second-key trajectory.
+Foundational milestone run: 20 tests passed in 7.05 seconds.
+Final suite: 23 tests passed in 23.68 seconds, including the full upstream update.
+Fourteen warnings were third-party Matplotlib/Pyparsing deprecation warnings.
+pip check reported no broken requirements; the upstream checkout is unchanged.
+The CLI full run and test full run each executed exactly one ten-step IPPO update.
+Their summaries, datasets, raw trace arrays, and PNG bytes were identical under
+seed 7. A second seed was checked in the no-training pipeline for PRNG variation.
+No additional learner updates or long training were performed.
+The saved run has eight records, eight features, and design rank eight. The
+observed optimizer step was 1, parameter delta L2 was 0.01962762512266636, and
+applied clipped-gradient L2 was 0.4999999701976776. All checked numerical values
+were finite. These values document execution only, not scientific improvement.
+Artifacts: outputs/poc/{dataset.json,summary.json,traces.npz,poc.png,verification.json}.
+Test output: outputs/tests.log. The second full run is retained under
+outputs/test-run/test_full_pipeline_one_ippo_up0 for reproduction auditing.
+
+Deferred and remaining limits
+No exact temporal SCM discovery, calibrated statistical/structural/shift bounds,
+confidence-coverage assertion, decentralized commit/consensus, learned graph,
+full decision-focused acquisition, MAPPO, benchmark campaign, multi-domain
+environment, long training, GPU optimization, or scientific significance study.
+Synthetic tests verify algebra/counterexamples, not causal identification of MPE.
+The tiny frozen-guidance dataset is conditional on a single simulator context.
+IPPO's separate updated policy is not used to deploy estimates from that dataset.
+Dense three-edit features do not establish an advantage from causal sparsity.
+No observed smoke return is evidence of CORA's research hypotheses.

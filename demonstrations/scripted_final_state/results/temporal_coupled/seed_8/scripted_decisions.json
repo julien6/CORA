@@ -1,0 +1,37 @@
+{
+  "status_quo": {
+    "index": 0,
+    "bits": [
+      0,
+      0
+    ]
+  },
+  "fixed_swap": {
+    "index": 1,
+    "bits": [
+      1,
+      0
+    ]
+  },
+  "random_admissible": {
+    "index": 2,
+    "bits": [
+      0,
+      1
+    ]
+  },
+  "singleton_reference": {
+    "index": 1,
+    "bits": [
+      1,
+      0
+    ]
+  },
+  "compound_reference": {
+    "index": 1,
+    "bits": [
+      1,
+      0
+    ]
+  }
+}

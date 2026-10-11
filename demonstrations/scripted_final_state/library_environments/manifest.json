@@ -1,0 +1,37 @@
+{
+  "training_steps": 0,
+  "gradient_updates": 0,
+  "jaxmarl_revision": "976aeb152cb184a5095021968bba94da96eb6394",
+  "upstream": "https://github.com/bold-lab-ai/JaxMARL",
+  "scenarios": {
+    "world_comm": {
+      "steps": 70,
+      "description": "Native MPE Simple World Comm: four pursuers, two foragers, food, obstacle and forests. Leader broadcasts a four-channel target-position code.",
+      "source": "jaxmarl/environments/mpe/simple_world_comm.py",
+      "policy_access": "local observations, leader communication"
+    },
+    "smax": {
+      "steps": 45,
+      "description": "Native SMAX 3m: three marines against three heuristic enemies. Upstream observation-based heuristic versus random valid ally actions. Frames are decision-step snapshots, not interpolated combat ticks.",
+      "source": "jaxmarl/environments/smax/smax_env.py",
+      "policy_access": "unit-list observations; native legal-action mask"
+    },
+    "overcooked_v2": {
+      "steps": 110,
+      "description": "Native OvercookedV2 cramped_room_v2 (contextual kitchen rendering and original renderer screenshots): two chefs, multiple ingredients, recipe indicator, cooking and delivery. Full-state scripted task planner versus random actions. This illustration does not test decentralized partial-observation learning.",
+      "source": "jaxmarl/environments/overcooked_v2/overcooked.py",
+      "policy_access": "privileged full simulator state for scripted kitchen planner"
+    },
+    "jaxnav": {
+      "steps": 100,
+      "description": "Native JaxNav BlankCross2: differential-drive robots crossing toward opposing goals. Local goal-bearing controller with LiDAR braking versus random actions.",
+      "source": "jaxmarl/environments/jaxnav/jaxnav_env.py",
+      "policy_access": "local goal bearing, range and LiDAR observations"
+    }
+  },
+  "script_sha256": "63d4b608383e8647cec8725efed716bcee42ee836dbd8d15385dfdd7dc0900dc",
+  "renderer_sha256": "a459396df952103c270d142c3e39be66b542982258afc13dcb4f24538ebe9bcc",
+  "seed": 7,
+  "fps": 8,
+  "scope": "visual demonstrations, not CORA integration or learned baselines"
+}

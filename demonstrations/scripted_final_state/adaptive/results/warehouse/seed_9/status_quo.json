@@ -1,0 +1,14 @@
+{
+  "domain": "warehouse",
+  "seed": 9,
+  "profile": "status_quo",
+  "discounted_native_return": -6.167182354794428,
+  "discounted_commit_cost": 0,
+  "net_return": -6.167182354794428,
+  "commits": [],
+  "policy_version": "domain-guided-v2",
+  "policy_updates": 0,
+  "training_steps": 0,
+  "label": "SCRIPTED DEMO \u2014 NO TRAINING \u2014 NOT LEARNED BASELINE RESULTS",
+  "continuation": "same frozen scripted controller before and after live adoption"
+}

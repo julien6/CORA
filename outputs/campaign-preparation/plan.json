@@ -1,0 +1,682 @@
+{
+  "jobs": [
+    {
+      "name": "synthetic",
+      "config": {
+        "purpose": "research_exploration",
+        "output": "/home/jsoule/Documents/CORA/outputs/all-baselines/synthetic",
+        "seeds": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "budgets": [
+          4,
+          8,
+          16,
+          32,
+          64
+        ],
+        "benchmarks": [
+          "synthetic"
+        ],
+        "methods": [
+          "cora",
+          "random",
+          "uniform_tabular",
+          "global_linear",
+          "global_neural",
+          "factorized_uniform",
+          "structure_blind_active",
+          "cora_no_confidence",
+          "cora_incomplete_graph",
+          "cora_no_constraints",
+          "greedy_swap",
+          "no_op",
+          "oracle"
+        ],
+        "synthetic": {
+          "edits": 6,
+          "interaction_order": 3,
+          "density": 0.5,
+          "noise": 0.2,
+          "edit_cost": 0.1,
+          "forbidden_pairs": [
+            [
+              0,
+              5
+            ]
+          ],
+          "shift_magnitude": 0.5,
+          "scenarios": [
+            "sparse",
+            "dense",
+            "misspecified",
+            "policy_shift"
+          ]
+        },
+        "estimation": {
+          "ridge": 0.01,
+          "diagnostic_scale": 1.0,
+          "experiment_cost_weight": 0.0,
+          "regret_threshold": 0.1
+        },
+        "mpe": {
+          "horizon": 25,
+          "gamma": 0.99,
+          "swap_cost": 0.1,
+          "diagnostic_scale": 1.0,
+          "oracle_repeats": 64,
+          "u_noise": 0.05,
+          "policies": [
+            "guided",
+            "random",
+            "ippo",
+            "mappo",
+            "iql",
+            "vdn",
+            "qmix"
+          ]
+        },
+        "training": {
+          "total_environment_steps": 40400,
+          "environments": 4,
+          "updates": 100,
+          "epochs": 1,
+          "minibatches": 1,
+          "hidden_size": 64
+        },
+        "media": {
+          "enabled": true,
+          "seed": 0,
+          "fps": 10,
+          "comparison_methods": [
+            "no_op",
+            "cora",
+            "factorized_uniform",
+            "structure_blind_active"
+          ]
+        },
+        "statistics": {
+          "bootstrap_samples": 2000,
+          "confidence": 0.95
+        }
+      },
+      "module": "cora.benchmarks.runner",
+      "check": {
+        "experiments_executed": false,
+        "result_rows": 2600
+      }
+    },
+    {
+      "name": "native-frozen",
+      "config": {
+        "purpose": "research_configuration_not_executed",
+        "output": "/home/jsoule/Documents/CORA/outputs/all-baselines/native-frozen",
+        "protocol": "frozen",
+        "rounds": 1,
+        "seeds": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "budgets": [
+          4,
+          8,
+          16,
+          32
+        ],
+        "domains": [
+          "world_comm",
+          "smax",
+          "overcooked_v2",
+          "jaxnav"
+        ],
+        "policies": [
+          "random",
+          "ippo",
+          "mappo",
+          "iql",
+          "vdn",
+          "qmix"
+        ],
+        "methods": [
+          "cora",
+          "random",
+          "uniform_tabular",
+          "global_linear",
+          "global_neural",
+          "compositional_modular",
+          "factorized_uniform",
+          "structure_blind_active",
+          "cora_no_confidence",
+          "cora_incomplete_graph",
+          "greedy_swap",
+          "organization_mdp",
+          "no_op",
+          "oracle"
+        ],
+        "environment": {
+          "horizon": 25,
+          "options": {
+            "smax": {
+              "scenario": "3m"
+            },
+            "overcooked_v2": {
+              "layout": "cramped_room_v2"
+            },
+            "jaxnav": {
+              "num_agents": 3,
+              "lidar_num_beams": 32,
+              "map_params": {
+                "map_size": [
+                  7,
+                  7
+                ],
+                "fill": 0.2
+              }
+            }
+          }
+        },
+        "evaluation": {
+          "horizon": 25,
+          "gamma": 0.99,
+          "swap_cost": 0.1,
+          "diagnostic_scale": 1.0,
+          "oracle_repeats": 64
+        },
+        "training": {
+          "total_environment_steps": 40400,
+          "environments": 4,
+          "updates": 100,
+          "epochs": 1,
+          "minibatches": 1,
+          "hidden_size": 64
+        },
+        "estimation": {
+          "ridge": 0.01,
+          "diagnostic_scale": 1.0,
+          "experiment_cost_weight": 0.0,
+          "regret_threshold": 0.1
+        },
+        "media": {
+          "enabled": true,
+          "seed": 0,
+          "fps": 10
+        },
+        "statistics": {
+          "bootstrap_samples": 1000,
+          "confidence": 0.95
+        }
+      },
+      "module": "cora.benchmarks.release",
+      "check": {
+        "status": "ready_for_explicit_execution",
+        "result_rows": 13440,
+        "upper_bound_training_environment_steps": 113120000,
+        "protocol": "frozen",
+        "policy_transfer": "mechanism reuse only; no zero-shot learned-weight claim",
+        "external_comparators": "adapted/internal methods; faithful published reproductions remain unavailable",
+        "backend": "native_jaxmarl",
+        "environments": {
+          "world_comm": {
+            "backend": "native_jaxmarl",
+            "environment": "world_comm",
+            "controlled_agents": [
+              "leadadversary_0",
+              "adversary_0",
+              "adversary_1",
+              "adversary_2"
+            ],
+            "missions": [
+              "pursuit_sector_0",
+              "pursuit_sector_1",
+              "pursuit_sector_2",
+              "pursuit_sector_3"
+            ],
+            "ordered_swaps": [
+              [
+                0,
+                1
+              ],
+              [
+                0,
+                2
+              ],
+              [
+                0,
+                3
+              ],
+              [
+                1,
+                2
+              ],
+              [
+                1,
+                3
+              ],
+              [
+                2,
+                3
+              ]
+            ],
+            "organizational_intervention": "assignment hints; goal delegation also changes native goals in JaxNav",
+            "objective": "mean return of controlled agents",
+            "world_comm_opponents": "fixed local-observation food-seeking foragers",
+            "world_comm_action_mapping": "leader: native 20 actions; follower: code modulo 5",
+            "dependency_support": "conservative complete interaction family; no locality reduction assumed",
+            "options": {},
+            "horizon": 25
+          },
+          "smax": {
+            "backend": "native_jaxmarl",
+            "environment": "smax",
+            "controlled_agents": [
+              "ally_0",
+              "ally_1",
+              "ally_2"
+            ],
+            "missions": [
+              "focus_target_0",
+              "focus_target_1",
+              "focus_target_2"
+            ],
+            "ordered_swaps": [
+              [
+                0,
+                1
+              ],
+              [
+                0,
+                2
+              ],
+              [
+                1,
+                2
+              ]
+            ],
+            "organizational_intervention": "assignment hints; goal delegation also changes native goals in JaxNav",
+            "objective": "mean return of controlled agents",
+            "world_comm_opponents": null,
+            "world_comm_action_mapping": null,
+            "dependency_support": "conservative complete interaction family; no locality reduction assumed",
+            "options": {
+              "scenario": "3m"
+            },
+            "horizon": 25
+          },
+          "overcooked_v2": {
+            "backend": "native_jaxmarl",
+            "environment": "overcooked_v2",
+            "controlled_agents": [
+              "agent_0",
+              "agent_1"
+            ],
+            "missions": [
+              "ingredient_cook",
+              "plate_deliver"
+            ],
+            "ordered_swaps": [
+              [
+                0,
+                1
+              ]
+            ],
+            "organizational_intervention": "assignment hints; goal delegation also changes native goals in JaxNav",
+            "objective": "mean return of controlled agents",
+            "world_comm_opponents": null,
+            "world_comm_action_mapping": null,
+            "dependency_support": "conservative complete interaction family; no locality reduction assumed",
+            "options": {
+              "layout": "cramped_room_v2"
+            },
+            "horizon": 25
+          },
+          "jaxnav": {
+            "backend": "native_jaxmarl",
+            "environment": "jaxnav",
+            "controlled_agents": [
+              "agent_0",
+              "agent_1",
+              "agent_2"
+            ],
+            "missions": [
+              "navigation_goal_0",
+              "navigation_goal_1",
+              "navigation_goal_2"
+            ],
+            "ordered_swaps": [
+              [
+                0,
+                1
+              ],
+              [
+                0,
+                2
+              ],
+              [
+                1,
+                2
+              ]
+            ],
+            "organizational_intervention": "assignment hints; goal delegation also changes native goals in JaxNav",
+            "objective": "mean return of controlled agents",
+            "world_comm_opponents": null,
+            "world_comm_action_mapping": null,
+            "dependency_support": "conservative complete interaction family; no locality reduction assumed",
+            "options": {
+              "num_agents": 3,
+              "lidar_num_beams": 32,
+              "map_params": {
+                "map_size": [
+                  7,
+                  7
+                ],
+                "fill": 0.2
+              }
+            },
+            "horizon": 25
+          }
+        },
+        "experiments_executed": false
+      }
+    },
+    {
+      "name": "native-adaptive",
+      "config": {
+        "purpose": "research_configuration_not_executed",
+        "output": "/home/jsoule/Documents/CORA/outputs/all-baselines/native-adaptive",
+        "protocol": "retrain_between_decisions",
+        "rounds": 3,
+        "seeds": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "budgets": [
+          4,
+          8,
+          16,
+          32
+        ],
+        "domains": [
+          "world_comm",
+          "smax",
+          "overcooked_v2",
+          "jaxnav"
+        ],
+        "policies": [
+          "random",
+          "ippo",
+          "mappo",
+          "iql",
+          "vdn",
+          "qmix"
+        ],
+        "methods": [
+          "cora",
+          "random",
+          "uniform_tabular",
+          "global_linear",
+          "global_neural",
+          "compositional_modular",
+          "factorized_uniform",
+          "structure_blind_active",
+          "cora_no_confidence",
+          "cora_incomplete_graph",
+          "greedy_swap",
+          "organization_mdp",
+          "no_op",
+          "oracle"
+        ],
+        "environment": {
+          "horizon": 25,
+          "options": {
+            "smax": {
+              "scenario": "3m"
+            },
+            "overcooked_v2": {
+              "layout": "cramped_room_v2"
+            },
+            "jaxnav": {
+              "num_agents": 3,
+              "lidar_num_beams": 32,
+              "map_params": {
+                "map_size": [
+                  7,
+                  7
+                ],
+                "fill": 0.2
+              }
+            }
+          }
+        },
+        "evaluation": {
+          "horizon": 25,
+          "gamma": 0.99,
+          "swap_cost": 0.1,
+          "diagnostic_scale": 1.0,
+          "oracle_repeats": 64
+        },
+        "training": {
+          "total_environment_steps": 40400,
+          "environments": 4,
+          "updates": 100,
+          "epochs": 1,
+          "minibatches": 1,
+          "hidden_size": 64
+        },
+        "estimation": {
+          "ridge": 0.01,
+          "diagnostic_scale": 1.0,
+          "experiment_cost_weight": 0.0,
+          "regret_threshold": 0.1
+        },
+        "media": {
+          "enabled": true,
+          "seed": 0,
+          "fps": 10
+        },
+        "statistics": {
+          "bootstrap_samples": 1000,
+          "confidence": 0.95
+        }
+      },
+      "module": "cora.benchmarks.release",
+      "check": {
+        "status": "ready_for_explicit_execution",
+        "result_rows": 40320,
+        "upper_bound_training_environment_steps": 339360000,
+        "protocol": "retrain_between_decisions",
+        "policy_transfer": "mechanism reuse only; no zero-shot learned-weight claim",
+        "external_comparators": "adapted/internal methods; faithful published reproductions remain unavailable",
+        "backend": "native_jaxmarl",
+        "environments": {
+          "world_comm": {
+            "backend": "native_jaxmarl",
+            "environment": "world_comm",
+            "controlled_agents": [
+              "leadadversary_0",
+              "adversary_0",
+              "adversary_1",
+              "adversary_2"
+            ],
+            "missions": [
+              "pursuit_sector_0",
+              "pursuit_sector_1",
+              "pursuit_sector_2",
+              "pursuit_sector_3"
+            ],
+            "ordered_swaps": [
+              [
+                0,
+                1
+              ],
+              [
+                0,
+                2
+              ],
+              [
+                0,
+                3
+              ],
+              [
+                1,
+                2
+              ],
+              [
+                1,
+                3
+              ],
+              [
+                2,
+                3
+              ]
+            ],
+            "organizational_intervention": "assignment hints; goal delegation also changes native goals in JaxNav",
+            "objective": "mean return of controlled agents",
+            "world_comm_opponents": "fixed local-observation food-seeking foragers",
+            "world_comm_action_mapping": "leader: native 20 actions; follower: code modulo 5",
+            "dependency_support": "conservative complete interaction family; no locality reduction assumed",
+            "options": {},
+            "horizon": 25
+          },
+          "smax": {
+            "backend": "native_jaxmarl",
+            "environment": "smax",
+            "controlled_agents": [
+              "ally_0",
+              "ally_1",
+              "ally_2"
+            ],
+            "missions": [
+              "focus_target_0",
+              "focus_target_1",
+              "focus_target_2"
+            ],
+            "ordered_swaps": [
+              [
+                0,
+                1
+              ],
+              [
+                0,
+                2
+              ],
+              [
+                1,
+                2
+              ]
+            ],
+            "organizational_intervention": "assignment hints; goal delegation also changes native goals in JaxNav",
+            "objective": "mean return of controlled agents",
+            "world_comm_opponents": null,
+            "world_comm_action_mapping": null,
+            "dependency_support": "conservative complete interaction family; no locality reduction assumed",
+            "options": {
+              "scenario": "3m"
+            },
+            "horizon": 25
+          },
+          "overcooked_v2": {
+            "backend": "native_jaxmarl",
+            "environment": "overcooked_v2",
+            "controlled_agents": [
+              "agent_0",
+              "agent_1"
+            ],
+            "missions": [
+              "ingredient_cook",
+              "plate_deliver"
+            ],
+            "ordered_swaps": [
+              [
+                0,
+                1
+              ]
+            ],
+            "organizational_intervention": "assignment hints; goal delegation also changes native goals in JaxNav",
+            "objective": "mean return of controlled agents",
+            "world_comm_opponents": null,
+            "world_comm_action_mapping": null,
+            "dependency_support": "conservative complete interaction family; no locality reduction assumed",
+            "options": {
+              "layout": "cramped_room_v2"
+            },
+            "horizon": 25
+          },
+          "jaxnav": {
+            "backend": "native_jaxmarl",
+            "environment": "jaxnav",
+            "controlled_agents": [
+              "agent_0",
+              "agent_1",
+              "agent_2"
+            ],
+            "missions": [
+              "navigation_goal_0",
+              "navigation_goal_1",
+              "navigation_goal_2"
+            ],
+            "ordered_swaps": [
+              [
+                0,
+                1
+              ],
+              [
+                0,
+                2
+              ],
+              [
+                1,
+                2
+              ]
+            ],
+            "organizational_intervention": "assignment hints; goal delegation also changes native goals in JaxNav",
+            "objective": "mean return of controlled agents",
+            "world_comm_opponents": null,
+            "world_comm_action_mapping": null,
+            "dependency_support": "conservative complete interaction family; no locality reduction assumed",
+            "options": {
+              "num_agents": 3,
+              "lidar_num_beams": 32,
+              "map_params": {
+                "map_size": [
+                  7,
+                  7
+                ],
+                "fill": 0.2
+              }
+            },
+            "horizon": 25
+          }
+        },
+        "experiments_executed": false
+      }
+    }
+  ],
+  "parallel_jobs": 1,
+  "training_is_executed_only_when_launched": true,
+  "scope": "All configured runnable methods and MARL learners; not unspecified/unavailable published reproductions."
+}

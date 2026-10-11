@@ -1,0 +1,10 @@
+seed: 7
+horizon: 20
+samples: 8
+gamma: 0.99
+swap_cost: 0.1
+ridge: 0.01
+diagnostic_scale: 1.0
+output: outputs/poc
+ippo_steps: 10
+

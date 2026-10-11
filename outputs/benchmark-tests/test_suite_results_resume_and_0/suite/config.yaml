@@ -1,0 +1,74 @@
+purpose: technical_validation
+output: /home/jsoule/Documents/CORA/outputs/benchmark-tests/test_suite_results_resume_and_0/suite
+seeds:
+- 7
+budgets:
+- 2
+- 4
+benchmarks:
+- synthetic
+methods:
+- cora
+- random
+- uniform_tabular
+- global_linear
+- global_neural
+- factorized_uniform
+- structure_blind_active
+- cora_no_confidence
+- cora_incomplete_graph
+- cora_no_constraints
+- greedy_swap
+- no_op
+- oracle
+synthetic:
+  edits: 5
+  interaction_order: 2
+  density: 0.6
+  noise: 0.1
+  edit_cost: 0.1
+  forbidden_pairs:
+  - - 0
+    - 4
+  shift_magnitude: 0.5
+  scenarios:
+  - sparse
+estimation:
+  ridge: 0.01
+  diagnostic_scale: 1.0
+  experiment_cost_weight: 0.0
+  regret_threshold: 0.1
+mpe:
+  horizon: 20
+  gamma: 0.99
+  swap_cost: 0.1
+  diagnostic_scale: 1.0
+  oracle_repeats: 4
+  u_noise: 0.05
+  policies:
+  - guided
+  - random
+  - ippo
+  - mappo
+  - iql
+  - vdn
+  - qmix
+training:
+  total_environment_steps: 20
+  environments: 1
+  updates: 1
+  epochs: 1
+  minibatches: 1
+  hidden_size: 16
+media:
+  enabled: false
+  seed: 7
+  fps: 10
+  comparison_methods:
+  - no_op
+  - cora
+  - factorized_uniform
+  - structure_blind_active
+statistics:
+  bootstrap_samples: 10
+  confidence: 0.95

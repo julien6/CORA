@@ -1,0 +1,26 @@
+{
+  "domain": "wildfire",
+  "seed": 9,
+  "profile": "scripted_reconfigure",
+  "discounted_native_return": -12.120425692754976,
+  "discounted_commit_cost": 0.08953382542587164,
+  "net_return": -12.209959518180847,
+  "commits": [
+    {
+      "step": 11,
+      "bits": [
+        1,
+        0,
+        0
+      ],
+      "version": 1,
+      "cost": 0.1,
+      "selection": "hardcoded, not learned or oracle-selected"
+    }
+  ],
+  "policy_version": "domain-guided-v2",
+  "policy_updates": 0,
+  "training_steps": 0,
+  "label": "SCRIPTED DEMO \u2014 NO TRAINING \u2014 NOT LEARNED BASELINE RESULTS",
+  "continuation": "same frozen scripted controller before and after live adoption"
+}

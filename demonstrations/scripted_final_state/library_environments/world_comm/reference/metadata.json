@@ -1,0 +1,39 @@
+{
+  "environment": "world_comm",
+  "profile": "reference",
+  "seed": 7,
+  "steps": 70,
+  "per_agent_return": [
+    17.29761126730591,
+    16.922151170670986,
+    16.684880431741476,
+    17.077163100242615,
+    17.328941449755803,
+    -19.16897686664015
+  ],
+  "mean_return": 11.023628425512774,
+  "team_returns": {
+    "pursuers_mean": 16.995451492490247,
+    "foragers_mean": -0.9200177084421739
+  },
+  "policy_access": "local observations, leader communication",
+  "training_steps": 0,
+  "terminal_reached": false,
+  "terminal_handling": "freeze final state and zero rewards after episode ends; no autoreset",
+  "state_leaf_paths": [
+    ".done",
+    ".step",
+    ".p_pos",
+    ".p_vel",
+    ".c"
+  ],
+  "action_storage": "Each agent action flattened and right-zero-padded to length 9; native sizes in action_sizes",
+  "action_sizes": {
+    "leadadversary_0": 9,
+    "adversary_0": 5,
+    "adversary_1": 5,
+    "adversary_2": 5,
+    "agent_0": 5,
+    "agent_1": 5
+  }
+}

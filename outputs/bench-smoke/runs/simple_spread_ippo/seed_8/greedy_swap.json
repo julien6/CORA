@@ -1,0 +1,289 @@
+{
+  "status": "complete",
+  "rows": [
+    {
+      "benchmark": "simple_spread_ippo",
+      "method": "greedy_swap",
+      "seed": 8,
+      "budget": 4,
+      "queries": 4,
+      "selected_index": 1,
+      "selected_intervention": [
+        0,
+        0,
+        1
+      ],
+      "policy_version": "ippo-seed8-updates1-130d4d45c40f",
+      "simple_regret": 0.10000000000000142,
+      "heldout_mae": 0.6966969760168586,
+      "heldout_effect_mae": 0.785181430812357,
+      "heldout_count": 4,
+      "selected_net_value": -24.308561420440675,
+      "noop_net_value": -24.208561420440674,
+      "oracle_net_value": -24.208561420440674,
+      "harmful_reference": 1,
+      "harm_reference_standard_error": 0.0,
+      "harm_sign_resolved_at_approx_95pct": true,
+      "constraint_violation": 0,
+      "abstention": 0,
+      "truth_kind": "monte_carlo",
+      "oracle_samples": 32,
+      "oracle_standard_error": 1.3889803458602348,
+      "diagnostic_coverage": 0.875,
+      "certified": false,
+      "design_rank": 4,
+      "experiment_cost": 0.30000000000000004,
+      "wall_seconds": 0.009091772000829224,
+      "budget_to_regret_threshold": null
+    },
+    {
+      "benchmark": "simple_spread_ippo",
+      "method": "greedy_swap",
+      "seed": 8,
+      "budget": 8,
+      "queries": 8,
+      "selected_index": 4,
+      "selected_intervention": [
+        1,
+        0,
+        0
+      ],
+      "policy_version": "ippo-seed8-updates1-130d4d45c40f",
+      "simple_regret": 0.10000000000000142,
+      "heldout_mae": 3.3640294999821068,
+      "heldout_effect_mae": 5.817685811444773,
+      "heldout_count": 4,
+      "selected_net_value": -24.308561420440675,
+      "noop_net_value": -24.208561420440674,
+      "oracle_net_value": -24.208561420440674,
+      "harmful_reference": 1,
+      "harm_reference_standard_error": 0.0,
+      "harm_sign_resolved_at_approx_95pct": true,
+      "constraint_violation": 0,
+      "abstention": 0,
+      "truth_kind": "monte_carlo",
+      "oracle_samples": 32,
+      "oracle_standard_error": 1.3889803458602348,
+      "diagnostic_coverage": 0.625,
+      "certified": false,
+      "design_rank": 4,
+      "experiment_cost": 0.6,
+      "wall_seconds": 0.01716249799937941,
+      "budget_to_regret_threshold": null
+    }
+  ],
+  "decisions": [
+    {
+      "budget": 4,
+      "selected_index": 1,
+      "predictions": [
+        -24.70142793886982,
+        -23.453991243177626,
+        -25.771895724971017,
+        -24.524459029278823,
+        -24.232544516595777,
+        -22.985107820903583,
+        -25.303012302696974,
+        -24.05557560700478
+      ],
+      "diagnostic_radius": [
+        0.9807207353020363,
+        0.9950845672932304,
+        0.9950845672932302,
+        10.144175506899867,
+        0.9950845672932302,
+        10.144175506899867,
+        10.144175506899867,
+        20.166906639760533
+      ],
+      "rank": 4,
+      "parameters": [
+        -24.70142793886982,
+        0.4688834222740432,
+        -1.0704677861011973,
+        1.247436695692194,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "value_identifiable": [
+        true,
+        true,
+        true,
+        false,
+        true,
+        false,
+        false,
+        false
+      ],
+      "certified": false,
+      "queries": 4,
+      "experiment_cost": 0.30000000000000004,
+      "wall_seconds": 0.009091772000829224
+    },
+    {
+      "budget": 8,
+      "selected_index": 4,
+      "predictions": [
+        -26.66221773190334,
+        -23.62362383192664,
+        -25.39551180569306,
+        -22.35691790571636,
+        -23.21060314283062,
+        -20.17200924285392,
+        -21.943897216620343,
+        -18.905303316643643
+      ],
+      "diagnostic_radius": [
+        0.7001656558003281,
+        0.7053542173721605,
+        0.7053542173721605,
+        10.073507308687773,
+        0.7053542173721605,
+        10.073507308687773,
+        10.073507308687773,
+        20.08542523135187
+      ],
+      "rank": 4,
+      "parameters": [
+        -26.66221773190334,
+        3.451614589072719,
+        1.2667059262102784,
+        3.0385938999767,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "value_identifiable": [
+        true,
+        true,
+        true,
+        false,
+        true,
+        false,
+        false,
+        false
+      ],
+      "certified": false,
+      "queries": 8,
+      "experiment_cost": 0.6,
+      "wall_seconds": 0.01716249799937941
+    }
+  ],
+  "experiments": [
+    {
+      "step": 1,
+      "index": 0,
+      "intervention": [
+        0,
+        0,
+        0
+      ],
+      "outcome": -24.95490074157715,
+      "cost": 0.0,
+      "assignment_probability": 1.0,
+      "policy_version": "ippo-seed8-updates1-130d4d45c40f",
+      "admissible": true
+    },
+    {
+      "step": 2,
+      "index": 1,
+      "intervention": [
+        0,
+        0,
+        1
+      ],
+      "outcome": -23.441516876220703,
+      "cost": 0.1,
+      "assignment_probability": 1.0,
+      "policy_version": "ippo-seed8-updates1-130d4d45c40f",
+      "admissible": true
+    },
+    {
+      "step": 3,
+      "index": 2,
+      "intervention": [
+        0,
+        1,
+        0
+      ],
+      "outcome": -25.78260040283203,
+      "cost": 0.1,
+      "assignment_probability": 1.0,
+      "policy_version": "ippo-seed8-updates1-130d4d45c40f",
+      "admissible": true
+    },
+    {
+      "step": 4,
+      "index": 4,
+      "intervention": [
+        1,
+        0,
+        0
+      ],
+      "outcome": -24.227855682373047,
+      "cost": 0.1,
+      "assignment_probability": 1.0,
+      "policy_version": "ippo-seed8-updates1-130d4d45c40f",
+      "admissible": true
+    },
+    {
+      "step": 5,
+      "index": 0,
+      "intervention": [
+        0,
+        0,
+        0
+      ],
+      "outcome": -28.713726043701172,
+      "cost": 0.0,
+      "assignment_probability": 1.0,
+      "policy_version": "ippo-seed8-updates1-130d4d45c40f",
+      "admissible": true
+    },
+    {
+      "step": 6,
+      "index": 1,
+      "intervention": [
+        0,
+        0,
+        1
+      ],
+      "outcome": -23.775344848632812,
+      "cost": 0.1,
+      "assignment_probability": 1.0,
+      "policy_version": "ippo-seed8-updates1-130d4d45c40f",
+      "admissible": true
+    },
+    {
+      "step": 7,
+      "index": 2,
+      "intervention": [
+        0,
+        1,
+        0
+      ],
+      "outcome": -24.995756149291992,
+      "cost": 0.1,
+      "assignment_probability": 1.0,
+      "policy_version": "ippo-seed8-updates1-130d4d45c40f",
+      "admissible": true
+    },
+    {
+      "step": 8,
+      "index": 4,
+      "intervention": [
+        1,
+        0,
+        0
+      ],
+      "outcome": -22.15883445739746,
+      "cost": 0.1,
+      "assignment_probability": 1.0,
+      "policy_version": "ippo-seed8-updates1-130d4d45c40f",
+      "admissible": true
+    }
+  ]
+}

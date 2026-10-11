@@ -1,0 +1,53 @@
+{
+  "learner": "ippo",
+  "seed": 8,
+  "policy_version": "ippo-seed8-updates1-130d4d45c40f",
+  "optimizer_updates": 1,
+  "training_environment_steps": 20,
+  "buffer_initialization_steps": 0,
+  "wall_seconds": 3.3085834109951975,
+  "finite": true,
+  "config": {
+    "LR": 0.00025,
+    "NUM_ENVS": 1,
+    "NUM_STEPS": 20,
+    "TOTAL_TIMESTEPS": 20,
+    "UPDATE_EPOCHS": 1,
+    "NUM_MINIBATCHES": 1,
+    "GAMMA": 0.99,
+    "GAE_LAMBDA": 0.95,
+    "CLIP_EPS": 0.2,
+    "ENT_COEF": 0.01,
+    "VF_COEF": 0.5,
+    "MAX_GRAD_NORM": 0.5,
+    "ACTIVATION": "tanh",
+    "ENV_NAME": "MPE_simple_spread_v3",
+    "ENV_KWARGS": {},
+    "ANNEAL_LR": false,
+    "SEED": 30,
+    "NUM_SEEDS": 10,
+    "ENTITY": "",
+    "PROJECT": "jaxmarl-mpe",
+    "WANDB_MODE": "disabled",
+    "TEST_DURING_TRAINING": false,
+    "NUM_ACTORS": 3,
+    "NUM_UPDATES": 1,
+    "MINIBATCH_SIZE": 60
+  },
+  "upstream_revision": "976aeb152cb184a5095021968bba94da96eb6394",
+  "upstream_source_sha256": "a65d2a5f93d5b961142796108eeaef7edf8f87a7e007060dfc593373ce11f882",
+  "metrics": [
+    {
+      "actor_loss": -1.1126201115985168e-07,
+      "critic_loss": 15.239773750305176,
+      "entropy": 1.6094316244125366,
+      "ratio": 1.0,
+      "ratio0": 1.0,
+      "returned_episode": 0.0,
+      "returned_episode_lengths": 0.0,
+      "returned_episode_returns": 0.0,
+      "total_loss": 7.603792190551758
+    }
+  ],
+  "checkpoint": "checkpoint.msgpack"
+}

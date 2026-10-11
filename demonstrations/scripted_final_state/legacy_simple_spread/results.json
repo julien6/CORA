@@ -1,0 +1,317 @@
+[
+  {
+    "benchmark": "simple_spread",
+    "seed": 7,
+    "profile": "status_quo",
+    "selected_index": 0,
+    "selected_bits": [
+      0,
+      0,
+      0
+    ],
+    "reference_net_value": -14.144462585449219,
+    "reference_regret": 3.155701065063477,
+    "harmful_reference": false,
+    "is_noop": true,
+    "selection_uses_reference": false,
+    "reference_kind": "monte_carlo_scripted_policy",
+    "training_steps": 0,
+    "certified": false,
+    "result_kind": "scripted_demonstration",
+    "heldout_rollout_return": -14.144462585449219
+  },
+  {
+    "benchmark": "simple_spread",
+    "seed": 7,
+    "profile": "fixed_swap",
+    "selected_index": 1,
+    "selected_bits": [
+      0,
+      0,
+      1
+    ],
+    "reference_net_value": -10.988761520385742,
+    "reference_regret": 0.0,
+    "harmful_reference": false,
+    "is_noop": false,
+    "selection_uses_reference": false,
+    "reference_kind": "monte_carlo_scripted_policy",
+    "training_steps": 0,
+    "certified": false,
+    "result_kind": "scripted_demonstration",
+    "heldout_rollout_return": -10.888761520385742
+  },
+  {
+    "benchmark": "simple_spread",
+    "seed": 7,
+    "profile": "random_admissible",
+    "selected_index": 7,
+    "selected_bits": [
+      1,
+      1,
+      1
+    ],
+    "reference_net_value": -15.011610794067384,
+    "reference_regret": 4.022849273681642,
+    "harmful_reference": true,
+    "is_noop": false,
+    "selection_uses_reference": false,
+    "reference_kind": "monte_carlo_scripted_policy",
+    "training_steps": 0,
+    "certified": false,
+    "result_kind": "scripted_demonstration",
+    "heldout_rollout_return": -14.711610794067383
+  },
+  {
+    "benchmark": "simple_spread",
+    "seed": 7,
+    "profile": "singleton_reference",
+    "selected_index": 1,
+    "selected_bits": [
+      0,
+      0,
+      1
+    ],
+    "reference_net_value": -10.988761520385742,
+    "reference_regret": 0.0,
+    "harmful_reference": false,
+    "is_noop": false,
+    "selection_uses_reference": true,
+    "reference_kind": "monte_carlo_scripted_policy",
+    "training_steps": 0,
+    "certified": false,
+    "result_kind": "scripted_demonstration",
+    "heldout_rollout_return": -10.888761520385742
+  },
+  {
+    "benchmark": "simple_spread",
+    "seed": 7,
+    "profile": "compound_reference",
+    "selected_index": 1,
+    "selected_bits": [
+      0,
+      0,
+      1
+    ],
+    "reference_net_value": -10.988761520385742,
+    "reference_regret": 0.0,
+    "harmful_reference": false,
+    "is_noop": false,
+    "selection_uses_reference": true,
+    "reference_kind": "monte_carlo_scripted_policy",
+    "training_steps": 0,
+    "certified": false,
+    "result_kind": "scripted_demonstration",
+    "heldout_rollout_return": -10.888761520385742
+  },
+  {
+    "benchmark": "simple_spread",
+    "seed": 8,
+    "profile": "status_quo",
+    "selected_index": 0,
+    "selected_bits": [
+      0,
+      0,
+      0
+    ],
+    "reference_net_value": -12.0536527633667,
+    "reference_regret": 0.0,
+    "harmful_reference": false,
+    "is_noop": true,
+    "selection_uses_reference": false,
+    "reference_kind": "monte_carlo_scripted_policy",
+    "training_steps": 0,
+    "certified": false,
+    "result_kind": "scripted_demonstration",
+    "heldout_rollout_return": -12.0536527633667
+  },
+  {
+    "benchmark": "simple_spread",
+    "seed": 8,
+    "profile": "fixed_swap",
+    "selected_index": 1,
+    "selected_bits": [
+      0,
+      0,
+      1
+    ],
+    "reference_net_value": -17.627462005615236,
+    "reference_regret": 5.573809242248537,
+    "harmful_reference": true,
+    "is_noop": false,
+    "selection_uses_reference": false,
+    "reference_kind": "monte_carlo_scripted_policy",
+    "training_steps": 0,
+    "certified": false,
+    "result_kind": "scripted_demonstration",
+    "heldout_rollout_return": -17.527462005615234
+  },
+  {
+    "benchmark": "simple_spread",
+    "seed": 8,
+    "profile": "random_admissible",
+    "selected_index": 5,
+    "selected_bits": [
+      1,
+      0,
+      1
+    ],
+    "reference_net_value": -17.804124069213866,
+    "reference_regret": 5.750471305847167,
+    "harmful_reference": true,
+    "is_noop": false,
+    "selection_uses_reference": false,
+    "reference_kind": "monte_carlo_scripted_policy",
+    "training_steps": 0,
+    "certified": false,
+    "result_kind": "scripted_demonstration",
+    "heldout_rollout_return": -17.604124069213867
+  },
+  {
+    "benchmark": "simple_spread",
+    "seed": 8,
+    "profile": "singleton_reference",
+    "selected_index": 0,
+    "selected_bits": [
+      0,
+      0,
+      0
+    ],
+    "reference_net_value": -12.0536527633667,
+    "reference_regret": 0.0,
+    "harmful_reference": false,
+    "is_noop": true,
+    "selection_uses_reference": true,
+    "reference_kind": "monte_carlo_scripted_policy",
+    "training_steps": 0,
+    "certified": false,
+    "result_kind": "scripted_demonstration",
+    "heldout_rollout_return": -12.0536527633667
+  },
+  {
+    "benchmark": "simple_spread",
+    "seed": 8,
+    "profile": "compound_reference",
+    "selected_index": 0,
+    "selected_bits": [
+      0,
+      0,
+      0
+    ],
+    "reference_net_value": -12.0536527633667,
+    "reference_regret": 0.0,
+    "harmful_reference": false,
+    "is_noop": true,
+    "selection_uses_reference": true,
+    "reference_kind": "monte_carlo_scripted_policy",
+    "training_steps": 0,
+    "certified": false,
+    "result_kind": "scripted_demonstration",
+    "heldout_rollout_return": -12.0536527633667
+  },
+  {
+    "benchmark": "simple_spread",
+    "seed": 9,
+    "profile": "status_quo",
+    "selected_index": 0,
+    "selected_bits": [
+      0,
+      0,
+      0
+    ],
+    "reference_net_value": -9.842002868652344,
+    "reference_regret": 0.13055839538574254,
+    "harmful_reference": false,
+    "is_noop": true,
+    "selection_uses_reference": false,
+    "reference_kind": "monte_carlo_scripted_policy",
+    "training_steps": 0,
+    "certified": false,
+    "result_kind": "scripted_demonstration",
+    "heldout_rollout_return": -9.842002868652344
+  },
+  {
+    "benchmark": "simple_spread",
+    "seed": 9,
+    "profile": "fixed_swap",
+    "selected_index": 1,
+    "selected_bits": [
+      0,
+      0,
+      1
+    ],
+    "reference_net_value": -11.438832855224609,
+    "reference_regret": 1.7273883819580078,
+    "harmful_reference": true,
+    "is_noop": false,
+    "selection_uses_reference": false,
+    "reference_kind": "monte_carlo_scripted_policy",
+    "training_steps": 0,
+    "certified": false,
+    "result_kind": "scripted_demonstration",
+    "heldout_rollout_return": -11.33883285522461
+  },
+  {
+    "benchmark": "simple_spread",
+    "seed": 9,
+    "profile": "random_admissible",
+    "selected_index": 3,
+    "selected_bits": [
+      0,
+      1,
+      1
+    ],
+    "reference_net_value": -10.215064239501952,
+    "reference_regret": 0.5036197662353512,
+    "harmful_reference": true,
+    "is_noop": false,
+    "selection_uses_reference": false,
+    "reference_kind": "monte_carlo_scripted_policy",
+    "training_steps": 0,
+    "certified": false,
+    "result_kind": "scripted_demonstration",
+    "heldout_rollout_return": -10.015064239501953
+  },
+  {
+    "benchmark": "simple_spread",
+    "seed": 9,
+    "profile": "singleton_reference",
+    "selected_index": 4,
+    "selected_bits": [
+      1,
+      0,
+      0
+    ],
+    "reference_net_value": -9.711444473266601,
+    "reference_regret": 0.0,
+    "harmful_reference": false,
+    "is_noop": false,
+    "selection_uses_reference": true,
+    "reference_kind": "monte_carlo_scripted_policy",
+    "training_steps": 0,
+    "certified": false,
+    "result_kind": "scripted_demonstration",
+    "heldout_rollout_return": -9.611444473266602
+  },
+  {
+    "benchmark": "simple_spread",
+    "seed": 9,
+    "profile": "compound_reference",
+    "selected_index": 4,
+    "selected_bits": [
+      1,
+      0,
+      0
+    ],
+    "reference_net_value": -9.711444473266601,
+    "reference_regret": 0.0,
+    "harmful_reference": false,
+    "is_noop": false,
+    "selection_uses_reference": true,
+    "reference_kind": "monte_carlo_scripted_policy",
+    "training_steps": 0,
+    "certified": false,
+    "result_kind": "scripted_demonstration",
+    "heldout_rollout_return": -9.611444473266602
+  }
+]

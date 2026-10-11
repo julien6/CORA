@@ -1,0 +1,176 @@
+{
+  "decisions": [
+    {
+      "budget": 4,
+      "selected_index": 0,
+      "predictions": [
+        4.378453675202696,
+        1.3863893053988505,
+        -4.640270254229453,
+        -7.632334624033298
+      ],
+      "diagnostic_radius": [
+        0.7018966410291931,
+        0.995061457930015,
+        0.9950614579300149,
+        10.121933553020556
+      ],
+      "rank": 3,
+      "parameters": [
+        4.378453675202696,
+        -9.018723929432149,
+        -2.9920643698038454,
+        0.0
+      ],
+      "value_identifiable": [
+        true,
+        true,
+        true,
+        false
+      ],
+      "certified": false,
+      "queries": 4,
+      "experiment_cost": 0.2,
+      "wall_seconds": 0.002157121001800988
+    },
+    {
+      "budget": 8,
+      "selected_index": 0,
+      "predictions": [
+        4.3421438781834585,
+        2.9151447444475984,
+        -3.055272948607316,
+        -4.482272082343176
+      ],
+      "diagnostic_radius": [
+        0.5744928556613332,
+        0.5763935777133466,
+        0.7053514067230562,
+        10.05755070303492
+      ],
+      "rank": 3,
+      "parameters": [
+        4.3421438781834585,
+        -7.397416826790774,
+        -1.4269991337358598,
+        0.0
+      ],
+      "value_identifiable": [
+        true,
+        true,
+        true,
+        false
+      ],
+      "certified": false,
+      "queries": 8,
+      "experiment_cost": 0.5,
+      "wall_seconds": 0.005585533996054437
+    }
+  ],
+  "queries": [
+    {
+      "step": 1,
+      "index": 0,
+      "intervention": [
+        0,
+        0
+      ],
+      "outcome": 4.7279486063312754,
+      "cost": 0.0,
+      "assignment_probability": 1.0,
+      "policy_version": "local-script-v1",
+      "admissible": true
+    },
+    {
+      "step": 2,
+      "index": 1,
+      "intervention": [
+        0,
+        1
+      ],
+      "outcome": 1.356468661700812,
+      "cost": 0.1,
+      "assignment_probability": 1.0,
+      "policy_version": "local-script-v1",
+      "admissible": true
+    },
+    {
+      "step": 3,
+      "index": 2,
+      "intervention": [
+        1,
+        0
+      ],
+      "outcome": -4.730457493523774,
+      "cost": 0.1,
+      "assignment_probability": 1.0,
+      "policy_version": "local-script-v1",
+      "admissible": true
+    },
+    {
+      "step": 4,
+      "index": 0,
+      "intervention": [
+        0,
+        0
+      ],
+      "outcome": 4.192851163818502,
+      "cost": 0.0,
+      "assignment_probability": 1.0,
+      "policy_version": "local-script-v1",
+      "admissible": true
+    },
+    {
+      "step": 5,
+      "index": 1,
+      "intervention": [
+        0,
+        1
+      ],
+      "outcome": 1.8455997085409732,
+      "cost": 0.1,
+      "assignment_probability": 1.0,
+      "policy_version": "local-script-v1",
+      "admissible": true
+    },
+    {
+      "step": 6,
+      "index": 2,
+      "intervention": [
+        1,
+        0
+      ],
+      "outcome": -1.4540625719587659,
+      "cost": 0.1,
+      "assignment_probability": 1.0,
+      "policy_version": "local-script-v1",
+      "admissible": true
+    },
+    {
+      "step": 7,
+      "index": 0,
+      "intervention": [
+        0,
+        0
+      ],
+      "outcome": 4.237297462787697,
+      "cost": 0.0,
+      "assignment_probability": 1.0,
+      "policy_version": "local-script-v1",
+      "admissible": true
+    },
+    {
+      "step": 8,
+      "index": 1,
+      "intervention": [
+        0,
+        1
+      ],
+      "outcome": 5.529095871763654,
+      "cost": 0.1,
+      "assignment_probability": 1.0,
+      "policy_version": "local-script-v1",
+      "admissible": true
+    }
+  ]
+}

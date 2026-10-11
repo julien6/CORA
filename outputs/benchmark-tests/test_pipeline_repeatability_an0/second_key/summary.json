@@ -1,0 +1,198 @@
+{
+  "schema_version": 1,
+  "purpose": "engineering_smoke_test",
+  "certified": false,
+  "config": {
+    "seed": 8,
+    "horizon": 20,
+    "samples": 8,
+    "gamma": 0.99,
+    "swap_cost": 0.1,
+    "ridge": 0.01,
+    "diagnostic_scale": 1.0,
+    "ippo_steps": 10
+  },
+  "environment": "MPE_simple_spread_v3",
+  "policy_version": "assignment-guidance-v1-epsilon-0.1",
+  "reward_convention": "discounted mean of native agent rewards",
+  "initial_assignments": [
+    0,
+    1,
+    2
+  ],
+  "selected_assignments": [
+    2,
+    1,
+    0
+  ],
+  "selected_intervention": [
+    0,
+    1,
+    0
+  ],
+  "selection": {
+    "candidate_bits": [
+      [
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        1
+      ],
+      [
+        0,
+        1,
+        0
+      ],
+      [
+        0,
+        1,
+        1
+      ],
+      [
+        1,
+        0,
+        0
+      ],
+      [
+        1,
+        0,
+        1
+      ],
+      [
+        1,
+        1,
+        0
+      ],
+      [
+        1,
+        1,
+        1
+      ]
+    ],
+    "predicted_value": [
+      -15.235557556152344,
+      -13.329505920410156,
+      -12.743000030517578,
+      -13.631572723388672,
+      -15.914920806884766,
+      -12.906039237976074,
+      -13.657170295715332,
+      -12.687780380249023
+    ],
+    "predicted_net_value": [
+      -15.235557556152344,
+      -13.429505920410156,
+      -12.843000030517578,
+      -13.831572723388671,
+      -16.014920806884767,
+      -13.106039237976074,
+      -13.857170295715331,
+      -12.987780380249024
+    ],
+    "diagnostic_radius": [
+      0.9646944999694824,
+      0.9819787740707397,
+      0.9819787740707397,
+      0.9908196926116943,
+      0.9819787740707397,
+      0.9908197522163391,
+      0.9908196926116943,
+      0.9953359365463257
+    ],
+    "value_identifiable": [
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "selected_index": 2,
+    "certified": false,
+    "structural_bound_verified": false,
+    "shift_bound_verified": false
+  },
+  "dataset_size": 8,
+  "feature_family": [
+    [],
+    [
+      0
+    ],
+    [
+      1
+    ],
+    [
+      2
+    ],
+    [
+      0,
+      1
+    ],
+    [
+      0,
+      2
+    ],
+    [
+      1,
+      2
+    ],
+    [
+      0,
+      1,
+      2
+    ]
+  ],
+  "design_rank": 8,
+  "parameter_count": 8,
+  "coefficients": [
+    -15.235557556152344,
+    -0.679362952709198,
+    2.4925572872161865,
+    1.9060511589050293,
+    -0.2348073422908783,
+    1.1028298139572144,
+    -2.7946228981018066,
+    0.7551326155662537
+  ],
+  "exploration": {
+    "uniform_candidate": [
+      0,
+      0,
+      0
+    ],
+    "uniform_probability": 0.125,
+    "uncertainty_candidate": [
+      0,
+      1,
+      0
+    ],
+    "uncertainty_probability": 1.0,
+    "acquisition_executed": true
+  },
+  "continuation_returns": {
+    "noop": -12.625662803649902,
+    "selected": -11.71139907836914
+  },
+  "observation_shape": [
+    21
+  ],
+  "backend": "cpu",
+  "dependencies": {
+    "jax": "0.4.38",
+    "jaxlib": "0.4.38",
+    "jaxmarl": "0.2.0",
+    "flax": "0.10.2",
+    "optax": "0.2.4",
+    "distrax": "0.1.5",
+    "numpy": "2.2.6"
+  },
+  "ippo": {
+    "skipped": true
+  }
+}

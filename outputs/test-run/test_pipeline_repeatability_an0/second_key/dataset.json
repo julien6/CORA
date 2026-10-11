@@ -1,0 +1,237 @@
+{
+  "schema_version": 1,
+  "records": [
+    {
+      "intervention": [
+        0,
+        1,
+        1
+      ],
+      "organization": [
+        2,
+        0,
+        1
+      ],
+      "roles": [
+        0,
+        0,
+        0
+      ],
+      "organization_version": 1,
+      "policy_version": "assignment-guidance-v1-epsilon-0.1",
+      "reward": -13.667070388793945,
+      "cost": 0.2,
+      "assignment_probability": 0.125,
+      "context_id": "shared-reset-0",
+      "rollout_key": [
+        3070616724,
+        91781294
+      ],
+      "horizon": 20,
+      "gamma": 0.99
+    },
+    {
+      "intervention": [
+        1,
+        1,
+        1
+      ],
+      "organization": [
+        2,
+        1,
+        0
+      ],
+      "roles": [
+        0,
+        0,
+        0
+      ],
+      "organization_version": 1,
+      "policy_version": "assignment-guidance-v1-epsilon-0.1",
+      "reward": -12.680228233337402,
+      "cost": 0.30000000000000004,
+      "assignment_probability": 0.14285714285714285,
+      "context_id": "shared-reset-0",
+      "rollout_key": [
+        3070616724,
+        91781294
+      ],
+      "horizon": 20,
+      "gamma": 0.99
+    },
+    {
+      "intervention": [
+        0,
+        0,
+        0
+      ],
+      "organization": [
+        0,
+        1,
+        2
+      ],
+      "roles": [
+        0,
+        0,
+        0
+      ],
+      "organization_version": 0,
+      "policy_version": "assignment-guidance-v1-epsilon-0.1",
+      "reward": -15.451932907104492,
+      "cost": 0.0,
+      "assignment_probability": 0.16666666666666666,
+      "context_id": "shared-reset-0",
+      "rollout_key": [
+        3070616724,
+        91781294
+      ],
+      "horizon": 20,
+      "gamma": 0.99
+    },
+    {
+      "intervention": [
+        1,
+        0,
+        1
+      ],
+      "organization": [
+        1,
+        2,
+        0
+      ],
+      "roles": [
+        0,
+        0,
+        0
+      ],
+      "organization_version": 1,
+      "policy_version": "assignment-guidance-v1-epsilon-0.1",
+      "reward": -12.902563095092773,
+      "cost": 0.2,
+      "assignment_probability": 0.2,
+      "context_id": "shared-reset-0",
+      "rollout_key": [
+        3070616724,
+        91781294
+      ],
+      "horizon": 20,
+      "gamma": 0.99
+    },
+    {
+      "intervention": [
+        1,
+        0,
+        0
+      ],
+      "organization": [
+        1,
+        0,
+        2
+      ],
+      "roles": [
+        0,
+        0,
+        0
+      ],
+      "organization_version": 1,
+      "policy_version": "assignment-guidance-v1-epsilon-0.1",
+      "reward": -15.922842979431152,
+      "cost": 0.1,
+      "assignment_probability": 0.25,
+      "context_id": "shared-reset-0",
+      "rollout_key": [
+        3070616724,
+        91781294
+      ],
+      "horizon": 20,
+      "gamma": 0.99
+    },
+    {
+      "intervention": [
+        1,
+        1,
+        0
+      ],
+      "organization": [
+        2,
+        0,
+        1
+      ],
+      "roles": [
+        0,
+        0,
+        0
+      ],
+      "organization_version": 1,
+      "policy_version": "assignment-guidance-v1-epsilon-0.1",
+      "reward": -13.667070388793945,
+      "cost": 0.2,
+      "assignment_probability": 0.3333333333333333,
+      "context_id": "shared-reset-0",
+      "rollout_key": [
+        3070616724,
+        91781294
+      ],
+      "horizon": 20,
+      "gamma": 0.99
+    },
+    {
+      "intervention": [
+        0,
+        0,
+        1
+      ],
+      "organization": [
+        0,
+        2,
+        1
+      ],
+      "roles": [
+        0,
+        0,
+        0
+      ],
+      "organization_version": 1,
+      "policy_version": "assignment-guidance-v1-epsilon-0.1",
+      "reward": -13.285974502563477,
+      "cost": 0.1,
+      "assignment_probability": 0.5,
+      "context_id": "shared-reset-0",
+      "rollout_key": [
+        3070616724,
+        91781294
+      ],
+      "horizon": 20,
+      "gamma": 0.99
+    },
+    {
+      "intervention": [
+        0,
+        1,
+        0
+      ],
+      "organization": [
+        2,
+        1,
+        0
+      ],
+      "roles": [
+        0,
+        0,
+        0
+      ],
+      "organization_version": 1,
+      "policy_version": "assignment-guidance-v1-epsilon-0.1",
+      "reward": -12.680228233337402,
+      "cost": 0.1,
+      "assignment_probability": 1.0,
+      "context_id": "shared-reset-0",
+      "rollout_key": [
+        3070616724,
+        91781294
+      ],
+      "horizon": 20,
+      "gamma": 0.99
+    }
+  ]
+}

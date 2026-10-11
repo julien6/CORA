@@ -1,0 +1,118 @@
+{
+  "status": "complete",
+  "rows": [
+    {
+      "benchmark": "simple_spread_vdn",
+      "method": "oracle",
+      "seed": 8,
+      "budget": 4,
+      "queries": 0,
+      "selected_index": 5,
+      "selected_intervention": [
+        1,
+        0,
+        1
+      ],
+      "policy_version": "vdn-seed8-updates1-0e86a63f7354",
+      "simple_regret": 0.0,
+      "heldout_mae": 0.0,
+      "heldout_effect_mae": 0.0,
+      "heldout_count": 8,
+      "selected_net_value": -18.378359508514404,
+      "noop_net_value": -23.64499282836914,
+      "oracle_net_value": -18.378359508514404,
+      "harmful_reference": 0,
+      "harm_reference_standard_error": 0.017484834757219573,
+      "harm_sign_resolved_at_approx_95pct": true,
+      "constraint_violation": 0,
+      "abstention": 0,
+      "truth_kind": "monte_carlo",
+      "oracle_samples": 32,
+      "oracle_standard_error": 0.04061201023098595,
+      "diagnostic_coverage": null,
+      "certified": false,
+      "design_rank": 0,
+      "experiment_cost": 0.0,
+      "wall_seconds": 0,
+      "budget_to_regret_threshold": 4
+    },
+    {
+      "benchmark": "simple_spread_vdn",
+      "method": "oracle",
+      "seed": 8,
+      "budget": 8,
+      "queries": 0,
+      "selected_index": 5,
+      "selected_intervention": [
+        1,
+        0,
+        1
+      ],
+      "policy_version": "vdn-seed8-updates1-0e86a63f7354",
+      "simple_regret": 0.0,
+      "heldout_mae": 0.0,
+      "heldout_effect_mae": 0.0,
+      "heldout_count": 8,
+      "selected_net_value": -18.378359508514404,
+      "noop_net_value": -23.64499282836914,
+      "oracle_net_value": -18.378359508514404,
+      "harmful_reference": 0,
+      "harm_reference_standard_error": 0.017484834757219573,
+      "harm_sign_resolved_at_approx_95pct": true,
+      "constraint_violation": 0,
+      "abstention": 0,
+      "truth_kind": "monte_carlo",
+      "oracle_samples": 32,
+      "oracle_standard_error": 0.04061201023098595,
+      "diagnostic_coverage": null,
+      "certified": false,
+      "design_rank": 0,
+      "experiment_cost": 0.0,
+      "wall_seconds": 0,
+      "budget_to_regret_threshold": 4
+    }
+  ],
+  "decisions": [
+    {
+      "budget": 4,
+      "selected_index": 5,
+      "predictions": [
+        -23.64499282836914,
+        -21.07446813583374,
+        -23.992036819458008,
+        -27.637662887573242,
+        -24.143765926361084,
+        -18.178359508514404,
+        -27.637662887573242,
+        -23.992036819458008
+      ],
+      "diagnostic_radius": null,
+      "rank": 0,
+      "certified": false,
+      "queries": 0,
+      "experiment_cost": 0,
+      "wall_seconds": 0
+    },
+    {
+      "budget": 8,
+      "selected_index": 5,
+      "predictions": [
+        -23.64499282836914,
+        -21.07446813583374,
+        -23.992036819458008,
+        -27.637662887573242,
+        -24.143765926361084,
+        -18.178359508514404,
+        -27.637662887573242,
+        -23.992036819458008
+      ],
+      "diagnostic_radius": null,
+      "rank": 0,
+      "certified": false,
+      "queries": 0,
+      "experiment_cost": 0,
+      "wall_seconds": 0
+    }
+  ],
+  "experiments": []
+}

@@ -1,0 +1,37 @@
+{
+  "environment": "smax",
+  "profile": "reference",
+  "seed": 7,
+  "steps": 45,
+  "per_agent_return": [
+    0.13333334028720856,
+    0.13333334028720856,
+    0.13333334028720856
+  ],
+  "mean_return": 0.13333334028720856,
+  "team_returns": null,
+  "policy_access": "random legal actions",
+  "training_steps": 0,
+  "terminal_reached": true,
+  "terminal_handling": "freeze final state and zero rewards after episode ends; no autoreset",
+  "state_leaf_paths": [
+    ".state.done",
+    ".state.step",
+    ".state.unit_positions",
+    ".state.unit_alive",
+    ".state.unit_teams",
+    ".state.unit_health",
+    ".state.unit_types",
+    ".state.unit_weapon_cooldowns",
+    ".state.prev_movement_actions",
+    ".state.prev_attack_actions",
+    ".enemy_policy_state.default_target",
+    ".enemy_policy_state.last_attacked_enemy"
+  ],
+  "action_storage": "Each agent action flattened and right-zero-padded to length 9; native sizes in action_sizes",
+  "action_sizes": {
+    "ally_0": 1,
+    "ally_1": 1,
+    "ally_2": 1
+  }
+}
