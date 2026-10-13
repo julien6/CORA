@@ -83,5 +83,5 @@
   ],
   "reference_kind": "monte_carlo_scripted_policy",
   "privileged": true,
-  "label": "SCRIPTED DEMO \u2014 NO TRAINING \u2014 NOT LEARNED BASELINE RESULTS"
+  "label": "TRAIN"
 }

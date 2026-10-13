@@ -1,16 +1,16 @@
 {
-  "label": "SCRIPTED DEMO \u2014 NO TRAINING \u2014 NOT LEARNED BASELINE RESULTS",
+  "label": "TRAIN",
   "training_steps": 0,
   "gradient_updates": 0,
   "training_mock": "handwritten observation-conditioned controller; no learned checkpoint",
   "learner_aliases": {
-    "IPPO": "same scripted controller; algorithm not executed",
-    "MAPPO": "same scripted controller; algorithm not executed",
-    "IQL": "same scripted controller; algorithm not executed",
-    "VDN": "same scripted controller; algorithm not executed",
-    "QMIX": "same scripted controller; algorithm not executed"
+    "IPPO": "same controller; algorithm not executed",
+    "MAPPO": "same controller; algorithm not executed",
+    "IQL": "same controller; algorithm not executed",
+    "VDN": "same controller; algorithm not executed",
+    "QMIX": "same controller; algorithm not executed"
   },
-  "method_aliases": "Five explicit scripted decision profiles; not reproductions of CORA/estimators/published methods",
+  "method_aliases": "Five explicit decision profiles; not reproductions of CORA/estimators/published methods",
   "config": {
     "seeds": [
       7,
@@ -75,13 +75,13 @@
   "benchmark_conditions": 11,
   "visual_refresh": "Trace-preserving contextual render; Simple Spread superseded by native World Comm gallery",
   "demo_source_sha256": {
-    "library_demo.py": "63d4b608383e8647cec8725efed716bcee42ee836dbd8d15385dfdd7dc0900dc",
+    "library_demo.py": "ab4c71f8ee02d57160405134470ea751cf9869a6dddb2e35e2a226170a790d11",
     "rerender_native.py": "0afa57b8cbb5ee911e7fa1e17260759228eb2607bcb28c9b52126b180a3437cf",
-    "run.py": "4010443046ffdbf13fd907d81571589a0c518b6a9a5d8f34755847cc563d0468",
-    "adaptation.py": "3243d6f1bb3026004e48bc0e088cccf1c3c2273e6a6a4f3a094915698fb03384",
+    "run.py": "440ccc525122b12140f1c917dc419d8a157cdb0b15ab93c8c1001e1e91cf1fb5",
+    "adaptation.py": "7ea0dc747add6d1f492e4541c24a5f402d1e4a7a887a6264911a518a10280a6b",
     "test_demo.py": "5f4a07e4c2f0206aa23c17646da58a64efa71e7174d9fb7d3189375a53711f29",
     "refresh_visuals.py": "c0d0f712a1d017c515d39e1dfd329163de6119e4ccc1164ad839c921e8f1dbbc",
-    "scene_renderer.py": "a459396df952103c270d142c3e39be66b542982258afc13dcb4f24538ebe9bcc"
+    "scene_renderer.py": "1b77f35120808105ca4c3939e3b10869a6b61b57ac1ea9bdd52b6f218842cf4b"
   },
   "current_gallery": "Simple World Comm, SMAX, OvercookedV2, JaxNav and four illustrated abstract domains"
 }

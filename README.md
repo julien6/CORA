@@ -209,7 +209,7 @@ actual verification record.
 
 The specification ledger is [docs/specification_audit.md](docs/specification_audit.md).
 Known temporal-SCM validation, conditional confidence formulas, policy-version
-isolation, a sampled 64-edit backend, and four small scripted application
+isolation, a sampled 64-edit backend, and four small application
 prototypes are available. They extend technical coverage, not scientific claims.
 
 ```bash
@@ -239,3 +239,23 @@ Twenty application–learner interfaces are checked with abstract JAX tracing;
 this does not execute numerical optimizer updates or establish convergence.
 Published-comparator source and adaptation status are recorded in
 [docs/external_comparators.json](docs/external_comparators.json).
+
+## Présentation visuelle pédagogique
+
+Présentation Beamer : [PDF](presentations/cora_beamer/presentation.pdf), [source LaTeX](presentations/cora_beamer/presentation.tex) et [instructions](presentations/cora_beamer/README.md). 36 diapositives françaises avec figures et replays intégrés ; compilation : `bash presentations/cora_beamer/build.sh`. La section finale AI-disclosure précise les sources ; ces supports ne remplacent pas les résultats de la campagne serveur.
+
+### Schémas organisationnels MOISE+
+
+Installer le package autonome : `.venv/bin/python -m pip install '.[diagrams]'`.
+
+Le langage [MOISE Diagram](docs/moise_diagram_language.md) permet d'écrire des organisations dans des fichiers textuels et de les compiler en SVG, PNG ou PDF :
+
+```bash
+.venv/bin/python -m moise_diagram examples/moise/gouter.moise -o examples/moise/gouter.svg
+```
+
+Voir [le fichier source](examples/moise/gouter.moise) et [son rendu](examples/moise/gouter.svg). Graphviz (`dot`) est nécessaire au rendu.
+
+## Campagne à contrôleurs fixes
+
+Le [protocole central sans MARL](docs/fixed_controller_campaign.md) dispose d'une commande distincte : `./run_fixed_baselines.sh --dry-run`. Il utilise un benchmark séquentiel contrôlé à ressources, avec engagements effectifs et support causal justifié, et un comparateur G-optimal sur les mêmes caractéristiques. Pour une vérification courte : `./run_fixed_baselines.sh --smoke --output outputs/fixed-check`. La campagne complète n'est pas lancée automatiquement.

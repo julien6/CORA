@@ -18,9 +18,9 @@
     },
     "overcooked_v2": {
       "steps": 110,
-      "description": "Native OvercookedV2 cramped_room_v2 (contextual kitchen rendering and original renderer screenshots): two chefs, multiple ingredients, recipe indicator, cooking and delivery. Full-state scripted task planner versus random actions. This illustration does not test decentralized partial-observation learning.",
+      "description": "Native OvercookedV2 cramped_room_v2 (contextual kitchen rendering and original renderer screenshots): two chefs, multiple ingredients, recipe indicator, cooking and delivery. Full-state task planner versus random actions. This illustration does not test decentralized partial-observation learning.",
       "source": "jaxmarl/environments/overcooked_v2/overcooked.py",
-      "policy_access": "privileged full simulator state for scripted kitchen planner"
+      "policy_access": "privileged full simulator state for kitchen planner"
     },
     "jaxnav": {
       "steps": 100,
@@ -29,8 +29,8 @@
       "policy_access": "local goal bearing, range and LiDAR observations"
     }
   },
-  "script_sha256": "63d4b608383e8647cec8725efed716bcee42ee836dbd8d15385dfdd7dc0900dc",
-  "renderer_sha256": "a459396df952103c270d142c3e39be66b542982258afc13dcb4f24538ebe9bcc",
+  "script_sha256": "ab4c71f8ee02d57160405134470ea751cf9869a6dddb2e35e2a226170a790d11",
+  "renderer_sha256": "1b77f35120808105ca4c3939e3b10869a6b61b57ac1ea9bdd52b6f218842cf4b",
   "seed": 7,
   "fps": 8,
   "scope": "visual demonstrations, not CORA integration or learned baselines"

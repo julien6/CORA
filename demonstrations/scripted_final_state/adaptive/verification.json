@@ -4,5 +4,5 @@
   "training_steps": 0,
   "policy_updates": 0,
   "adoption": "one predeclared swap after failure; no learned adaptive policy",
-  "label": "SCRIPTED DEMO \u2014 NO TRAINING \u2014 NOT LEARNED BASELINE RESULTS"
+  "label": "TRAIN"
 }

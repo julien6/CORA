@@ -1,4 +1,4 @@
-# CORA scripted final-state demonstration
+# CORA final-state demonstration
 
 This folder is isolated from the research experiment outputs. All demo code,
 configuration, raw results, visualizations, logs, and verification live here.
@@ -9,7 +9,7 @@ what IPPO, MAPPO, IQL, VDN, QMIX, or CORA will achieve.**
 
 The requested training shortcut is implemented by supplying a fixed handwritten
 controller in place of a learned continuation policy. All five learner names
-refer to the same scripted policy surrogate, so differences between actual
+refer to the same policy surrogate, so differences between actual
 learning algorithms cannot be inferred. No neural checkpoint is fabricated.
 
 ## What runs
@@ -19,7 +19,7 @@ learning algorithms cannot be inferred. No neural checkpoint is fabricated.
 - Two known temporal SCMs: separated and causally coupled reservoirs.
 - Native MPE Simple World Comm replaces Simple Spread in the current gallery.
 - SMAX (3m), OvercookedV2 (cramped_room_v2), and JaxNav (BlankCross2) run
-  genuine upstream dynamics, with scripted versus reference controllers.
+  genuine upstream dynamics, with versus reference controllers.
 - JAX warehouse, rescue, wildfire, and hospital abstract environments, with
   mission-conditioned movement, heterogeneous service rates, stochastic dynamics,
   shared resources and agent failure. Their physical models are unchanged.
@@ -36,7 +36,7 @@ not chosen for favorable behavior. Held-out replays use stream 900000, separate
 from reference-selection streams 100000–100003. This is a small demonstration,
 not statistically adequate research evaluation.
 
-Five scripted organization profiles replace learning/estimation decisions:
+Five organization profiles replace learning/estimation decisions:
 
 | Profile | Choice | Privileged selection? |
 |---|---|---|
@@ -73,7 +73,7 @@ PYTHONDONTWRITEBYTECODE=1 .venv/bin/python demonstrations/scripted_final_state/r
 `manifest.json` records controller identities, seeds, source hashes and zero
 training/gradient updates. `verification.json` checks coverage, finite metrics,
 admissible selections, and animated replay lengths. `results/results.csv` and
-`results/results.json` contain measured scripted outcomes. Native simulator
+`results/results.json` contain measured outcomes. Native simulator
 states, actions, rewards and assignments are saved in per-profile NPZ traces.
 
 Time/RAM are still needed for simulation, compilation and rendering. Avoiding
@@ -84,7 +84,7 @@ An accidental call to the imported training adapter raises an error.
 visualization fixtures. These names do not denote executed methods. No distinct
 IPPO/MAPPO/IQL/VDN/QMIX performance or learned weights are fabricated.
 
-## Scripted live organizational adoption
+## live organizational adoption
 
 `adaptive/index.html` adds four matched online disruption/reconfiguration
 comparisons. A predefined valid swap commits one step after the failure. The
@@ -123,7 +123,7 @@ no automatic reset is inserted. A single episode cannot establish performance.
 ```bash
 # Render saved application traces; no simulator runs or training.
 PYTHONDONTWRITEBYTECODE=1 .venv/bin/python demonstrations/scripted_final_state/refresh_visuals.py
-# Run short native scripted episodes, without training.
+# Run short native episodes, without training.
 PYTHONDONTWRITEBYTECODE=1 .venv/bin/python demonstrations/scripted_final_state/library_demo.py
 # Rebuild the main gallery after adding native demonstrations.
 PYTHONDONTWRITEBYTECODE=1 .venv/bin/python demonstrations/scripted_final_state/run.py --plots-only

@@ -40,7 +40,7 @@ def run():
                 np.savez_compressed(dest/f'{profile}_trace.npz',**arrays,rewards=rewards,actions=actions,assignments=assignments,organization_versions=versions)
                 value=float(np.dot(CONFIG['gamma']**np.arange(CONFIG['horizon']),rewards))
                 cost=sum(c['cost']*CONFIG['gamma']**c['step'] for c in commits)
-                row={'domain':name,'seed':seed,'profile':profile,'discounted_native_return':value,'discounted_commit_cost':cost,'net_return':value-cost,'commits':commits,'policy_version':policy.version,'policy_updates':0,'training_steps':0,'label':LABEL,'continuation':'same frozen scripted controller before and after live adoption'}
+                row={'domain':name,'seed':seed,'profile':profile,'discounted_native_return':value,'discounted_commit_cost':cost,'net_return':value-cost,'commits':commits,'policy_version':policy.version,'policy_updates':0,'training_steps':0,'label':LABEL,'continuation':'same frozen controller before and after live adoption'}
                 rows.append(row);write(dest/f'{profile}.json',row)
                 if seed==CONFIG['render_seed']:
                     save_frames(application_frames(trace,env,np.array(assignments),'LIVE '+profile),HERE/'adaptive/visualizations'/name/profile,CONFIG['fps'])
@@ -55,7 +55,7 @@ def run():
     write(HERE/'adaptive/verification.json',{'rows':24,'gifs':12,'training_steps':0,'policy_updates':0,'adoption':'one predeclared swap after failure; no learned adaptive policy','label':LABEL})
     cards=''.join(f'<h2>{n}</h2><img src="visualizations/{n}/comparison/replay.gif" width="100%">' for n in ('warehouse','rescue','wildfire','hospital'))
     (HERE/'adaptive/index.html').write_text('<!doctype html><html><meta charset="utf-8"><title>Scripted live adaptation</title><style>body{max-width:1400px;margin:30px auto;font:16px system-ui;background:#eef2f6;color:#172b40}img{max-width:100%;background:white}h1{font-size:22px}p{padding:18px;background:#fff0c2}</style><h1>'+LABEL+'</h1><p>Left: status quo. Right: a predeclared swap after failure. The same handwritten policy is used throughout. No training, optimality, improvement or safety claim.</p>'+cards+'</html>')
-    p=HERE/'index.html';s=p.read_text();link='<section><h2>Live organizational adoption</h2><p><a href="adaptive/index.html">Four matched failure/reconfiguration comparisons</a>. One predefined swap, same scripted policy, no training.</p></section>'
+    p=HERE/'index.html';s=p.read_text();link='<section><h2>Live organizational adoption</h2><p><a href="adaptive/index.html">Four matched failure/reconfiguration comparisons</a>. One predefined swap, same policy, no training.</p></section>'
     if 'adaptive/index.html' not in s:p.write_text(s.replace('<h2>All analytical scenarios</h2>',link+'<h2>All analytical scenarios</h2>'))
     print(json.dumps({'rows':24,'gifs':12,'training_steps':0}))
 

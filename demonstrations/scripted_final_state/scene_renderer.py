@@ -86,8 +86,6 @@ def application_frames(trace,env,assignments,title):
         text(d,(645,433),'TASK PROGRESS',size=18)
         for i in range(3):text(d,(645,463+25*i),f'{names[i]}: {float(states.completed[t,i]):.0f} completed',size=14)
         text(d,(645,548),f'Resource remaining: {float(states.resource[t]):.0f}',size=15)
-        text(d,(25,600),'SCRIPTED DEMO / NO TRAINING / NOT LEARNED BASELINE RESULTS',fill='#a43b34',size=15)
-        text(d,(25,625),'Illustrated abstract grid model. Scenery is decorative; positions, queues and failures are recorded states.',size=12)
         frames.append(im)
     return frames
 

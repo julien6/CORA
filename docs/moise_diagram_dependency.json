@@ -1,0 +1,6 @@
+{
+  "repository": "https://github.com/julien6/MOISE_Diagram",
+  "commit": "0403d820dea1773559e79bb7771d00e8a8016678",
+  "version": "0.2.0",
+  "installation": "python -m pip install '.[diagrams]'"
+}

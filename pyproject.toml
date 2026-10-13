@@ -16,6 +16,7 @@ dependencies = [
 ]
 
 [project.optional-dependencies]
+diagrams = ["moise-diagram @ git+https://github.com/julien6/MOISE_Diagram.git@0403d820dea1773559e79bb7771d00e8a8016678"]
 test = ["pytest==8.3.5"]
 
 [project.scripts]

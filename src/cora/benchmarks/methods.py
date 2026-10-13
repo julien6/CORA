@@ -19,6 +19,7 @@ from cora.benchmarks.planning import value_iteration
 
 
 METHODS = {
+    "linear_g_optimal": "Sequential greedy G-optimal design on identical structured features; conservative diagnostic commit; not a published-algorithm reproduction",
     "cora": "Structured ridge; decision-difference active design; diagnostic conservative commit",
     "cora_conditional": "Structured active design with Eq. 6 bounds; requires explicitly established hypotheses",
     "random": "Uniform experiments; random admissible final intervention",
@@ -196,6 +197,20 @@ def run_method(name: str, public: PublicProblem, observe, budgets, seed, config)
             # Randomized ties, with logged actual conditional assignment propensity.
             tied = allowed[np.isclose(scores, scores.min(), rtol=1e-8, atol=1e-10)]
             chosen, probability = int(rng.choice(tied)), 1.0 / len(tied)
+        elif name == "linear_g_optimal":
+            # Myopic G-optimal design: minimize maximum prediction variance
+            # after one query, with the same features and admissible set as CORA.
+            fit = ridge_fit(features, queried, outcomes, regularization, scale)
+            inv = fit.precision_inverse
+            target = features[allowed]
+            scores = []
+            for candidate in allowed:
+                u = inv @ features[candidate]
+                updated = inv - np.outer(u, u) / (1. + features[candidate] @ u)
+                scores.append(np.max(np.einsum('ij,jk,ik->i', target, updated, target)))
+            scores = np.asarray(scores)
+            tied = allowed[np.isclose(scores, scores.min(), rtol=1e-8, atol=1e-10)]
+            chosen, probability = int(rng.choice(tied)), 1. / len(tied)
         elif name == "greedy_swap":
             singleton = allowed[public.bits[allowed].sum(axis=1) <= 1]
             chosen = int(singleton[step % len(singleton)])
@@ -252,7 +267,7 @@ def run_method(name: str, public: PublicProblem, observe, budgets, seed, config)
             selected = max(means, key=lambda i: means[i] - public.costs[i])
         elif name == "cora_conditional":
             selected = conservative_decision(fit.prediction, stat, structural, shift, public.costs, public.valid, public.noop)
-        elif name in ("cora", "cora_incomplete_graph", "cora_no_constraints"):
+        elif name in ("cora", "linear_g_optimal", "cora_incomplete_graph", "cora_no_constraints"):
             selected = int(allowed[np.argmax((net - fit.radius)[allowed])])
             if not (fit.identifiable[selected] and fit.identifiable[public.noop] and
                     net[selected] - fit.radius[selected] > net[public.noop] + fit.radius[public.noop]):

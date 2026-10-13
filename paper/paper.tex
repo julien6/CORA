@@ -1,179 +1,320 @@
-% This is samplepaper.tex, a sample chapter demonstrating the
-% LLNCS macro package for Springer Computer Science proceedings;
-% Version 2.25 of 2026/09/03
-%
 \documentclass[runningheads]{llncs}
-%
 \usepackage[T1]{fontenc}
-% T1 fonts will be used to generate the final print and online PDFs,
-% so please use T1 fonts in your manuscript whenever possible.
-% Other font encondings may result in incorrect characters.
-%
-
-\usepackage{newtxtext}       % 
-\usepackage[varvw]{newtxmath}       % selects Times Roman as basic font
-
-
-\usepackage{graphicx}
-% Used for displaying a sample figure. If possible, figure files should
-% be included in EPS format.
-%
-% If you use the hyperref package, please uncomment the following two lines
-% to display URLs in blue roman font according to Springer's eBook style:
-%\usepackage{color}
-%\renewcommand\UrlFont{\color{blue}\rmfamily}
-%\urlstyle{rm}
-%
+\usepackage{newtxtext}
+\usepackage[varvw]{newtxmath}
+\usepackage{amsmath,graphicx,booktabs,tabularx}
+\usepackage[hidelinks]{hyperref}
+\hypersetup{pdftitle={CORA: Structure-Aware Causal Organizational Reconfiguration},pdfauthor={Anonymous}}
+\newcommand{\valid}{\mathcal Z_{\mathrm{valid}}}
+\newcommand{\family}{\mathcal K}
+\newcommand{\noop}{z_0}
 \begin{document}
-%
-\title{Contribution Title}
-%
-%\titlerunning{Abbreviated paper title}
-% If the paper title is too long for the running head, you can set
-% an abbreviated paper title here
-%
-\author{First Author\inst{1}\orcidID{0000-1111-2222-3333} \and
-Second Author\inst{2,3}\orcidID{1111-2222-3333-4444} \and
-Third Author\inst{3}\orcidID{2222--3333-4444-5555}}
-%
-\authorrunning{F. Author et al.}
-% First names are abbreviated in the running head.
-% If there are more than two authors, 'et al.' is used.
-%
-\institute{Princeton University, Princeton NJ 08544, USA \and
-Springer Heidelberg, Europaplatz 3, 69115 Heidelberg, Germany
-\email{lncs@springer.com}\\
-\url{http://www.springer.com/gp/computer-science/lncs} \and
-ABC Institute, Ruprecht-Karls-University Heidelberg, Heidelberg, Germany\\
-\email{\{abc,lncs\}@uni-heidelberg.de}}
-%
-\maketitle              % typeset the header of the contribution
-%
+\title{CORA: Structure-Aware Active Causal Organizational Reconfiguration}
+\titlerunning{Causal Organizational Reconfiguration}
+\author{Anonymous Authors}
+\authorrunning{Anonymous Authors}
+\institute{Anonymous Institution}
+\maketitle
 \begin{abstract}
-The abstract should briefly summarize the contents of the paper in
-150--250 words.
-
-\keywords{First keyword  \and Second keyword \and Another keyword.}
+    Organizational adaptation changes who is responsible for what, rather than only how individual agents act. Selecting such changes is difficult when their consequences interact through shared resources, observations, and future policy updates. We formulate constrained causal organizational reconfiguration as finite-horizon intervention selection with explicit transaction semantics and a declared continuation-policy protocol. CORA combines a conservative dependency hypergraph, a compositional intervention-value estimator, decision-focused active experimentation, and a cost-aware commit-or-retain rule. We establish conditional interaction locality, distinguish coefficient identification from identification of decision-relevant values, and state the assumptions under which combined statistical, structural, and policy-shift bounds imply expected-value non-degradation. The mathematical ingredients are established; the proposed contribution is their coupling for organizational decisions. A reproducible evaluation protocol separates known-ground-truth intervention problems from native JaxMARL environments and separates frozen-policy evaluation from retraining between organizational decisions. Analytical examples explain both complementary edits and conservative abstention. An explicitly synthetic pedagogical walkthrough adds noisy result fixtures and annotated native-environment demonstrations. The empirical campaign is in progress; this draft reports no measured superiority, training convergence, or unconditional safety guarantee. The decisive empirical question is whether useful causal structure reduces intervention requirements relative to matched structured and active-design controls, without hiding misspecification or policy-shift failures.
+    \keywords{Organizational adaptation \and Causal interventions \and Multi-agent reinforcement learning \and Active experimental design}
 \end{abstract}
-%
-%
-%
-\section{First Section}
-\subsection{A Subsection Sample}
-Please note that the first paragraph of a section or subsection is
-not indented. The first paragraph that follows a table, figure,
-equation etc. does not need an indent, either.
 
-Subsequent paragraphs, however, are indented.
+\section{Introduction}\label{sec:intro}
+Multi-agent organizations assign roles, groups, missions, and normative relations to autonomous agents. These assignments can become inadequate after a resource shortage, a change in collective goals, or a change in agent capabilities. Improving action policies within an unchanged organization may leave the underlying coordination problem intact. The distinction between emergent self-organization and explicit reorganization, and mechanisms for adapting roles and interactions, are established in prior work~\cite{picard2009organization,picard2006reorganization}. Organizational adaptation must therefore decide which role adoptions, mission commitments, or organizational links to modify, subject to explicit rules about admissible changes.
 
-\subsubsection{Sample Heading (Third Level)} Only two levels of
-headings should be numbered. Lower level headings remain unnumbered;
-they are formatted as run-in headings.
+The relevant question is causal: what collective return would follow an intervention on the organization, under a specified continuation policy and a controlled context? A predictive association between assignment and reward is insufficient. Moreover, changes compose nonlinearly. Reassigning an observer and opening a communication channel may be useful only together; assigning two teams to individually attractive missions may overload a shared resource. Scoring each change independently can therefore miss the best reorganization or select a harmful combination. Enumerating every combination, however, requires exponentially many intervention values.
 
-\paragraph{Sample Heading (Fourth Level)}
-The contribution should contain no more than four levels of
-headings. Table~\ref{tab1} gives a summary of all heading levels.
+We investigate the following problem: \emph{how can agents select effective organizational reconfigurations using causal estimates of their consequences while preserving explicit organizational constraints?} Three obstacles motivate our design. First, an organizational graph is not a causal graph: shared physical dynamics may couple symbolically separate teams. Second, admissibility restricts the experiments available for identifying effects. Third, an estimate made under one behavioral policy may become unreliable after that policy changes. These obstacles require a joint treatment of structure, experimentation, and adoption.
 
-\begin{table}
-\caption{Table captions should be placed above the
-tables.}\label{tab1}
-\begin{tabular}{|l|l|l|}
-\hline
-Heading level &  Example & Font size and style\\
-\hline
-Title (centered) &  {\Large\bfseries Lecture Notes} & 14 point, bold\\
-1st-level heading &  {\large\bfseries 1 Introduction} & 12 point, bold\\
-2nd-level heading & {\bfseries 2.1 Printing Area} & 10 point, bold\\
-3rd-level heading & {\bfseries Run-in Heading in Bold.} Text follows & 10 point, bold\\
-4th-level heading & {\itshape Lowest Level Heading.} Text follows & 10 point, italic\\
-\hline
-\end{tabular}
-\end{table}
-
-
-\noindent Displayed equations are centered and set on a separate
-line.
-\begin{equation}
-x + y = z
-\end{equation}
-Please try to avoid rasterized images for line-art diagrams and
-schemas. Whenever possible, use vector graphics instead (see
-Fig.~\ref{fig1}).
-
-\begin{figure}
-\includegraphics[width=\textwidth]{fig1.eps}
-\Description{In LaTeX you may insert your alternative texts into your manuscript using the \verb|\Description| command in a \verb|figure| environment}
-\caption{A figure caption is always placed below the illustration.
-Please note that short captions are centered, while long ones are
-justified by the macro package automatically.} \label{fig1}
+\begin{figure}[t]
+    \centering\includegraphics[width=\textwidth]{figures/overview.pdf}
+    \caption{CORA at one organizational decision. Explicit rules restrict atomic edit transactions. Temporal dependencies define interaction features; experiments target uncertainty in differences between candidate values. Adoption compares net values with a declared uncertainty model. The arrows describe the proposed mechanism, not a measured performance improvement.}\label{fig:overview}
 \end{figure}
 
-\begin{theorem}
-This is a sample theorem. The run-in heading is set in bold, while
-the following text appears in italics. Definitions, lemmas,
-propositions, and corollaries are styled the same way.
-\end{theorem}
-%
-% the environments 'definition', 'lemma', 'proposition', 'corollary',
-% 'remark', and 'example' are defined in the LLNCS documentclass as well.
-%
+CORA (Causal Organizational Reconfiguration for Adaptive Multi-Agent Learning) uses causal dependencies to restrict which edit interactions must be estimated and chooses experiments relevant to the final decision. Its central hypothesis is conditional: \emph{when intervention interactions have exploitable causal structure, a structured, decision-focused design can identify low-regret admissible reorganizations with fewer experiments than methods that ignore that structure.} Dense dependencies, incorrect structure, or uninformative admissible experiments can invalidate this advantage. We do not assume the hypothesis true.
+
+Our contributions are: (C1) an intervention-level formulation with explicit validity, transaction, and continuation semantics (Section~\ref{sec:problem}); (C2) a synthesis of locality and decision-identifiability conditions that specifies when compositional estimation is justified (Section~\ref{sec:theory}); (C3) a structure-aware experimental-design and conservative-adoption mechanism with separated error sources (Section~\ref{sec:algorithm}); and (C4) an executable evaluation protocol with matched ablations, native simulator contracts, and automated evidence generation (Section~\ref{sec:evaluation}). These are method and infrastructure contributions. Empirical efficiency and robustness remain hypotheses awaiting the running campaign; no numerical performance gain is asserted in this draft.
+
+The scope is cooperative finite-horizon evaluation with decentralized behavioral policies. Organizational experimentation and atomic commit are coordinated in the current implementation. Neither decentralized action execution nor local observations establish decentralized consensus. Strategic agents, real-world institutional compliance, and pathwise safety are outside the guarantees.
+
+\section{Related Work and Positioning}\label{sec:related}
+\paragraph{Self-organization and reorganization.}
+Picard, H\"ubner, Boissier and Gleizes distinguish agent-centred self-organization, emerging from local interactions, from the reorganization of explicitly represented organizations~\cite{picard2009organization}. This distinction clarifies CORA's scope: decentralized behavioral policies coexist with an explicit organization and a coordinated transaction selector; the present implementation does not establish fully decentralized organizational self-management. Picard, Mellouli and Gleizes study changes to agent interactions and roles to address failures in open multi-agent systems~\cite{picard2006reorganization}. Picard and Gleizes also investigate cooperation as a self-organization mechanism in the AMAS approach, illustrated through multi-robot resource transportation~\cite{picard2005cooperation}. These contributions establish organizational adaptation and cooperative self-organization as prior work. CORA's proposed focus is the causal valuation of compound admissible changes and the choice of experiments that discriminate between them, rather than the introduction of reorganization itself. The present experiments do not constitute a direct comparison with these earlier mechanisms.
+
+\paragraph{Explicit organizations and learned roles.}
+Organizational formalisms distinguish structure, function, and normative constraints; MOISE$^+$ provides the organizational vocabulary used here~\cite{moise}. ROMA learns role-conditioned representations~\cite{roma}, while RODE decomposes tasks through learned roles~\cite{rode}. These works motivate role-aware coordination, but learned roles alone do not determine the causal value of a constrained compound organizational transaction. CORA treats the organization as an explicit intervention target and the continuation policy as part of the estimand. It does not claim that roles or organizational adaptation are new.
+
+\paragraph{Causal estimation and active design.}
+Interventional semantics follow structural causal modeling~\cite{pearl}. The interaction expansion below is classical finite-set inversion. Linear identification and self-normalized confidence bounds are likewise established~\cite{linear}. CORA's proposed distinction is to combine these ingredients around an admissible organizational decision, including the possibility of retaining the current organization. Active-design baselines are essential: superiority to uniform sampling alone would not isolate a contribution from causal structure. A thorough priority assessment against compositional causal estimators and published organizational adaptation methods remains necessary; a generic planner or adapted modular estimator is not a faithful reproduction of those methods.
+
+\paragraph{MARL infrastructure and evaluation.}
+MAPPO demonstrates the relevance of PPO-based cooperative learning~\cite{mappo}. JaxMARL supplies accelerated environments and reference algorithm implementations~\cite{jaxmarl}. We use it as a behavioral-learning and simulation substrate, while keeping intervention estimation separate from the learner. Evaluation follows the emphasis on robust aggregation and uncertainty in reinforcement learning~\cite{agarwal,gorsane}. Return improvements from a better learner must not be attributed to organizational reconfiguration: matched continuation policies and separate intervention budgets are required.
+
+\begin{table}[t]
+    \caption{Positioning by mechanism. Entries describe the comparison question, not an exhaustive claim that prior work lacks a capability.}\label{tab:position}
+    \small\begin{tabularx}{\textwidth}{@{}lX@{}}\toprule
+        Comparison family             & Distinction the experiments must establish                               \\\midrule
+        Role-learning MARL            & Benefit of explicit organizational intervention beyond policy adaptation \\
+        Global intervention estimator & Benefit of justified interactions beyond model capacity                  \\
+        Structured uniform design     & Benefit of decision-focused experimentation at fixed features            \\
+        Structure-blind active design & Benefit of structure at matched acquisition objective                    \\
+        Organizational planner        & Benefit beyond cost-aware empirical intervention planning                \\
+        Conservative selector         & Whether harm reduction retains useful adoption frequency                 \\\bottomrule
+    \end{tabularx}\end{table}
+
+\section{Problem and Intervention Semantics}\label{sec:problem}
+Let $N=\{1,\ldots,n\}$ be agents in a partially observable cooperative process. At time $t$, agent $i$ takes action $a_t^i$ using local history $h_t^i$ and authorized organizational view $\zeta_t^i$, with policy $\pi_i(a_t^i\mid h_t^i,\zeta_t^i)$. The transition kernel is $P(s_{t+1}\mid s_t,a_t,G_t)$ and the collective reward is $r_t$. An organization $G=(A,R,M,E,D,\rho)$ contains agents, roles, missions, typed relations, normative rules, and assignments. A validator $\mathrm{Valid}(G)$ checks the represented invariants; it does not certify every desirable organizational property.
+
+\paragraph{Organizational vocabulary from MOISE$^+$.}
+Following H\"ubner, Sichman and Boissier~\cite{moise}, distinguish an organizational specification $OS=(SS,FS,DS)$ from its organizational entity $OE$, instantiated by agents. The structural specification $SS$ defines roles, groups, role links, inheritance, compatibility and cardinality. An agent plays a role in an instantiated group. The functional specification $FS$ defines social schemes: collective goals decomposed by plans, with sequence, choice and parallelism operators. A mission is a coherent set of goals to which an agent commits; it is neither a role nor a single action. The deontic specification $DS$ links roles to missions through permissions $per(r,m,tc)$ and obligations $obl(r,m,tc)$, with a temporal condition $tc$; obligation implies permission.
+
+The tuple $G$ above is an abbreviated intervention-level view, not a replacement for the full MOISE$^+$ specification. Reconfiguration may in general change $OS$ or the role adoptions and mission commitments in $OE$. The current code implements a reduced projection: agent roles, mission assignments, role-to-mission permissions and a version counter. Native interventions permute mission assignments while keeping roles and permissions fixed. Group hierarchies, explicit social-scheme plans, temporal norms and goal-achievement semantics are not implemented by that projection. Thus a mission hint must not be called a role change, and simulator return must not be called MOISE$^+$ goal satisfaction.
+
+\begin{figure}[t]
+\centering\includegraphics[width=\textwidth]{organization/moise_dimensions.pdf}
+\caption{MOISE$^+$ organizational dimensions, following the vocabulary and structural/functional conventions of~\cite{moise}. Left: roles (rounded boxes), group (folder-shaped box), composition and cardinalities. Centre: collective goal decomposed into parallel subgoals, with mission annotations and goal descriptions. Right: role-to-mission permissions. This explanatory specification is separate from the causal dependency graph and from the reduced native implementation.}\label{fig:moise-dimensions}
+\end{figure}
+
+\paragraph{Viewing organizational evolution.}
+The structural and functional specifications can remain fixed while agents change mission commitments in $OE$. A temporal view therefore keeps role and group glyphs stable and displays the changing agent-to-mission commitments in an entity table, with organization version and intervention time. These entity tables are a visualization extension supplied by MOISE Diagram, not the MOISE$^+$ role-link notation. In particular, an agent-to-mission arrow is not an acquaintance, communication or authority link between roles. Only recorded commitments should be shown as applied changes; goal achievement requires separate observed predicates.
+
+Given $m$ elementary edits $\delta_1,\ldots,\delta_m$, encode a compound transaction by $z\in\{0,1\}^m$ and support $S(z)=\{j:z_j=1\}$. The operator $T_G(G,z)$ specifies the resulting organization, including edit ordering and conflicts. Define
+\begin{equation}
+    \valid(G)=\{z:\mathrm{Valid}(T_G(G,z))=1\},\qquad \noop=0\in\valid(G).
+\end{equation}
+Set notation does not imply that edits commute. In the native experiments, pairwise mission-commitment permutations execute in ascending edit-index order and the final assignment is validated atomically. Different edit vectors may yield the same assignment; they remain distinct transactions when their costs differ.
+
+At a decision time, fix pre-intervention context $X=x$, evaluation horizon $K$, discount $\gamma$, and continuation protocol $\Pi$. Define
+\begin{equation}\label{eq:estimand}
+    \begin{aligned}
+        Y^{(K)}(z;\Pi) & =\sum_{k=0}^{K-1}\gamma^k r_{t+k}(z;\Pi), \\
+        F_x^\Pi(z)     & =\mathbb E[Y^{(K)}(z;\Pi)\mid X=x],\qquad
+        J_x^\Pi(z)=F_x^\Pi(z)-c_x(z).
+    \end{aligned}
+\end{equation}
+The target is $z^*\in\arg\max_{z\in\valid(G)}J_x^\Pi(z)$, including no-op. Costs $c_x$ are declared before selection. A frozen policy, a policy retrained before the next decision, and a policy learning within an intervention rollout define different experimental protocols; their values must not be pooled.
+
+Controlled simulator interventions identify values only when the simulator faithfully implements the designated changes, contexts are not conditioned on post-treatment outcomes, and the executed design supports the target comparisons. Algorithms receive admissible candidates, public features and query outcomes. Ground-truth coefficients and exhaustive reference values belong to evaluation infrastructure, not the learned selector. Reference computation and oracle selection are privileged controls and must be costed separately.
+
+\paragraph{Why singleton evidence is insufficient.}
+Two systems can have $F(\varnothing)=0$ and $F(\{1\})=F(\{2\})=1$, yet disagree between $F(\{1,2\})=2$ and $-5$. Singleton experiments cannot distinguish them. Conversely, a pair may have positive complementarity even if neither constituent edit pays for itself. Compound-intervention performance therefore needs direct evidence or justified structural restrictions.
+
+\section{Compositional Estimation and Conditional Properties}\label{sec:theory}
+\subsection{Interaction decomposition and causal locality}
+For a set function defined on the full edit lattice,
+\begin{equation}\label{eq:mobius}
+    \theta_T=\sum_{B\subseteq T}(-1)^{|T|-|B|}F(B),\qquad
+    F(S)=\sum_{T\subseteq S}\theta_T.
+\end{equation}
+There are $2^m$ coefficients without restrictions. If some interventions are physically undefined, extending $F$ to their subsets is an additional modeling assumption. Forbidden experiments do not license measuring those values or interpreting an arbitrary extension as an identified causal effect.
+
+Consider a correct time-unrolled acyclic structural causal graph over intervention nodes $U_j$, environment transitions, observations, actions, reward factors, and any policy updates. Write $Y^{(K)}=\sum_{\ell=1}^L Y_\ell$ and let $D_\ell$ collect intervention indices with causal influence on factor $Y_\ell$. Assume, conditional on pre-treatment $x$, that the factor expectation depends only on coordinates in $D_\ell$. This assumption includes indirect paths through resources and future behavior.
+
+\begin{proposition}[Conditional interaction locality]\label{prop:locality}
+    Under these assumptions, $F_x(S)=\sum_\ell f_{\ell,x}(S\cap D_\ell)$. For nonempty $T$, if $T\nsubseteq D_\ell$ for every $\ell$, then $\theta_T=0$.
+\end{proposition}
 \begin{proof}
-Proofs, examples, and remarks have the initial word in italics,
-while the following text appears in normal font.
+    Linearity of expectation gives the factor representation. For each factor choose $j\in T\setminus D_\ell$. In Eq.~\eqref{eq:mobius}, pair each $B$ not containing $j$ with $B\cup\{j\}$. Their factor values agree and their signs oppose, so the factor contribution cancels.
 \end{proof}
-For citations of references, we prefer the use of square brackets
-and consecutive numbers. Citations using labels or the author/year
-convention are also acceptable. The following bibliography provides
-a sample reference list with entries for journal
-articles~\cite{ref_article1}, an LNCS chapter~\cite{ref_lncs1}, a
-book~\cite{ref_book1}, proceedings without editors~\cite{ref_proc1},
-and a homepage~\cite{ref_url1}. Multiple citations are grouped
-\cite{ref_article1,ref_lncs1,ref_book1},
-\cite{ref_article1,ref_book1,ref_proc1,ref_url1}.
+The downward-closed family $\family=\bigcup_\ell 2^{D_\ell}$ includes all potentially nonzero interactions. If $|D_\ell|\le d$, its size $p$ is at most $\min(2^m,L2^d)$. This is a parameter-count statement, not an unconditional sample-complexity improvement. A conservative supergraph preserves the argument but may yield $p=2^m$. Omitting a genuine dependency introduces structural bias. Estimating a tight causal graph is a separate challenge, not solved by drawing organizational links.
 
-\begin{credits}
-\subsubsection{\ackname} A bold run-in heading in small font size at the end of the paper is
-used for general acknowledgments, for example: This study was funded
-by X (grant number Y).
+\subsection{Coefficient and decision identification}
+For $T\in\family$, let $\varphi_T(z)=\prod_{j\in T}z_j$, with $\varphi_\varnothing=1$. The restricted model is $F(z)=\varphi(z)^\top\theta$. With observations $y_q=F(z_q)+\epsilon_q$, define design matrix $H$ with rows $\varphi(z_q)^\top$.
+\begin{proposition}[Two identification questions]\label{prop:identification}
+    Under exact specification, all coefficients are identifiable from intervention means if and only if $\mathrm{rank}(H)=p$. A target value $F(z)$ is identifiable if and only if $\varphi(z)\in\mathrm{Row}(H)$. A comparison $F(z)-F(z')$ is identifiable if and only if $\varphi(z)-\varphi(z')\in\mathrm{Row}(H)$.
+\end{proposition}
+\begin{proof}
+    Observationally equivalent coefficients differ by a vector in $\mathrm{Null}(H)$. A target linear functional is invariant over this set exactly when its feature vector annihilates that nullspace, equivalently when it belongs to the row space.
+\end{proof}
+Thus a rank-deficient design need not prevent every organizational decision. For example, when constraints forbid simultaneous activation of two edits, a pair coefficient may be unidentified but irrelevant to the admissible targets. Conversely, singleton-only sampling cannot identify a feasible complementary pair. Ridge regularization makes numerical fitting possible; it does not create identification.
 
-\subsubsection{\discintname}
-It is now necessary to declare any competing interests or to specifically
-state that the authors have no competing interests. Please place the
-statement with a bold run-in heading in small font size beneath the
-(optional) acknowledgments\footnote{If EquinOCS, our proceedings submission
-system, is used, then the disclaimer can be provided directly in the system.},
-for example: The authors have no competing interests to declare that are
-relevant to the content of this article. Or: Author A has received research
-grants from Company W. Author B has received a speaker honorarium from
-Company X and owns stock in Company Y. Author C is a member of committee Z.
-\end{credits}
-%
-% ---- Bibliography ----
-%
-% BibTeX users should specify bibliography style 'splncs04'.
-% References will then be sorted and formatted in the correct style.
-%
-% \bibliographystyle{splncs04}
-% \bibliography{mybibliography}
-%
-\begin{thebibliography}{8}
-\bibitem{ref_article1}
-Author, F.: Article title. Journal \textbf{2}(5), 99--110 (2016)
+\subsection{Statistical uncertainty and its assumptions}
+Let $V_q=\lambda I+\sum_{u\le q}\varphi(z_u)\varphi(z_u)^\top$ and $\hat\theta_q=V_q^{-1}\sum_{u\le q}\varphi(z_u)y_u$. For predictable features, conditionally mean-zero $\sigma$-sub-Gaussian noise, exact linear specification, and known $\|\theta\|_2\le S_\theta$, established self-normalized bounds~\cite{linear} give
+\begin{equation}\label{eq:bound}
+    |\varphi(z)^\top(\hat\theta_q-\theta)|\le \beta_q\|\varphi(z)\|_{V_q^{-1}},\quad
+    \beta_q=\sigma\sqrt{2\log\frac{\det(V_q)^{1/2}}{\det(\lambda I)^{1/2}\delta}}+\sqrt\lambda S_\theta
+\end{equation}
+on a simultaneous confidence event. Fixed-design least-squares bounds cannot simply be reused after outcome-dependent acquisition. Estimated residual variance is not automatically a known sub-Gaussian parameter, and a guessed coefficient norm does not establish Eq.~\eqref{eq:bound}.
 
-\bibitem{ref_lncs1}
-Author, F., Author, S.: Title of a proceedings paper. In: Editor,
-F., Editor, S. (eds.) CONFERENCE 2016, LNCS, vol. 9999, pp. 1--13.
-Springer, Heidelberg (2016). \doi{10.10007/1234567890}
+The configured native CORA uses a diagnostic radius rather than established values of all these hypotheses. Its coverage and harm rate are empirical questions. A separate conditional-bound implementation requires caller-established assumptions; its existence does not certify the default campaign. This distinction is necessary when relating theory to implementation.
 
-\bibitem{ref_book1}
-Author, F., Author, S., Author, T.: Book title. 2nd edn. Publisher,
-Location (1999)
+\section{Decision-Focused Experimentation and Adoption}\label{sec:algorithm}
+Let $\hat J_q(z)=\varphi(z)^\top\hat\theta_q-c(z)$ and define plausible candidates $C_q$ by comparing their upper scores to the best lower score. For $d(z,z')=\varphi(z)-\varphi(z')$, select an admissible experiment $a$ to minimize
+\begin{equation}\label{eq:design}
+    \max_{z,z'\in C_q}d(z,z')^\top[V_q+\varphi(a)\varphi(a)^\top]^{-1}d(z,z')+\eta c_{\mathrm{exp}}(a).
+\end{equation}
+This criterion targets uncertainty in decisions rather than uniformly reducing every coefficient error. Experiment cost and adoption cost are distinct. Randomized tie-breaking is logged with its conditional propensity. Restricted support and near-deterministic selection may still prevent identification; logging probabilities alone does not guarantee positivity.
 
-\bibitem{ref_proc1}
-Author, A.-B.: Contribution title. In: 9th International Proceedings
-on Proceedings, pp. 1--2. Publisher, Location (2010)
+\paragraph{Implementation and complexity.}
+Candidate sets are enumerated for the current small instances. Sherman--Morrison updates avoid fitting a new inverse for each possible query. For $A$ experiments and $C$ plausible candidates, direct pairwise scoring costs $O(AC^2p^2)$, with $O(p^2+Ap)$ matrix and feature storage apart from transient pair arrays. A rank-one estimator update costs $O(p^2)$; a fresh inverse costs $O(p^3)$. Candidate generation itself remains exponential in edit count. CORA has no general polynomial-time claim. Large edit sets require restricted candidate pools or approximate solvers with reported search error.
 
-\bibitem{ref_url1}
-LNCS Homepage, \url{http://www.springer.com/lncs}, last accessed 2023/10/25
+\paragraph{Separate uncertainty sources.}
+With reference policy $\Pi_0$ and deployment protocol $\Pi_1$, let valid bounds cover statistical error, omitted interactions, and policy shift:
+\begin{equation}
+    B(z)=\epsilon_{\mathrm{stat}}(z)+\epsilon_{\mathrm{struct}}(z)+\epsilon_{\mathrm{shift}}(z).
+\end{equation}
+The omitted-interaction sum $\sum_{T\subseteq S(z),T\notin\family}|\theta_T|$ is one structural bound when those coefficients are meaningfully defined and bounded; it is unavailable from a guessed graph alone.
+\begin{proposition}[Conditional adoption]\label{prop:commit}
+    Suppose $|\hat F(z)-F_x^{\Pi_1}(z)|\le B(z)$ holds simultaneously for admissible candidates with probability at least $1-\delta$ and costs are known. If adoption requires
+    \begin{equation}\label{eq:commit}
+        \hat J(z)-B(z)>\hat J(\noop)+B(\noop),
+    \end{equation}
+    then every accepted decision has $J_x^{\Pi_1}(z)>J_x^{\Pi_1}(\noop)$ on that event.
+\end{proposition}
+\begin{proof}
+    On the joint coverage event, $J(z)\ge\hat J(z)-B(z)>\hat J(\noop)+B(\noop)\ge J(\noop)$. The triangle inequality combines valid bounds for the three error sources.
+\end{proof}
+This compares expected finite-horizon net values. It does not guarantee a safe realized trajectory. A useful conservative selector must also avoid universal abstention.
+
+If joint policies differ in total variation by at most $\alpha$ at every relevant common history, transitions agree and $|r_t|\le R_{\max}$, maximal coupling yields
+\begin{equation}
+    \epsilon_{\mathrm{shift}}(z)\le2R_{\max}\sum_{t=0}^{K-1}\gamma^t[1-(1-\alpha)^{t+1}]
+    \le2R_{\max}\alpha\sum_{t=0}^{K-1}(t+1)\gamma^t.
+\end{equation}
+The condition is on the joint policy, not merely one agent. Changes to transitions or to learning-state dynamics need additional analysis. Without a valid shift bound, a stale value model should not be described as certified for a newly trained policy.
+
+\begin{table}[t]
+    \caption{CORA at a fixed decision context. Diagnostic bounds and conditional confidence bounds are separate operating modes.}\label{tab:algorithm}
+    \begin{tabularx}{\textwidth}{@{}rX@{}}\toprule
+        1 & Fix context, policy version, evaluation horizon, transaction semantics and costs.           \\
+        2 & Validate the candidate set, include no-op, and construct conservative interaction features. \\
+        3 & For each available query, fit the value model and audit decision-relevant identification.   \\
+        4 & Form plausible candidates; execute an admissible query minimizing Eq.~\eqref{eq:design}.    \\
+        5 & Log intervention, outcome, conditional propensity, context and policy version.              \\
+        6 & At each budget checkpoint, compare pessimistic net scores with optimistic no-op.            \\
+        7 & Commit the selected valid transaction if the comparison passes; otherwise retain.           \\
+        8 & Before another organizational decision, refresh estimates for its continuation protocol.    \\\bottomrule
+    \end{tabularx}\end{table}
+
+\section{Evaluation Protocol and Evidence Plan}\label{sec:evaluation}
+The experimental campaign is running on a separate server. Its outputs have not been imported into this manuscript. The protocol below records the configured executable experiments; it is not retrospectively described as preregistered. Primary claims must be resolved from complete logs, including failures, without modifying the campaign to match examples.
+
+\subsection{Research questions and falsifiers}
+\paragraph{RQ1: Does structure-aware active design save interventions?}
+Compare simple regret against query budget with factorized-uniform and structure-blind-active controls. Evidence requires an improvement against both controls in settings where restricted interactions are correct; beating random selection alone is insufficient. No gain at matched budget refutes an efficiency claim for that setting.
+\paragraph{RQ2: When does composition generalize?}
+Compare held-out intervention-effect error across sparse, dense, and omitted-dependency instances. Additive and neural global estimators test whether structured modeling matters beyond acquisition. Worse held-out accuracy on correctly specified sparse instances challenges the mechanism; failure under a missing interaction establishes a boundary rather than an exception to hide.
+\paragraph{RQ3: Is conservative adoption useful?}
+Compare CORA with its no-confidence ablation using harmful expected-value decisions, abstention and net value jointly. Lower harm accompanied by universal retention does not establish practical benefit. Diagnostic interval coverage is measured separately from conditional theoretical coverage.
+\paragraph{RQ4: What survives sequential dynamics and retraining?}
+Compare organizational methods within each fixed native environment, learner and round. Frozen-policy and between-round-retraining results remain separate. A consistent core algorithm across environments tests portability of the mechanism; it does not establish zero-shot transfer of learned weights or real-world organizational efficacy.
+
+\begin{table}[t]
+    \caption{Claim-to-evidence map. All empirical verdicts are pending. No analytical example decides these hypotheses.}\label{tab:claims}
+    \small\begin{tabularx}{\textwidth}{@{}lXX@{}}\toprule
+        Claim                     & Required evidence                                             & Failure interpretation                              \\\midrule
+        Cl1: fewer useful queries & RQ1 regret curves; paired comparisons to both design controls & No efficiency advantage in tested regime            \\
+        Cl2: better composition   & RQ2 held-out error by structure quality                       & Structure unjustified or insufficient               \\
+        Cl3: useful conservatism  & RQ3 harm, abstention, net value, coverage                     & Diagnostic radius too loose or unreliable           \\
+        Cl4: portable decisions   & RQ4 per-domain, per-learner frozen/adaptive results           & Benefit limited to particular continuation policies \\\bottomrule
+    \end{tabularx}\end{table}
+
+\subsection{Benchmarks and intervention contracts}
+\paragraph{Level 1: known-ground-truth causal organizations.}
+The current configuration uses six elementary edits, interaction order up to three, noise scale $0.2$, edit cost $0.1$, and a forbidden edit pair. Four scenarios vary sparse versus dense interactions, incomplete dependencies, and a policy-shift stressor. Budgets are $4,8,16,32,64$ and seeds are $0$--$9$. Ground-truth effects are visible only to the evaluation oracle. These controlled instances test statistical and structural mechanisms; six edits cannot establish large-organization scaling. The broader agent-count, edit-count, and nonstationarity sweeps in the research specification are not claimed completed.
+
+\paragraph{Levels 2 and 3: native sequential environments.}
+Native transitions and rewards are retained from pinned JaxMARL sources. Mission commitment is encoded by local mission hints, except where an intervention changes navigation goals directly. Table~\ref{tab:environments} states these semantics so that differences in causal intervention strength are visible.
+\begin{table}[t]
+    \caption{Native intervention contracts. Candidate counts refer to edit vectors, including potentially equivalent final assignments.}\label{tab:environments}
+    \small\begin{tabularx}{\textwidth}{@{}lrrX@{}}\toprule
+        Environment  & Agents & Candidates & Organizational change and objective                                     \\\midrule
+        World Comm   & 4      & 64         & Pursuit duty hints; mean pursuer reward against fixed foragers          \\
+        SMAX 3m      & 3      & 8          & Focus-target duty hints; native allied reward against heuristic enemies \\
+        OvercookedV2 & 2      & 2          & Cooking/delivery duty hints; native shared delivery reward              \\
+        JaxNav       & 3      & 8          & Goal reassignment; native mean navigation reward                        \\\bottomrule
+    \end{tabularx}\end{table}
+World Comm controls a leader and three pursuers, retaining native communication; follower action codes map modulo five to movement. SMAX uses three allied marines against native heuristic enemies. OvercookedV2 uses \texttt{cramped\_room\_v2}. JaxNav uses three robots with discrete native controls, normalized LiDAR, and a $7\times7$ polygon map. Duty hints do not prohibit simulator actions and may be ignored by a policy. Native rules therefore establish only the represented assignment invariants, not mission completion.
+
+All native edit interactions are retained conservatively. Consequently the native campaign cannot demonstrate a sparse-structure parameter advantage: its purpose is to test organizational intervention behavior under sequential dynamics. Overcooked has a single elementary edit and cannot test compound-edit superiority. Genuine causal locality and large-scale gains require additional justified dependency families. The implemented application scope supersedes the earlier custom warehouse, rescue, wildfire, and hospital prototypes for current empirical comparisons; no corresponding domain-specific outcome is claimed here.
+
+\subsection{Baselines, continuation policies and budgets}
+Behavioral policies comprise random behavior and adapted upstream IPPO, MAPPO, IQL, VDN and QMIX. Each learning configuration requests $40{,}400$ environment steps with four parallel environments, 100 updates, hidden size 64, one epoch and one minibatch. Equal requested interaction budgets do not imply identical optimizer schedules, wall time, or convergence. Q learners use native legality masks in SMAX; current PPO actors rely on native handling of unavailable actions. This limitation belongs in interpretation of cross-learner results.
+
+Organizational methods include CORA, random experiment/random decision, tabular uniform, additive global, neural global, factorized uniform, structure-blind active, no-confidence and incomplete-graph ablations, greedy singleton swap, no-op and privileged oracle. Native suites additionally include an adapted modular estimator and a generic one-decision organizational MDP planner. Neither is presented as a faithful published-method reproduction. A constraint-removal ablation is confined to generated problems. No-op and oracle consume different budgets by definition and serve as references, not matched learned competitors.
+
+Native budgets are $4,8,16,32$ with ten seeds, discount $0.99$, horizon 25 and swap cost $0.1$. A frozen suite has one organizational round; an adaptive suite has three rounds with method-specific retraining between decisions. Each queried rollout freezes the current policy. Thus ``adaptive'' does not mean that the policy learns inside a causal evaluation branch. Evaluation stops at termination without automatic reset and contributes zero reward thereafter. Monte Carlo reference means use 64 repetitions per candidate and independent evaluation seeds. Reference error may alter the ranking of close interventions; its precision must be assessed before interpreting tiny regret or harm differences.
+
+No hyperparameter search is asserted. Fixed settings are shared within comparison families; this avoids inventing a tuning campaign but limits conclusions about well-tuned baselines. Training, intervention-query rollouts, reference rollouts, compilation and rendering must be reported separately. The configured campaign has 2,600 generated-problem rows, 13,440 frozen rows and 40,320 adaptive rows. These are correlated budget/round observations, not 56,360 independent replications.
+
+\subsection{Metrics, statistical analysis and reproducibility}
+For admissible held-out targets $Z_{\mathrm{test}}$, effect error is $|Z_{\mathrm{test}}|^{-1}\sum_z|\hat F(z)-F(z)|$. Simple regret is $J(z^*)-J(\hat z)$. Harm is $J(\hat z)<J(\noop)$ among executed non-noop decisions; unconditional harmful-reference frequency and abstention are reported alongside it. Constraint violation refers to the stated validator. Additional diagnostics include design rank, interval coverage and wall-clock cost. Recovery after disruptions and learned-weight transfer need dedicated experiments and are not inferred from three retraining rounds.
+
+The executable analysis reports seed-level interquartile means (IQM), bootstrap 95\% intervals and paired regret comparisons with Holm correction over reported tests. It uses 1,000 bootstrap resamples in native suites and 2,000 in the generated-problem suite. Budget checkpoints from the same trajectory are dependent; seeds, rather than individual checkpoints or rollout frames, define the replication unit. Paired $t$-test outputs require scrutiny with ten seeds and skewed regret. Sensitivity to a seed-level nonparametric comparison and Monte Carlo ranking uncertainty should be checked before strong significance claims. Per-environment results remain separate because reward scales differ.
+
+Artifacts include raw JSON/CSV, configuration snapshots, source hashes, policy checkpoints, progress manifests, statistical summaries and saved native state trees. Galleries render the saved trajectories with upstream visualizers, producing screenshots and GIFs for a fixed media seed. A replay illustrates behavior; it is not evidence of aggregate superiority. Resume checks protect against source/configuration drift. Software pins include JAX 0.4.38, Flax 0.10.2 and the JaxMARL checkout recorded by the manifests. Server accelerator model, memory, software/backend versions, total compute and failed trials must be obtained from the running campaign, rather than inferred from the local workstation. An anonymized reproducibility archive remains a submission requirement.
+
+\section{Analytical Illustration and Pending Empirical Results}\label{sec:results}
+\subsection{Complementarity and conservative abstention}
+Consider a constructed two-edit organization with
+\begin{equation}\label{eq:example}
+    F(z)=10-0.5z_1-0.5z_2+4z_1z_2,\qquad c(z)=0.25(z_1+z_2).
+\end{equation}
+One edit can represent reassignment to monitoring and the other a complementary delegation change. Individually each loses $0.75$ net units; together they gain $2.5$. These numbers specify a synthetic analytical example, not trained behavior or measured native-environment performance.
+\begin{table}[t]
+    \caption{Exact values from the constructed example in Eq.~\eqref{eq:example}. These are analytical synthetic values, not baseline measurements.}\label{tab:example}
+    \centering\begin{tabular}{@{}lrrr@{}}\toprule
+        Transaction & Gross value & Cost & Net value \\\midrule
+        No-op       & 10.00       & 0.00 & 10.00     \\
+        Edit 1      & 9.50        & 0.25 & 9.25      \\
+        Edit 2      & 9.50        & 0.25 & 9.25      \\
+        Both edits  & 13.00       & 0.50 & 12.50     \\\bottomrule
+    \end{tabular}\end{table}
+An additive model fitted to no-op and singleton means predicts gross pair value $9$ and net pair value $8.5$. It would retain the status quo and incur regret $2.5$ in this example. A correctly identified model containing the pair interaction reconstructs all four values. This demonstrates the necessity of interaction evidence; it does not demonstrate that CORA acquires that evidence faster than an active baseline.
+
+\begin{figure}[t]
+    \centering\includegraphics[width=\textwidth]{figures/analytical_example.pdf}
+    \caption{Analytical synthetic illustration, not empirical learning curves. Left: exact net improvements from Eq.~\eqref{eq:example}. Right: with exact central values and equal candidate radii $B$, the pair's acceptance margin is $2.5-2B$. The strict rule adopts only for $B<1.25$. No statistical confidence interval or trained-policy result is depicted.}\label{fig:example}
+\end{figure}
+With exact central values and equal error radius $B$ for the pair and no-op, Eq.~\eqref{eq:commit} has margin $2.5-2B$. Even a promising reorganization is rejected if uncertainty is too large. Conversely, omitting a negative interaction can make an apparently confident additive decision harmful. The example explains why RQ3 must jointly examine harm, coverage and abstention.
+
+\subsection{Results organization and decision criteria}
+\paragraph{RQ1: Intervention efficiency.}
+The final results will report regret-versus-budget curves and paired contrasts with both design controls, within each structure regime. A statistically uncertain contrast will be reported as inconclusive. Saturation after few queries must not be interpreted as policy convergence, and zero oracle regret is a reference property rather than a learned outcome.
+\paragraph{RQ2: Compositional prediction.}
+Held-out effect error will be displayed by interaction family and structure misspecification. Native dense-family estimates are not evidence of sparse causal identification. If an additive model wins in a low-interaction setting, that is a meaningful boundary case. Structure-induced gains must be distinguished from regularization or capacity effects.
+\paragraph{RQ3: Conservative decisions.}
+The final table will pair harm among executed decisions with abstention, net value and diagnostic coverage. Zero harmful decisions with zero adoptions provides no evidence of useful adaptation. Native harm labels depend on finite-reference means and will require appropriate uncertainty interpretation.
+\paragraph{RQ4: Sequential portability.}
+Native per-learner results and round trajectories will remain visible rather than being collapsed into one favorable score. Fixed-seed replay comparisons will document delegation changes and failure cases. Cross-domain consistency of an algorithm is a weaker claim than causal transport or learned-policy transfer. All four empirical verdicts are currently pending; the running server outputs are required before replacing these paragraphs with findings.
+
+\input{pedagogical/section.tex}
+
+\section{Limitations and Threats to Validity}\label{sec:limitations}
+\paragraph{Internal validity.}
+A simulator oracle can leak ground truth if exposed to fitting or acquisition; public interfaces and independent evaluation seeds reduce this risk. Shared training initialization enables matched comparisons, but method-specific later policies make round effects dependent on prior adoption. Unequal tuning familiarity, duplicate transactions, stochastic references and unavailable-action handling can affect comparisons. Source hashes are useful provenance, not proof of scientific correctness.
+
+\paragraph{Construct validity.}
+Permutation of a mission hint is a limited organizational intervention. Its effect may arise from out-of-distribution policy inputs rather than effective changes in mission commitment. Role consistency does not establish compliance with richer permissions, obligations or prohibitions. IQM return does not establish interpretability, and expected harm does not measure all trajectory-level risks. Generated interaction models may favor a correctly specified factorization by construction.
+
+\paragraph{External validity and theory.}
+Four small native environments do not establish performance in warehouses, rescue operations, wildfire response or hospitals. Dense native dependency families give no dimension reduction, and two-chef cooking offers no compound interaction test. Short horizons and modest training budgets may yield weak behavioral policies; absence of benefit may reflect either the organizational method or poor continuation behavior. The conditional non-degradation proposition needs valid simultaneous bounds, structural coverage and shift control, none supplied by a diagnostic radius alone.
+
+\paragraph{Novelty and submission readiness.}
+The contribution is the organizational coupling and its evaluation, not the inversion identity, ridge regression or confidence-comparison proof. Close published causal-composition and organizational-adaptation comparators still require fuller verification and reproducible comparison. Theoretical conditions and arithmetic can support a methodological discussion, but cannot substitute for evidence deciding the empirical claims. The final manuscript must include complete measured results, server compute details and an anonymized artifact before it is treated as an empirical full-paper submission.
+
+\section{Conclusion}
+CORA treats organizational adaptation as a constrained causal intervention decision with a declared continuation policy. Conservative dependency modeling can restrict interaction estimation, while decision-focused experiments target value comparisons that matter for adoption. The analysis distinguishes causal locality, decision identification and combined uncertainty, with explicit limits on each conditional property. Exact constructed examples explain complementarity and abstention. The current draft makes no measured claim of baseline superiority; those claims depend on the ongoing campaign.
+
+The main open question is whether sufficiently informative causal structure remains available under realistic sequential couplings and changing policies. Priority next steps are to analyze the complete campaign, assess reference precision and diagnostic coverage, compare against the closest published methods, and test justified sparse dependency models at larger scales. Richer organizational norms and genuinely decentralized proposal/commit protocols would extend the method, but require additional semantics and evidence.
+
+\label{body-end}
+\begin{thebibliography}{12}
+    \bibitem{moise} H\"ubner, J.F., Sichman, J.S., Boissier, O.: A model for the structural, functional, and deontic specification of organizations in multiagent systems. In: Advances in Artificial Intelligence, SBIA 2002. LNCS 2507, pp. 118--128. Springer (2002). \url{https://moise.sourceforge.net/doc/publications/Hubner-sbia2002.pdf}
+    \bibitem{roma} Wang, T., Dong, H., Lesser, V., Zhang, C.: ROMA: Multi-agent reinforcement learning with emergent roles. In: ICML, PMLR 119, pp. 9876--9886 (2020). \url{https://proceedings.mlr.press/v119/wang20f.html}
+    \bibitem{rode} Wang, T., Gupta, T., Mahajan, A., Peng, B., Whiteson, S., Zhang, C.: RODE: Learning roles to decompose multi-agent tasks. In: ICLR (2021). \url{https://arxiv.org/abs/2010.01523}
+    \bibitem{pearl} Pearl, J.: Causality: Models, Reasoning, and Inference. 2nd edn. Cambridge University Press (2009).
+    \bibitem{linear} Abbasi-Yadkori, Y., P\'al, D., Szepesv\'ari, C.: Improved algorithms for linear stochastic bandits. In: Advances in Neural Information Processing Systems 24 (2011). \url{https://proceedings.neurips.cc/paper_files/paper/2011/hash/e1d5be1c7f2f456670de3d53c7b54f4a-Abstract.html}
+    \bibitem{mappo} Yu, C., et al.: The surprising effectiveness of PPO in cooperative multi-agent games. In: Advances in Neural Information Processing Systems 35 (2022). \url{https://arxiv.org/abs/2103.01955}
+    \bibitem{jaxmarl} Rutherford, A., et al.: JaxMARL: Multi-agent RL environments and algorithms in JAX. In: Advances in Neural Information Processing Systems 37, Datasets and Benchmarks Track (2024). \url{https://arxiv.org/abs/2311.10090v5}
+    \bibitem{agarwal} Agarwal, R., Schwarzer, M., Castro, P.S., Courville, A., Bellemare, M.G.: Deep reinforcement learning at the edge of the statistical precipice. In: Advances in Neural Information Processing Systems 34 (2021). \url{https://arxiv.org/abs/2108.13264}
+    \bibitem{gorsane} Gorsane, R., Mahjoub, O., de Kock, R., Dubb, R., Singh, S., Pretorius, A.: Towards a standardised performance evaluation protocol for cooperative MARL. In: Advances in Neural Information Processing Systems 35 (2022). \url{https://arxiv.org/abs/2209.10485}
+    \bibitem{picard2009organization} Picard, G., H\"ubner, J.F., Boissier, O., Gleizes, M.-P.: Reorganisation and self-organisation in multi-agent systems. In: International Workshop on Organizational Modeling (OrgMod 2009), pp. 66--80 (2009). \url{https://hal.science/emse-00675584}
+    \bibitem{picard2006reorganization} Picard, G., Mellouli, S., Gleizes, M.-P.: Techniques for multi-agent system reorganization. In: Dikenelli, O., Gleizes, M.-P., Ricci, A. (eds.) Engineering Societies in the Agents World VI, ESAW 2005. LNCS 3963, pp. 142--152. Springer (2006). \doi{10.1007/11759683_9}
+    \bibitem{picard2005cooperation} Picard, G., Gleizes, M.-P.: Cooperative self-organization to design robust and adaptive collectives. In: Second International Conference on Informatics in Control, Automation and Robotics (ICINCO 2005), vol. 1, pp. 236--241. INSTICC Press (2005). \url{https://www.scitepress.org/PublishedPapers/2005/11779/11779.pdf}
 \end{thebibliography}
+
+\section*{AI disclosure}
+Generative AI assisted the preparation of this working draft, including prose organization, mathematical exposition, literature lookup, figure-generation code and editorial checks. This assistance extends beyond grammar editing and must be reviewed against the venue's policy before submission. The numerical values in Table~\ref{tab:example} and Fig.~\ref{fig:example} are deliberately constructed synthetic analytical examples generated from Eq.~\eqref{eq:example}; they are not observations, predicted trained-policy scores, or outputs of the server campaign. The additional pedagogical tables, jagged curves, heatmap, reliability and recovery panels use deliberately chosen numerical fixtures and correlated pseudo-random perturbations. These fixtures model qualitative hypotheses and failure modes without empirical calibration; they are not preregistered predictions. Annotated native screenshots and GIFs reuse saved random and-controller demonstrations, with no CORA selection or training, and preserve their actual policy labels and limitations. No AI-generated benchmark measurements are reported. The authors remain responsible for independently checking the mathematics, citations, implementation and eventual measured results. This disclosure records assistance, rather than establishing venue-policy compliance.
 \end{document}

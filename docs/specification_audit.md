@@ -17,7 +17,7 @@ Short local checks are authorized; expensive training and final evaluation are n
 | Eq. 11 joint-policy shift | reliability.policy_shift_bound | Implemented, joint TV must be supplied as a valid bound |
 | Eq. 12 acquisition | benchmarks/methods.acquisition; direct inverse regression test | Exact finite-set implementation |
 | Level 1 scale to 64 edits | benchmarks/scalable.py | Sampled candidate backend implemented; global optimization gap unknown |
-| Level 2 shared resources and prerequisites | benchmarks/domains.py | Four small scripted application prototypes; realistic dynamics incomplete |
+| Level 2 shared resources and prerequisites | benchmarks/domains.py | Four small application prototypes; realistic dynamics incomplete |
 | Level 3 organization-conditioned MARL | learners.py, checkpoints, smoke tests | Five learners operational; new domains not integrated with MARL |
 | Adaptive causal estimates | temporal.PolicyVersionedData, adaptation.py | Version-separated Algorithm 1 orchestration; injected trainers/trials, end-to-end adaptive MARL experiment remains |
 | Published baseline identities | literature shortlist below | Candidates identified; faithful reproduction remains |
@@ -77,7 +77,7 @@ prior work. Unavailable registry entries stay unavailable to avoid mislabeling.
 
 `.venv/bin/python scripts/validate_extended.py`
 
-The extended validation runs no behavioral training: 12-step scripted trajectories,
+The extended validation runs no behavioral training: 12-step trajectories,
 8 MC oracle replicas, 4/8 intervention budgets, one seed per domain. Its plots
 are technical diagnostics, not aggregate performance evidence or preregistered
 hypothesis tests. Algorithm mechanism reuse is not learned-weight transfer.

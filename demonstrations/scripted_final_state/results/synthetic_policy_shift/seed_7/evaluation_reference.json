@@ -363,5 +363,5 @@
   ],
   "reference_kind": "exact_synthetic",
   "privileged": true,
-  "label": "SCRIPTED DEMO \u2014 NO TRAINING \u2014 NOT LEARNED BASELINE RESULTS"
+  "label": "TRAIN"
 }

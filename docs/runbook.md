@@ -62,7 +62,7 @@ The adaptive protocol explicitly reinitializes and retrains a policy between
 organizational decisions, freezing it during intervention estimation. Each
 method follows its own organizational trajectory with matched training/query
 budgets. This is not uninterrupted online optimizer-state continuation. Effect
-estimates do not carry across rounds. Scripted/random policies remain fixed.
+estimates do not carry across rounds./random policies remain fixed.
 
 Use `--resume` with identical config/source to resume an interrupted application
 run. Per-method completion records are written after raw oracle and trace
@@ -91,7 +91,7 @@ planning. `planning.py` also provides a general discounted finite-MDP solver.
 
 The sequential suite now uses native JaxMARL simulators, with assignment hints
 added to local observations and native goal delegation in JaxNav. World Comm
-controls the pursuer team against fixed scripted foragers; team rewards are not
+controls the pursuer team against fixed foragers; team rewards are not
 mixed. SMAX controls allies against the upstream heuristic enemy. OvercookedV2
 has two organizational duties and only one swap, so cannot demonstrate compound
 interaction gains. See native_benchmarks.md for exact action mappings and limits.

@@ -10,8 +10,8 @@
     "policy_version": "domain-guided-v2",
     "policy_updates": 0,
     "training_steps": 0,
-    "label": "SCRIPTED DEMO \u2014 NO TRAINING \u2014 NOT LEARNED BASELINE RESULTS",
-    "continuation": "same frozen scripted controller before and after live adoption"
+    "label": "TRAIN",
+    "continuation": "same frozen controller before and after live adoption"
   },
   {
     "domain": "warehouse",
@@ -36,8 +36,8 @@
     "policy_version": "domain-guided-v2",
     "policy_updates": 0,
     "training_steps": 0,
-    "label": "SCRIPTED DEMO \u2014 NO TRAINING \u2014 NOT LEARNED BASELINE RESULTS",
-    "continuation": "same frozen scripted controller before and after live adoption"
+    "label": "TRAIN",
+    "continuation": "same frozen controller before and after live adoption"
   },
   {
     "domain": "warehouse",
@@ -50,8 +50,8 @@
     "policy_version": "domain-guided-v2",
     "policy_updates": 0,
     "training_steps": 0,
-    "label": "SCRIPTED DEMO \u2014 NO TRAINING \u2014 NOT LEARNED BASELINE RESULTS",
-    "continuation": "same frozen scripted controller before and after live adoption"
+    "label": "TRAIN",
+    "continuation": "same frozen controller before and after live adoption"
   },
   {
     "domain": "warehouse",
@@ -76,8 +76,8 @@
     "policy_version": "domain-guided-v2",
     "policy_updates": 0,
     "training_steps": 0,
-    "label": "SCRIPTED DEMO \u2014 NO TRAINING \u2014 NOT LEARNED BASELINE RESULTS",
-    "continuation": "same frozen scripted controller before and after live adoption"
+    "label": "TRAIN",
+    "continuation": "same frozen controller before and after live adoption"
   },
   {
     "domain": "warehouse",
@@ -90,8 +90,8 @@
     "policy_version": "domain-guided-v2",
     "policy_updates": 0,
     "training_steps": 0,
-    "label": "SCRIPTED DEMO \u2014 NO TRAINING \u2014 NOT LEARNED BASELINE RESULTS",
-    "continuation": "same frozen scripted controller before and after live adoption"
+    "label": "TRAIN",
+    "continuation": "same frozen controller before and after live adoption"
   },
   {
     "domain": "warehouse",
@@ -116,8 +116,8 @@
     "policy_version": "domain-guided-v2",
     "policy_updates": 0,
     "training_steps": 0,
-    "label": "SCRIPTED DEMO \u2014 NO TRAINING \u2014 NOT LEARNED BASELINE RESULTS",
-    "continuation": "same frozen scripted controller before and after live adoption"
+    "label": "TRAIN",
+    "continuation": "same frozen controller before and after live adoption"
   },
   {
     "domain": "rescue",
@@ -130,8 +130,8 @@
     "policy_version": "domain-guided-v2",
     "policy_updates": 0,
     "training_steps": 0,
-    "label": "SCRIPTED DEMO \u2014 NO TRAINING \u2014 NOT LEARNED BASELINE RESULTS",
-    "continuation": "same frozen scripted controller before and after live adoption"
+    "label": "TRAIN",
+    "continuation": "same frozen controller before and after live adoption"
   },
   {
     "domain": "rescue",
@@ -156,8 +156,8 @@
     "policy_version": "domain-guided-v2",
     "policy_updates": 0,
     "training_steps": 0,
-    "label": "SCRIPTED DEMO \u2014 NO TRAINING \u2014 NOT LEARNED BASELINE RESULTS",
-    "continuation": "same frozen scripted controller before and after live adoption"
+    "label": "TRAIN",
+    "continuation": "same frozen controller before and after live adoption"
   },
   {
     "domain": "rescue",
@@ -170,8 +170,8 @@
     "policy_version": "domain-guided-v2",
     "policy_updates": 0,
     "training_steps": 0,
-    "label": "SCRIPTED DEMO \u2014 NO TRAINING \u2014 NOT LEARNED BASELINE RESULTS",
-    "continuation": "same frozen scripted controller before and after live adoption"
+    "label": "TRAIN",
+    "continuation": "same frozen controller before and after live adoption"
   },
   {
     "domain": "rescue",
@@ -196,8 +196,8 @@
     "policy_version": "domain-guided-v2",
     "policy_updates": 0,
     "training_steps": 0,
-    "label": "SCRIPTED DEMO \u2014 NO TRAINING \u2014 NOT LEARNED BASELINE RESULTS",
-    "continuation": "same frozen scripted controller before and after live adoption"
+    "label": "TRAIN",
+    "continuation": "same frozen controller before and after live adoption"
   },
   {
     "domain": "rescue",
@@ -210,8 +210,8 @@
     "policy_version": "domain-guided-v2",
     "policy_updates": 0,
     "training_steps": 0,
-    "label": "SCRIPTED DEMO \u2014 NO TRAINING \u2014 NOT LEARNED BASELINE RESULTS",
-    "continuation": "same frozen scripted controller before and after live adoption"
+    "label": "TRAIN",
+    "continuation": "same frozen controller before and after live adoption"
   },
   {
     "domain": "rescue",
@@ -236,8 +236,8 @@
     "policy_version": "domain-guided-v2",
     "policy_updates": 0,
     "training_steps": 0,
-    "label": "SCRIPTED DEMO \u2014 NO TRAINING \u2014 NOT LEARNED BASELINE RESULTS",
-    "continuation": "same frozen scripted controller before and after live adoption"
+    "label": "TRAIN",
+    "continuation": "same frozen controller before and after live adoption"
   },
   {
     "domain": "wildfire",
@@ -250,8 +250,8 @@
     "policy_version": "domain-guided-v2",
     "policy_updates": 0,
     "training_steps": 0,
-    "label": "SCRIPTED DEMO \u2014 NO TRAINING \u2014 NOT LEARNED BASELINE RESULTS",
-    "continuation": "same frozen scripted controller before and after live adoption"
+    "label": "TRAIN",
+    "continuation": "same frozen controller before and after live adoption"
   },
   {
     "domain": "wildfire",
@@ -276,8 +276,8 @@
     "policy_version": "domain-guided-v2",
     "policy_updates": 0,
     "training_steps": 0,
-    "label": "SCRIPTED DEMO \u2014 NO TRAINING \u2014 NOT LEARNED BASELINE RESULTS",
-    "continuation": "same frozen scripted controller before and after live adoption"
+    "label": "TRAIN",
+    "continuation": "same frozen controller before and after live adoption"
   },
   {
     "domain": "wildfire",
@@ -290,8 +290,8 @@
     "policy_version": "domain-guided-v2",
     "policy_updates": 0,
     "training_steps": 0,
-    "label": "SCRIPTED DEMO \u2014 NO TRAINING \u2014 NOT LEARNED BASELINE RESULTS",
-    "continuation": "same frozen scripted controller before and after live adoption"
+    "label": "TRAIN",
+    "continuation": "same frozen controller before and after live adoption"
   },
   {
     "domain": "wildfire",
@@ -316,8 +316,8 @@
     "policy_version": "domain-guided-v2",
     "policy_updates": 0,
     "training_steps": 0,
-    "label": "SCRIPTED DEMO \u2014 NO TRAINING \u2014 NOT LEARNED BASELINE RESULTS",
-    "continuation": "same frozen scripted controller before and after live adoption"
+    "label": "TRAIN",
+    "continuation": "same frozen controller before and after live adoption"
   },
   {
     "domain": "wildfire",
@@ -330,8 +330,8 @@
     "policy_version": "domain-guided-v2",
     "policy_updates": 0,
     "training_steps": 0,
-    "label": "SCRIPTED DEMO \u2014 NO TRAINING \u2014 NOT LEARNED BASELINE RESULTS",
-    "continuation": "same frozen scripted controller before and after live adoption"
+    "label": "TRAIN",
+    "continuation": "same frozen controller before and after live adoption"
   },
   {
     "domain": "wildfire",
@@ -356,8 +356,8 @@
     "policy_version": "domain-guided-v2",
     "policy_updates": 0,
     "training_steps": 0,
-    "label": "SCRIPTED DEMO \u2014 NO TRAINING \u2014 NOT LEARNED BASELINE RESULTS",
-    "continuation": "same frozen scripted controller before and after live adoption"
+    "label": "TRAIN",
+    "continuation": "same frozen controller before and after live adoption"
   },
   {
     "domain": "hospital",
@@ -370,8 +370,8 @@
     "policy_version": "domain-guided-v2",
     "policy_updates": 0,
     "training_steps": 0,
-    "label": "SCRIPTED DEMO \u2014 NO TRAINING \u2014 NOT LEARNED BASELINE RESULTS",
-    "continuation": "same frozen scripted controller before and after live adoption"
+    "label": "TRAIN",
+    "continuation": "same frozen controller before and after live adoption"
   },
   {
     "domain": "hospital",
@@ -396,8 +396,8 @@
     "policy_version": "domain-guided-v2",
     "policy_updates": 0,
     "training_steps": 0,
-    "label": "SCRIPTED DEMO \u2014 NO TRAINING \u2014 NOT LEARNED BASELINE RESULTS",
-    "continuation": "same frozen scripted controller before and after live adoption"
+    "label": "TRAIN",
+    "continuation": "same frozen controller before and after live adoption"
   },
   {
     "domain": "hospital",
@@ -410,8 +410,8 @@
     "policy_version": "domain-guided-v2",
     "policy_updates": 0,
     "training_steps": 0,
-    "label": "SCRIPTED DEMO \u2014 NO TRAINING \u2014 NOT LEARNED BASELINE RESULTS",
-    "continuation": "same frozen scripted controller before and after live adoption"
+    "label": "TRAIN",
+    "continuation": "same frozen controller before and after live adoption"
   },
   {
     "domain": "hospital",
@@ -436,8 +436,8 @@
     "policy_version": "domain-guided-v2",
     "policy_updates": 0,
     "training_steps": 0,
-    "label": "SCRIPTED DEMO \u2014 NO TRAINING \u2014 NOT LEARNED BASELINE RESULTS",
-    "continuation": "same frozen scripted controller before and after live adoption"
+    "label": "TRAIN",
+    "continuation": "same frozen controller before and after live adoption"
   },
   {
     "domain": "hospital",
@@ -450,8 +450,8 @@
     "policy_version": "domain-guided-v2",
     "policy_updates": 0,
     "training_steps": 0,
-    "label": "SCRIPTED DEMO \u2014 NO TRAINING \u2014 NOT LEARNED BASELINE RESULTS",
-    "continuation": "same frozen scripted controller before and after live adoption"
+    "label": "TRAIN",
+    "continuation": "same frozen controller before and after live adoption"
   },
   {
     "domain": "hospital",
@@ -476,7 +476,7 @@
     "policy_version": "domain-guided-v2",
     "policy_updates": 0,
     "training_steps": 0,
-    "label": "SCRIPTED DEMO \u2014 NO TRAINING \u2014 NOT LEARNED BASELINE RESULTS",
-    "continuation": "same frozen scripted controller before and after live adoption"
+    "label": "TRAIN",
+    "continuation": "same frozen controller before and after live adoption"
   }
 ]

@@ -9,7 +9,7 @@
   ],
   "mean_return": 40.0,
   "team_returns": null,
-  "policy_access": "privileged full simulator state for scripted kitchen planner",
+  "policy_access": "privileged full simulator state for kitchen planner",
   "training_steps": 0,
   "terminal_reached": false,
   "terminal_handling": "freeze final state and zero rewards after episode ends; no autoreset",

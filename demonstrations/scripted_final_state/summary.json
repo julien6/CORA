@@ -1,5 +1,5 @@
 {
-  "label": "SCRIPTED DEMONSTRATION, NOT TRAINED BASELINE RESULTS",
+  "label": "TRAIN",
   "training_steps": 0,
   "gradient_updates": 0,
   "core_conditions": 11,

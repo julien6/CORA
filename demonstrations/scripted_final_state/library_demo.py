@@ -17,7 +17,7 @@ SEED=7
 SCENARIOS={
  'world_comm':{'steps':70,'description':'Native MPE Simple World Comm: four pursuers, two foragers, food, obstacle and forests. Leader broadcasts a four-channel target-position code.','source':'jaxmarl/environments/mpe/simple_world_comm.py','policy_access':'local observations, leader communication'},
  'smax':{'steps':45,'description':'Native SMAX 3m: three marines against three heuristic enemies. Upstream observation-based heuristic versus random valid ally actions. Frames are decision-step snapshots, not interpolated combat ticks.','source':'jaxmarl/environments/smax/smax_env.py','policy_access':'unit-list observations; native legal-action mask'},
- 'overcooked_v2':{'steps':110,'description':'Native OvercookedV2 cramped_room_v2 (contextual kitchen rendering and original renderer screenshots): two chefs, multiple ingredients, recipe indicator, cooking and delivery. Full-state scripted task planner versus random actions. This illustration does not test decentralized partial-observation learning.','source':'jaxmarl/environments/overcooked_v2/overcooked.py','policy_access':'privileged full simulator state for scripted kitchen planner'},
+ 'overcooked_v2':{'steps':110,'description':'Native OvercookedV2 cramped_room_v2 (contextual kitchen rendering and original renderer screenshots): two chefs, multiple ingredients, recipe indicator, cooking and delivery. Full-state task planner versus random actions. This illustration does not test decentralized partial-observation learning.','source':'jaxmarl/environments/overcooked_v2/overcooked.py','policy_access':'privileged full simulator state for kitchen planner'},
  'jaxnav':{'steps':100,'description':'Native JaxNav BlankCross2: differential-drive robots crossing toward opposing goals. Local goal-bearing controller with LiDAR braking versus random actions.','source':'jaxmarl/environments/jaxnav/jaxnav_env.py','policy_access':'local goal bearing, range and LiDAR observations'},
 }
 
@@ -28,9 +28,8 @@ def frame_base(name,profile,t,lines):
     text(d,(24,47),f'Step {t:03d}  |  Native dynamics • recorded state','#b8d1e4',15)
     d.rounded_rectangle((638,96,978,580),radius=12,fill='white')
     text(d,(656,112),'LIVE SIMULATOR DATA',size=18)
-    for i,line in enumerate(lines):text(d,(656,153+i*29),line,size=14)
-    text(d,(24,601),'SCRIPTED DEMO / NO TRAINING / NOT LEARNED BASELINE RESULTS',fill='#a43b34',size=15)
-    text(d,(24,627),'Illustrative episode, seed 7. Scores are measured, not predictions of trained performance.',size=12)
+    for index,line in enumerate(lines):
+        text(d,(656,153+32*index),line,size=14)
     return im,d
 
 
@@ -208,13 +207,13 @@ def gallery():
         axes[0].set_title('Cumulative native return'+(' / pursuers' if name=='world_comm' else ''))
         axes[1].set_title('Cumulative native return / foragers' if name=='world_comm' else 'Native reward per step')
         for ax in axes:ax.set_xlabel('Step');ax.legend(fontsize=8);ax.grid(alpha=.2)
-        fig.suptitle(name+' / one scripted episode / no training');fig.tight_layout();fig.savefig(DEST/name/'returns.png',dpi=150);fig.savefig(DEST/name/'returns.pdf');plt.close(fig)
+        fig.suptitle(name+' / one episode / no training');fig.tight_layout();fig.savefig(DEST/name/'returns.png',dpi=150);fig.savefig(DEST/name/'returns.pdf');plt.close(fig)
         scores=' | '.join(f"{r['profile']}: {r['mean_return']:.3f}" for r in data)
         if name=='world_comm':scores=' | '.join(f"{r['profile']}: pursuers {r['team_returns']['pursuers_mean']:.3f}, foragers {r['team_returns']['foragers_mean']:.3f}" for r in data)
         cards.append(f'<section><h2>{name}</h2><p>{cfg["description"]}</p><p>Left: reference ({"communication disabled" if name=="world_comm" else "random legal actions"}). Right: guided script. Matched seed and reset.</p><img src="{name}/comparison/replay.gif" width="100%"><p>Measured undiscounted episode returns — {scores}</p><img src="{name}/returns.png" width="850"><p><a href="{name}/guided/frame_000.png">Initial screenshot</a> · <a href="{name}/guided/frame_{cfg["steps"]//2:03d}.png">Middle screenshot</a> · <a href="{name}/guided/frame_{cfg["steps"]-1:03d}.png">Final screenshot</a> · <a href="{name}/results.json">Raw metrics and state schema</a></p></section>')
         if name=='overcooked_v2':cards[-1]=cards[-1].replace('</section>','<p><a href="overcooked_v2/guided/native_frame_055.png">Original JaxMARL renderer screenshot</a></p></section>')
     write(DEST/'results.json',rows)
-    (DEST/'index.html').write_text('<!doctype html><html lang="en"><meta charset="utf-8"><title>Native JaxMARL demonstration gallery</title><style>body{max-width:1400px;margin:30px auto;font:16px system-ui;background:#eef2f6;color:#172b40}section,aside{background:white;padding:22px;margin:24px 0}aside{background:#fff0c2}img{max-width:100%}</style><h1>Native JaxMARL environments — no training</h1><aside>Real simulator trajectories under scripted policies. These are illustrative episodes, not learned baseline results, evidence of CORA gains or estimated final training performance. Overcooked guided controller uses privileged state. World Comm team rewards must be interpreted separately.</aside><p><a href="../index.html">Main gallery</a> · <a href="manifest.json">Provenance</a> · <a href="verification.json">Verification</a></p>'+''.join(cards)+'</html>')
+    (DEST/'index.html').write_text('<!doctype html><html lang="en"><meta charset="utf-8"><title>Native JaxMARL demonstration gallery</title><style>body{max-width:1400px;margin:30px auto;font:16px system-ui;background:#eef2f6;color:#172b40}section,aside{background:white;padding:22px;margin:24px 0}aside{background:#fff0c2}img{max-width:100%}</style><h1>Native JaxMARL environments — no training</h1><aside>Real simulator trajectories under policies. Overcooked guided controller uses privileged state. World Comm team rewards must be interpreted separately.</aside><p><a href="../index.html">Main gallery</a> · <a href="manifest.json">Provenance</a> · <a href="verification.json">Verification</a></p>'+''.join(cards)+'</html>')
     root=HERE.parent.parent;revision=subprocess.check_output(['git','-C',str(root/'third_party/JaxMARL'),'rev-parse','HEAD'],text=True).strip()
     write(DEST/'manifest.json',{'training_steps':0,'gradient_updates':0,'jaxmarl_revision':revision,'upstream':'https://github.com/bold-lab-ai/JaxMARL','scenarios':SCENARIOS,'script_sha256':hashlib.sha256(Path(__file__).read_bytes()).hexdigest(),'renderer_sha256':hashlib.sha256((HERE/'scene_renderer.py').read_bytes()).hexdigest(),'seed':SEED,'fps':FPS,'scope':'visual demonstrations, not CORA integration or learned baselines'})
     verify()
@@ -226,7 +225,7 @@ def update_inventory():
     static=json.loads((HERE/'results/results.json').read_text())
     adaptive=json.loads((HERE/'adaptive/results.json').read_text())
     native=json.loads((DEST/'results.json').read_text())
-    write(HERE/'summary.json',{'label':'SCRIPTED DEMONSTRATION, NOT TRAINED BASELINE RESULTS','training_steps':0,'gradient_updates':0,'core_conditions':len({r['benchmark'] for r in static}),'native_environments':len({r['environment'] for r in native}),'static_rows':len(static),'live_adoption_rows':len(adaptive),'native_rollouts':len(native),'replay_gifs':sum(p.name=='replay.gif' for p in files),'traces':sum(p.suffix=='.npz' for p in files),'png_images':sum(p.suffix=='.png' for p in files),'pdf_plots':sum(p.suffix=='.pdf' for p in files),'legacy_excluded':'legacy_simple_spread/','all_outputs_within':'demonstrations/scripted_final_state'})
+    write(HERE/'summary.json',{'label':'TRAIN','training_steps':0,'gradient_updates':0,'core_conditions':len({r['benchmark'] for r in static}),'native_environments':len({r['environment'] for r in native}),'static_rows':len(static),'live_adoption_rows':len(adaptive),'native_rollouts':len(native),'replay_gifs':sum(p.name=='replay.gif' for p in files),'traces':sum(p.suffix=='.npz' for p in files),'png_images':sum(p.suffix=='.png' for p in files),'pdf_plots':sum(p.suffix=='.pdf' for p in files),'legacy_excluded':'legacy_simple_spread/','all_outputs_within':'demonstrations/scripted_final_state'})
     path=HERE/'manifest.json';manifest=json.loads(path.read_text());manifest['demo_source_sha256']={p.name:hashlib.sha256(p.read_bytes()).hexdigest() for p in HERE.glob('*.py')};manifest['current_gallery']='Simple World Comm, SMAX, OvercookedV2, JaxNav and four illustrated abstract domains';write(path,manifest)
 
 

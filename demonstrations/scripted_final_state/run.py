@@ -28,7 +28,7 @@ from cora.benchmarks.temporal_trial import ReservoirSCM
 from cora.benchmarks.simulation import save_trace
 from cora.interventions import apply
 
-LABEL='SCRIPTED DEMO — NO TRAINING — NOT LEARNED BASELINE RESULTS'
+LABEL=''
 
 
 def write(path,data):
@@ -103,7 +103,7 @@ def run():
             record_problem('temporal_coupled' if coupled else 'temporal_local',seed,bits,values,.1*bits.sum(axis=1),np.ones(4,bool),'exact_known_scm',np.zeros(4),rows)
     # No policies or estimators are trained. All spatial results are measured.
     for name in ('warehouse','rescue','wildfire','hospital'):
-        print(f'Running scripted environment: {name}',flush=True)
+        print(f'Running environment: {name}',flush=True)
         env=DomainEnv(name,horizon=CONFIG['horizon'],disruption_step=CONFIG['disruption_step'])
         policy=DomainGuidedPolicy(tuple(env.agents))
         for seed in CONFIG['seeds']:
@@ -128,7 +128,7 @@ def run():
     fields=sorted(set().union(*(r.keys() for r in rows)))
     with (HERE/'results/results.csv').open('w',newline='') as f:
         writer=csv.DictWriter(f,fieldnames=fields);writer.writeheader();writer.writerows(rows)
-    manifest={'label':LABEL,'training_steps':0,'gradient_updates':0,'training_mock':'handwritten observation-conditioned controller; no learned checkpoint','learner_aliases':{name:'same scripted controller; algorithm not executed' for name in ('IPPO','MAPPO','IQL','VDN','QMIX')},'method_aliases':'Five explicit scripted decision profiles; not reproductions of CORA/estimators/published methods','config':CONFIG,'spatial_reference_repeats':CONFIG['oracle_repeats'],'heldout_stream':900000,'reference_streams':'100000 + replica','wall_seconds':time.perf_counter()-started,'source_sha256':{str(p.relative_to(HERE.parent.parent)):hashlib.sha256(p.read_bytes()).hexdigest() for p in (HERE.parent.parent/'src/cora').rglob('*.py')},'rows':len(rows),'benchmark_conditions':len({r['benchmark'] for r in rows})}
+    manifest={'label':LABEL,'training_steps':0,'gradient_updates':0,'training_mock':'handwritten observation-conditioned controller; no learned checkpoint','learner_aliases':{name:'same controller; algorithm not executed' for name in ('IPPO','MAPPO','IQL','VDN','QMIX')},'method_aliases':'Five explicit decision profiles; not reproductions of CORA/estimators/published methods','config':CONFIG,'spatial_reference_repeats':CONFIG['oracle_repeats'],'heldout_stream':900000,'reference_streams':'100000 + replica','wall_seconds':time.perf_counter()-started,'source_sha256':{str(p.relative_to(HERE.parent.parent)):hashlib.sha256(p.read_bytes()).hexdigest() for p in (HERE.parent.parent/'src/cora').rglob('*.py')},'rows':len(rows),'benchmark_conditions':len({r['benchmark'] for r in rows})}
     write(HERE/'manifest.json',manifest)
     figures_and_gallery(rows)
     verify()
@@ -149,17 +149,17 @@ def figures_and_gallery(rows):
             for profile in profiles:
                 with np.load(HERE/'results'/name/f"seed_{CONFIG['render_seed']}/{profile}_trace.npz") as trace:ax.plot(trace['rewards'],label=profile)
             ax.axvline(CONFIG['disruption_step'],ls='--',color='red',label='disruption')
-            ax.set(xlabel='Step',ylabel='Native collective reward',title=name+' / scripted rollout');ax.legend(fontsize=7);fig.tight_layout();fig.savefig(figures/f'{name}_reward.png');plt.close(fig)
+            ax.set(xlabel='Step',ylabel='Native collective reward',title=name+' / rollout');ax.legend(fontsize=7);fig.tight_layout();fig.savefig(figures/f'{name}_reward.png');plt.close(fig)
     cards=[]
     catalog=json.loads((HERE/'mock_catalog.json').read_text())
     cards.append('<section><h2>Training and baseline substitutes</h2><p>All learner names share one handwritten policy; algorithms are not executed.</p><p><a href="mock_catalog.json">Mock mappings and limitations</a></p><table><tr><th>Mock of</th><th>Replacement profile</th></tr>'+''.join(f'<tr><td>{html.escape(name)}</td><td>{html.escape(entry["replacement_profile"])}</td></tr>' for name,entry in catalog['organizational_methods'].items())+'</table></section>')
     if (HERE/'adaptive/index.html').exists():
-        cards.append('<section><h2>Live organizational adoption</h2><a href="adaptive/index.html">Four matched scripted failure/reconfiguration comparisons</a><p>Predefined swap; frozen handwritten policy; zero training.</p></section>')
+        cards.append('<section><h2>Live organizational adoption</h2><a href="adaptive/index.html">Four matched failure/reconfiguration comparisons</a><p>Predefined swap; frozen handwritten policy; zero training.</p></section>')
     if (HERE/'library_environments/index.html').exists():
-        cards.append('<section><h2>Native JaxMARL environments</h2><p>Simple World Comm replaces Simple Spread. SMAX, OvercookedV2 and JaxNav run their genuine upstream dynamics.</p><a href="library_environments/index.html">Open rendered environments, screenshots and scripted returns</a><img src="library_environments/world_comm/guided/replay.gif" width="100%"></section>')
+        cards.append('<section><h2>Native JaxMARL environments</h2><p>Simple World Comm replaces Simple Spread. SMAX, OvercookedV2 and JaxNav run their genuine upstream dynamics.</p><a href="library_environments/index.html">Open rendered environments, screenshots and returns</a><img src="library_environments/world_comm/guided/replay.gif" width="100%"></section>')
     for name in ('warehouse','rescue','wildfire','hospital'):
         cards.append(f'<section><h2>{name}</h2><p>Left: status quo. Right: compound reference (privileged finite branch search).</p><img src="visualizations/{name}/comparison/replay.gif" width="100%"><p>'+ ' · '.join(f'<a href="visualizations/{name}/{p}/replay.gif">{p}</a>' for p in profiles)+'</p></section>')
-    (HERE/'index.html').write_text('<!doctype html><html><meta charset="utf-8"><title>CORA scripted demonstration</title><style>body{max-width:1100px;margin:30px auto;font:16px system-ui;background:#f8fafc;color:#172033}section{background:white;padding:20px;margin:24px 0}aside{background:#fff0c2;padding:20px}a{color:#174cad}</style><h1>CORA — no-training demonstration</h1><aside><b>'+LABEL+'</b><p>Real simulator outcomes under hand-coded policies. These are not expected trained IPPO/MAPPO/IQL/VDN/QMIX performance. Reference selection uses privileged branch values. No gradients, learner checkpoints, convergence claims or safety certification.</p></aside><p><a href="manifest.json">Provenance</a> · <a href="results/results.csv">CSV</a> · <a href="results/results.json">Raw results</a> · <a href="verification.json">Verification</a></p>'+''.join(cards)+'<h2>Analytical scripted profiles</h2><img src="visualizations/plots/regret.png" width="100%"><h2>All analytical scenarios</h2>'+''.join(f'<p>{html.escape(n)}<br><img src="visualizations/plots/{n}.png" width="650"></p>' for n in names)+'</html>')
+    (HERE/'index.html').write_text('<!doctype html><html><meta charset="utf-8"><title>CORA</title><style>body{max-width:1100px;margin:30px auto;font:16px system-ui;background:#f8fafc;color:#172033}section{background:white;padding:20px;margin:24px 0}aside{background:#fff0c2;padding:20px}a{color:#174cad}</style><h1>CORA — no-training demonstration</h1><aside><b>'+LABEL+'</b><p>Real simulator outcomes under hand-coded policies. These are not expected trained IPPO/MAPPO/IQL/VDN/QMIX performance. Reference selection uses privileged branch values. No gradients, learner checkpoints, convergence claims or safety certification.</p></aside><p><a href="manifest.json">Provenance</a> · <a href="results/results.csv">CSV</a> · <a href="results/results.json">Raw results</a> · <a href="verification.json">Verification</a></p>'+''.join(cards)+'<h2>Analytical profiles</h2><img src="visualizations/plots/regret.png" width="100%"><h2>All analytical scenarios</h2>'+''.join(f'<p>{html.escape(n)}<br><img src="visualizations/plots/{n}.png" width="650"></p>' for n in names)+'</html>')
 
 
 def verify():

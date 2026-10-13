@@ -57,7 +57,7 @@ def run(output):
     ax.set_ylabel('Regret against 8-rollout MC reference'); ax.set_title('Technical validation, one seed; not a performance comparison')
     ax.legend();fig.tight_layout();fig.savefig(output/'technical_regret.png');plt.close(fig)
     links=''.join(f'<li>{n}: <a href="{n}/cora.gif">CORA replay</a> / <a href="{n}/no_op.gif">no-op replay</a></li>' for n in ('warehouse','rescue','wildfire','hospital'))
-    (output/'index.html').write_text(f'<!doctype html><html><meta charset="utf-8"><title>Extended technical validation</title><h1>Small application prototypes</h1><p>One seed, frozen scripted policy, diagnostic confidence; no scientific performance claim.</p><ul>{links}</ul><img src="technical_regret.png" width="900"></html>')
+    (output/'index.html').write_text(f'<!doctype html><html><meta charset="utf-8"><title>Extended technical validation</title><h1>Small application prototypes</h1><p>One seed, frozen policy, diagnostic confidence; no scientific performance claim.</p><ul>{links}</ul><img src="technical_regret.png" width="900"></html>')
     return {'rows':len(rows),'temporal_trials':len(temporal),'behavioral_training_steps':0}
 
 
